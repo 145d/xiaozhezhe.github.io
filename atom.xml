@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://145d.github.io/xiaozhezhe.github.io/</id>
     <title>欢迎来到德来联盟</title>
-    <updated>2020-11-14T12:39:45.282Z</updated>
+    <updated>2020-11-15T05:37:14.917Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://145d.github.io/xiaozhezhe.github.io/"/>
     <link rel="self" href="https://145d.github.io/xiaozhezhe.github.io/atom.xml"/>
@@ -11,15 +11,92 @@
     <icon>https://145d.github.io/xiaozhezhe.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 欢迎来到德来联盟</rights>
     <entry>
+        <title type="html"><![CDATA[我的世界]]></title>
+        <id>https://145d.github.io/xiaozhezhe.github.io/post/wo-de-shi-jie/</id>
+        <link href="https://145d.github.io/xiaozhezhe.github.io/post/wo-de-shi-jie/">
+        </link>
+        <updated>2020-11-15T05:36:15.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://145d.github.io/xiaozhezhe.github.io//post-images/1605418587638.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>en						用户模式<br>
+#conf t						特权模式<br>
+(config)#int f0/0					全局模式<br>
+(config-if)#					接口模式<br>
+#disable  →&gt;<br>
+(config)#hostname  name				修改主机名</p>
+</blockquote>
+<p>switch(config)#vlan vlan-number			划分VLAN<br>
+switch(config-vl)#name vlan-name			vlan命名<br>
+switch(config)#int range f0/1-5			同时进入f0/1-5端口<br>
+Switch(config-if-range)#switchport mode access		把端口设置成接入链路<br>
+Switch(config-if-range)#switchport access vlan 2		把端口加入到vlan2<br>
+switch(config-if-range)#switchport mode trunk		把端口设置成中继链路<br>
+switch(config-if-range)#channel-group 1 mode on 	把几个端口捆绑成以太网通道1<br>
+switch(config)#vtp domain vtp-name			设置VTP名称<br>
+switch(config)#vtp password vtp-password		设置VTP密码<br>
+switch(config)#vtp mode server|client			设置成VTP服务器|客户端<br>
+switch(config)#ip default-gateway 默认网关		设置交换机默认网关	<br>
+(config)#enable secret pwd1				设置特权模式密码(密文)<br>
+(config)#enable password pwd1			设置特权模式密码(明文)<br>
+(config)#service password-encryption			对明文密码加密<br>
+(config-if)#ip address IP地址 子网掩码 			设置IP地址(交换机的IP地址只能设置在虚拟端口vlan上)<br>
+(config-if)#no shutdown				手动开启端口<br>
+(config)#line vty 0 4				开启0~4端口(一共5个)<br>
+(config)#password vty-password			设置vty密码<br>
+(config)#login					开启登录模式<br>
+(config)#line console 0 				进入配置口<br>
+(config)#password con-password			设置配置口密码<br>
+(config)#login					开启登录模式<br>
+vty		远程访问的时候需要<br>
+console		直接用配置线对设备配置时需要<br>
+router(config)#ip route 目标网段 子网掩码 IP地址|端口号 num	设置静态路由<br>
+router(config)#ip route 192.168.6.0 255.255.255.0 f0/1<br>
+IP地址指向下一个路由器(下一个路由器接收口的IP地址)<br>
+端口号指自身的端口(当前路由器的出口)<br>
+num数值1~255  数值越小优先级越高<br>
+目标网段 不能是具体IP地址(192.168.10.0      2.0.0.0)<br>
+router(config)#ip dhcp pool dhcp-name		设置DHCP并命名<br>
+router(dhcp-config)#network 分配的网段 子网掩码		设置地址池<br>
+分配的网段  (192.168.5.0  6.0.0.0)<br>
+router(dhcp-config)#default-router 默认网关		DHCP分配的默认网关<br>
+router(config)#int f 0/0.1				进入子端口<br>
+f0/0.1指 f0/0的第一个子端口<br>
+f0/1.2指 f0/1的第二个子端口<br>
+Router(config-subif)#en do vlan-number		把子端口绑定到vlan<br>
+Router(config-subif)#en do 2				把子端口绑定到vlan2</p>
+<p>telnet 目标IP地址					PC上远程访问设备<br>
+#reload						正常使用时重启<br>
+#show running-config				查看运行时配置<br>
+#show startup-config				查看保存的配置<br>
+(config)#do show running-config			其他模式下查看前面+do</p>
+<p>#copy running-config startup-config			把当前配置保存到NVRAM<br>
+#write						保存运行时配置(效果同上)<br>
+#copy startup-config running-config			用NVRAM覆盖当前配置</p>
+<p>#erase nvram: 					删除保存的配置</p>
+<p>#copy tftp flash					从TFTP服务器下载系统到路由器	<br>
+#copy flash tftp					从路由器上传系统到服务器<br>
+(config)#ip ftp username s1t161			在路由器上设置ftp的用户名<br>
+(config)#ip ftp password s1t161			在路由器上设置ftp的密码</p>
+<p>rommon 1 &gt; tftpdnld     				(download)<br>
+rommon 2 &gt; IP_ADDRESS=1.1.1.1			设置路由器的IP地址<br>
+rommon 3 &gt; IP_SUBNET_MASK=255.0.0.0		设置路由器的子网掩码<br>
+rommon 4 &gt; DEFAULT_GATEWAY=1.2.2.2		设置路由器的默认网关(TFTP的IP地址)<br>
+rommon 5 &gt; TFTP_SERVER=1.2.2.2			设置下载系统的原位置的IP地址(TFTP的IP地址)<br>
+rommon 6 &gt; TFTP_FILE=c1841-ipbasek9-mz.124-12.bin	设置要下载的文件名<br>
+rommon 7 &gt; tftpdnld</p>
+<p>Do you wish to continue? y/n:  [n]:  y			输入y继续<br>
+rommon 8 &gt; reset					重启<br>
+😙</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://145d.github.io/xiaozhezhe.github.io/post/hello-gridea/</id>
         <link href="https://145d.github.io/xiaozhezhe.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+        <content type="html"><![CDATA[<!-- more -->
+<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 <!-- more -->
 <p><a href="https://github.com/getgridea/gridea">Github</a><br>
