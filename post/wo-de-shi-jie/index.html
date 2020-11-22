@@ -2,13 +2,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta name="description" content="
-
 en						用户模式
 #conf t						特权模式
 (config)#int f0/0					全局模式
 (config-if)#					接口模式
 #disable  →&gt;
-(config)#hostname  nam..." />
+(config)#hostname  name..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
@@ -170,7 +169,7 @@ en						用户模式
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://www.zhz666.cf/images/avatar.png?v=1605584210875" class="avatar">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1606035173827" class="avatar">
         </div>
         <div class="sitename">欢迎来到德莱联盟</div>
         <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
@@ -397,7 +396,7 @@ en						用户模式
         <div class="postshow" style="padding-bottom: 0;">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;">
-                <img src="https://www.zhz666.cf/post-images/wo-de-shi-jie.jpg" class="postimage" style="cursor:auto">
+                <img src="https://p0.piqsels.com/preview/721/528/930/japan-odaiba-minato-gundam.jpg" class="postimage" style="cursor:auto">
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-11-15</div>
@@ -419,8 +418,7 @@ en						用户模式
                 </span>
             </div>
             <div class="text ">
-                <figure data-type="image" tabindex="1"><img src="https://www.zhz666.cf/post-images/1605418587638.jpg" alt="" loading="lazy"></figure>
-<blockquote>
+                <blockquote>
 <p>en						用户模式<br>
 #conf t						特权模式<br>
 (config)#int f0/0					全局模式<br>
@@ -563,7 +561,30 @@ rommon 8 &gt; reset					重启<br>
                 <div id="comment"  class="comment" style="background: white">
                     <div class="commentcontainer">
                         
-                        <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                        
+                        
                         
                     </div>
                 </div>
