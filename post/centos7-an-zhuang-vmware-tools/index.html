@@ -1,19 +1,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-本人是一个初入社会的青春少年！
-👨‍💻 博主是谁
-生活是如此的美好，加油呀！
-⛹ 兴趣爱好
-喜欢看动漫，喜欢听音乐~
-📬 联系我呀
-QQ:1684629789
-手机：1510..." />
-    <meta name="keywords" content="" />
+    <meta name="description" content="1、配置yum源😎
+rm -f /etc/yum.repos.d/*
+vim /etc/yum.repos.d/yum.repo
+2、挂载系统光盘
+umount /dev/sr0
+mount /dev/sr0 /media
+cd /med..." />
+    <meta name="keywords" content="MySQL" />
     <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
     
@@ -401,21 +396,25 @@ QQ:1684629789
         <div class="postshow" style="padding-bottom: 0;">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;">
-                <img src="https://www.zhz666.cf/post-images/about.jpg" class="postimage" style="cursor:auto">
+                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1606187903736&amp;di=2c377613dc89d2b676fb80bf0c66bfc7&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-12-20%2F5c1b8191cc15e.jpg" class="postimage" style="cursor:auto">
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2019-01-25</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-11-24</div>
                 <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
                 <div class="posttag">
+                    
+                    <a href="https://www.zhz666.cf/tag/TkSrlcQsO/" class="postlink">
+                        <i class="fa fa-tag"></i> MySQL
+                    </a>
                     
                 </div>
             </div>
             
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>关于</h2>
+                <h2>Centos7安装VMware-Tools</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://www.zhz666.cf/post/about/</div>
+                <div id="pl" style="display:none">https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/</div>
                 <div id="rootaddr" style="display:none">https://www.zhz666.cf</div>
                 <span id="hotnum">
                     <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
@@ -423,18 +422,34 @@ QQ:1684629789
                 </span>
             </div>
             <div class="text ">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>本人是一个初入社会的青春少年！</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>生活是如此的美好，加油呀！</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>喜欢看动漫，喜欢听音乐~</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ:1684629789<br>
-手机：15102600575</p>
+                <p>1、配置yum源😎<br>
+rm -f /etc/yum.repos.d/*<br>
+vim /etc/yum.repos.d/yum.repo</p>
+<p>2、挂载系统光盘<br>
+umount /dev/sr0<br>
+mount /dev/sr0 /media<br>
+cd /media/Packages/</p>
+<p>3、安装组件与依赖关系<br>
+yum -y install gcc gcc-c++ perl make kernel-haders kernel-devel</p>
+<p>4、卸载系统自带工具<br>
+rpm -qa | grep vm-tools<br>
+rpm -e open-vm-tools open-vm-tools-desktop --nodeps</p>
+<p>5、建立内核版本文件软连接文件<br>
+ln -s /usr/src/kernels/3.10.0-514.el7.x86_64/include/generated/uapi/linux/version.h /usr/src/kernels/3.10.0-514.el7.x86_64/include/linux/version.h</p>
+<p>6、关闭防火墙与selinux<br>
+vim /etc/selinux/config<br>
+修改：<br>
+SELINUX=disabled</p>
+<p>setenforce 0<br>
+systemctl disable firewalld.service<br>
+systemctl stop firewalld.service<br>
+reboot</p>
+<p>7、挂载vmware-tools光盘，解压软，并安装软件<br>
+tar -zxvf VMwareTools-10.0.0-2977863.tar.gz -C /tmp<br>
+cd /tmp/vmware-tools-distrib/<br>
+./vmware-install.pl<br>
+reboot<br>
+😎😎😎😎😎😎😎😎😎😎😎</p>
 
             </div>
             <hr style="width: 80%;">
@@ -472,13 +487,25 @@ QQ:1684629789
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong></li>
-            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/about/</li>
+            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/wo-de-shi-jie/';return false">
+                    
+                    <img src="https://p0.piqsels.com/preview/721/528/930/japan-odaiba-minato-gundam.jpg" style="width: 100%;" class="opimg">
+                    
+                    <h4 class="optitle">我的世界</h4>
+                </div>
+            </div>
+            <div class="next-post">
+                下一篇 <a href="https://www.zhz666.cf/post/wo-de-shi-jie/">我的世界</a>
+            </div>
             
         </div>
     </div>
@@ -531,17 +558,7 @@ QQ:1684629789
             
         
         <div class="toc-container">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+            
     </div>
     </div>
     </div>
@@ -779,7 +796,7 @@ QQ:1684629789
                 var nc = new NewCounter();
                 nc.save({
                     time: 1,
-                    title: "关于",
+                    title: "Centos7安装VMware-Tools",
                     url: pl,
                     xid: pl,
                 }).then(function (object) {
