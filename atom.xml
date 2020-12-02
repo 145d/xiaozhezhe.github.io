@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.zhz666.cf</id>
     <title>欢迎来到德莱联盟</title>
-    <updated>2020-12-02T14:41:51.466Z</updated>
+    <updated>2020-12-02T15:26:58.713Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.zhz666.cf"/>
     <link rel="self" href="https://www.zhz666.cf/atom.xml"/>
@@ -55,7 +55,7 @@ $?   存储上一次命令执行后的状态，执行成功为0 ,执行失败或
 1</p>
 <p>[root@lala ~]# [ -d /media ] &amp;&amp; echo &quot;yes&quot;<br>
 yes<br>
-[root@lala ~]# [ -d /media/dvd ] &amp;&amp; echo &quot;yes&quot;                         &amp;&amp;（逻辑与，而且的意思）<br>
+[root@lala ~]# [ -d /media/dvd ] &amp;&amp; echo &quot;yes&quot;             &amp;&amp;（逻辑与，而且的意思）<br>
 因为没有/media/dvd目录，所以不输出任何结果<br>
 [root@lala ~]#  [ -d /media/dvd ] &amp;&amp; echo &quot;yes&quot; || echo no     || （逻辑或，“或者”的意思）<br>
 no<br>
@@ -205,8 +205,8 @@ space is low<br>
 [root@localhost ~]# ! [ -z $pass1 ]<br>
 [root@localhost ~]# echo $?<br>
 0</h1>
-<p>练习：<br>
-1、测试/opt/backup目录是否存在<br>
+<p><font color=#0000FF><strong>练习</strong></font></p>
+<p>1、测试/opt/backup目录是否存在<br>
 [root@lala ~]# vim di.sh<br>
 #!/bin/bash<br>
 [ -d /opt/backup ] &amp;&amp; echo &quot;yes&quot; || echo &quot;no&quot;</p>
@@ -245,14 +245,15 @@ then<br>
     command2                                command：命令，指令<br>
 fi</p>
 <p>condition是判断条件，如果 condition 成立（返回“真”），那么 then 后边的语句将会被执行；如果 condition 不成立（返回“假”），那么不会执行任何语句。最后必须以fi来闭合，fi 就是 if 倒过来拼写，即使有多条语句也不需要用{ }包围起来。</p>
-<p>【1】单分支语法格式（两种写法）<br>
-if  条件测试操作		if  条件测试操作；then 命令序列                      解析：【1】如果if和then在同一行，必有;       【2】不在一行;可以省略！！！<br>
-then 命令序列		fi<br>
-fi</p>
-<p>单分支执行流程：<br>
+<p><font color="#00dd00"><strong>【1】单分支语法格式（两种写法）</strong></font><br /><br>
+if  条件测试操作	                              	if  条件测试操作；then 命令序列<br>
+then 命令序列    	                             	      fi<br>
+fi<br>
+解析：【1】如果if和then在同一行，必有;       【2】不在一行;可以省略！！！<br>
+<font color="#dd0000">单分支执行流程：<br>
 1）首先判断条件测试操作的结果。<br>
 2）如果返回值为0，表示条件成立，则执行then后面的命令序列，一直到遇见fi结束判断为止，继续执行其他脚本代码；<br>
-3）如果返回值不为0，则忽略then后面的命令序列，直接跳转至fi行以后执行其他脚本代码。</p>
+3）如果返回值不为0，则忽略then后面的命令序列，直接跳转至fi行以后执行其他脚本代码。</font><br /></p>
 <p>例：<br>
 [root@localhost ~]# vim mount.sh<br>
 #!/bin/bash<br>
@@ -267,21 +268,21 @@ fi</p>
 if [ $USER != &quot;abc&quot; ]<br>
 then<br>
 echo &quot;abc is not user&quot;                //执行脚本，返回abc is not user（如果有abc用户，将什么都不显示！）<br>
-fi</p>
-<p>【2】双分支语法格式<br>
+fi<br>
+<font color="#00dd00"><strong>【2】双分支语法格式</strong></font><br /><br>
 判断条件表达式中的结果是否满足，如果满足条件则执行命令序列1，如果不满足条件，则执行命令序列2。</p>
 <p>语法格式：<br>
-if [ 条件测试操作 ];then                                                   *  then：接着，当时                else：其他的，另外的 *<br>
+if [ 条件测试操作 ];then                                                                      then：接着，当时                else：其他的，另外的<br>
 满足条件后执行的语句 （命令序列1）<br>
 else<br>
 不满足添加后执行的语句（命令序列2）<br>
-fi</p>
-<p>注：else在一组if语句中只能使用一次。<br>
-在程序或脚本中，大部分的逻辑判断都是使用双分支语句，</p>
-<p>执行流程：<br>
-首先判断条件测试操作的结果！<br>
-如果条件成立，则执行then后面的命令序列1，忽略else及后面的命令序列2，直到遇见fi结束判断；<br>
-如果条件不成立，则忽略then及后面的命令序列1，直接跳至else后面的命令序列2，直到遇见fi结束判断。</p>
+fi<br>
+<font color="#dd0000"><strong>注：else在一组if语句中只能使用一次。<br>
+在程序或脚本中，大部分的逻辑判断都是使用双分支语句。</strong></font><br /><br>
+<font color="#dd0000">执行流程：</br><br>
+1）首先判断条件测试操作的结果！</br><br>
+2）如果条件成立，则执行then后面的命令序列1，忽略else及后面的命令序列2，直到遇见fi结束判断；</br><br>
+3）如果条件不成立，则忽略then及后面的命令序列1，直接跳至else后面的命令序列2，直到遇见fi结束判断。</font><br /></p>
 <p>例：<br>
 [root@localhost www]# vim httpd.sh<br>
 #!/bin/bash<br>
@@ -308,18 +309,18 @@ fi</p>
 $1：位置变量，如果改成$2，则要写两个ip地址，第一个不被使用，直接使用第二个</p>
 <p>[root@localhost www]# chmod +x ping.sh<br>
 [root@localhost www]# ./ping.sh 192.168.6.20</p>
-<p>【3】多分支语句结构<br>
+<p><font color="#00dd00"><strong>【3】多分支语句结构</strong></font><br /><br>
 判断条件中，多于两个以上的对比值，使用多分支判断，对不用值的语句调用。<br>
 if  条件测试操作1<br>
 then 命令序列1<br>
 elif 条件测试操作2                               elif：否则如果<br>
 then 命令序列2<br>
 else  命令序列3<br>
-fi</p>
-<p>执行流程：<br>
-1）首先判断条件测试操作1的结果，如果条件1成立，则执行命令序列1，然后跳至fi结束判断；<br>
-2）如果条件1不成立，则继续判断条件测试操作2的结果，如果条件2成立，则执行命令序列2，然后跳至fi结束判断……<br>
-3）如果所有条件都不满足，则执行then及后面的命令序列n，直接跳至else后面的命令序列2，直到遇见fi结束判断。</p>
+fi<br>
+<font color="#dd0000">执行流程：</br><br>
+1）首先判断条件测试操作1的结果，如果条件1成立，则执行命令序列1，然后跳至fi结束判断；</br><br>
+2）如果条件1不成立，则继续判断条件测试操作2的结果，如果条件2成立，则执行命令序列2，然后跳至fi结束判断……0</br><br>
+3）如果所有条件都不满足，则执行then及后面的命令序列n，直接跳至else后面的命令序列2，直到遇见fi结束判断。</td></tr></font><br /></p>
 <p>例：<br>
 vim name.sh<br>
 #!/bin/bash<br>
@@ -364,7 +365,8 @@ chengji is couhe<br>
 [root@lala ~]# sh fen.sh<br>
 qing shu ru nin de fen shu(0-100):74<br>
 chengji is youxiu</h2>
-<p>判断分数范围，分出优秀、合格、不合格三档（中文版）<br>
+<p><font size="4"><strong>判断分数范围，分出优秀、合格、不合格三档（中文版）</strong></font><br>
+<font color="#0000dd"><br>
 #!/bin/bash<br>
 read -p 请输入成绩： a<br>
 if [ $a -le 100 ] &amp;&amp;  [ $a -ge 90 ]<br>
@@ -387,7 +389,7 @@ fi<br>
 不合格<br>
 [root@localhost ~]# source 1.sh<br>
 请输入成绩：85<br>
-良</p>
+良</font><br /></p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
     </entry>
     <entry>
