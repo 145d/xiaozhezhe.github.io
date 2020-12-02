@@ -1,0 +1,1212 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="description" content="【1】、条件测试
+是判断语句最基础的算法，通过固定的格式进行字符串或数值的比较。
+语句格式中，【在中括号的两端加空格，测试语句不会直接生成结果】，满足条件的会标记为0，不满足条件的标记为其他值。
+格式1：test  条件表达式
+格式2：[ ..." />
+    <meta name="keywords" content="MySQL" />
+    <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <title>欢迎来到德莱联盟</title>
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="codeCopyText" style="display: none">代码复制成功了哦</div>
+    <div id="domainname" style="display:none">https://www.zhz666.cf</div>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div>
+            <div id="bar">
+                <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
+    }
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://www.zhz666.cf">欢迎来到德莱联盟&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf/post/hello-gridea">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://blog.csdn.net/qq_50573146?spm=1000.2115.3001.5113" target="_blank">
+              新世界的大门
+            </a></li>
+          
+          
+          
+          
+          <li><a href="https://www.zhz666.cf/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            </div>
+            <div class="row">
+                <div class="side"><body>
+    
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1606920062543" class="avatar">
+        </div>
+        <div class="sitename">欢迎来到德莱联盟</div>
+        <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://www.zhz666.cf/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">1684629789</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/post/hello-gridea" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://blog.csdn.net/qq_50573146?spm=1000.2115.3001.5113" class="mchocie describtion" target="_blank">
+            新世界的大门
+        </a>
+    </div>
+    
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/friends" class="menubutton">友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    
+    </div>
+
+
+<script src="https://www.zhz666.cf/media/js/wordshow.js"></script>
+    
+
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+                <div id="main" class="col-xs-12 col-sm-12 col-md-10 col-lg-7">
+                    <link rel="stylesheet" href="https://www.zhz666.cf/media/css/font-awesome.css">
+
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow" style="padding-bottom: 0;">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;">
+                <img src="https://w.wallhaven.cc/full/28/wallhaven-28k8jg.jpg" class="postimage" style="cursor:auto">
+            </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-12-02</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 16 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://www.zhz666.cf/tag/TkSrlcQsO/" class="postlink">
+                        <i class="fa fa-tag"></i> MySQL
+                    </a>
+                    
+                </div>
+            </div>
+            
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2>Shell脚本的“判断语句”</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://www.zhz666.cf/post/shell-jiao-ben-de-pan-duan-yu-ju/</div>
+                <div id="rootaddr" style="display:none">https://www.zhz666.cf</div>
+                <span id="hotnum">
+                    <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
+                            class="hotnum">loading...</i></h4>
+                </span>
+            </div>
+            <div class="text ">
+                <p>【1】、条件测试</p>
+<p>是判断语句最基础的算法，通过固定的格式进行字符串或数值的比较。<br>
+语句格式中，【在中括号的两端加空格，测试语句不会直接生成结果】，满足条件的会标记为0，不满足条件的标记为其他值。</p>
+<p>格式1：test  条件表达式<br>
+格式2：[  条件表达式  ]             #两个空格都不能少</p>
+<p>【2】、文件测试</p>
+<p>通过条件表达式，测试指定的文件或目录是否存在或其属性。</p>
+<p>条件判断<br>
+判断的方式两种<br>
+1、test<br>
+2、if</p>
+<p>test：文件测试<br>
+格式1：test 表达式<br>
+格式2：[   表达式    ]            #括号前后有空格</p>
+<p>-d：是否是目录<br>
+-f：是否是文件<br>
+-r：是否具有读权限<br>
+-w：是否具有写入权限<br>
+-x：是否具有执行权限          Exist：存在，生存            excute：执行，实施<br>
+-e：测试文件或目录是否存在<br>
+-s：是否是套接字<br>
+-c：是否是字符集设备<br>
+-b：是否是是块设备<br>
+$?   存储上一次命令执行后的状态，执行成功为0 ,执行失败或报错为其他数值</p>
+<p>[root@lala ~]# test -d aaa<br>
+[root@lala ~]# echo $?<br>
+1                                            --返回1表示执行出错<br>
+[root@lala ~]# mkdir aaa<br>
+[root@lala ~]# test -d aaa<br>
+[root@lala ~]# echo $?<br>
+0</p>
+<p>[root@lala ~]# [ -d /media/dvd  ]<br>
+[root@lala ~]# echo $?<br>
+0<br>
+[root@lala ~]# [ -d /media/dvd/server  ]<br>
+[root@lala ~]# echo $?<br>
+1</p>
+<p>[root@lala ~]# [ -d /media ] &amp;&amp; echo &quot;yes&quot;<br>
+yes<br>
+[root@lala ~]# [ -d /media/dvd ] &amp;&amp; echo &quot;yes&quot;                         &amp;&amp;（逻辑与，而且的意思）<br>
+因为没有/media/dvd目录，所以不输出任何结果<br>
+[root@lala ~]#  [ -d /media/dvd ] &amp;&amp; echo &quot;yes&quot; || echo no     || （逻辑或，“或者”的意思）<br>
+no<br>
+[root@lala ~]# [ -f aa.txt ] &amp;&amp; echo &quot;yes&quot;<br>
+[root@lala ~]# touch aa.txt<br>
+[root@lala ~]# [ -f aa.txt ] &amp;&amp; echo &quot;yes&quot;<br>
+yes</p>
+<p>检查看aa.txt文件的权限                                   【友情提示：不要去用大管root用户测试权限】<br>
+[root@lala ~]# ls -l aa.txt<br>
+-rw-r--r--. 1 root root 0 3月   2 15:53 aa.txt<br>
+[root@lala ~]# [ -r aa.txt ] &amp;&amp; echo &quot;yes&quot;    （读权限）<br>
+yes<br>
+[root@lala ~]# [ -w aa.txt ] &amp;&amp; echo &quot;yes&quot;   （写权限）<br>
+yes<br>
+[root@lala ~]# [ -x aa.txt ] &amp;&amp; echo &quot;yes&quot;   （执行权限）<br>
+因为没有执行权限，所以不输出任何内容<br>
+[haha@localhost huaizhe]$ [ -x aa.txt ] &amp;&amp; echo &quot;yes&quot;  || echo 你没有权限<br>
+你没有权限</p>
+<p>[root@lala ~]# [ -e aa.txt ] &amp;&amp; echo &quot;yes&quot;    （是否存在）<br>
+yes<br>
+[root@lala ~]# [ -e a.txt ] &amp;&amp; echo &quot;yes&quot;</p>
+<p>【3】、整数值比较<br>
+-eq：等于（Equal）         Equal：相同的，同等的                               greate：较大的        than：就，（多、小、少）于              lesser： 较小的<br>
+-ne：不等于（Not Equal）<br>
+-gt：大于（Greater Than）<br>
+-lt：小于（Lesser Than）<br>
+-le：小于或等于（Lesser or Equal）<br>
+-ge：大于或等于（Greater or Equal）</p>
+<p>[root@lala ~]# [ 1 -eq 2 ]<br>
+[root@lala ~]# echo $?<br>
+1-255<br>
+[root@lala ~]# [ 1 -eq 1 ]<br>
+[root@lala ~]# echo $?<br>
+0</p>
+<p>例：测试用户输入的值是否大于100<br>
+例：（脚本）<br>
+#!/bin/bash<br>
+stty -echo<br>
+read -p &quot;请输入一个数值：&quot; num<br>
+printf &quot;\n&quot;<br>
+stty echo<br>
+printf &quot;\n&quot;<br>
+[ $num -gt 100 ] &amp;&amp; echo &quot;数值大于100&quot; || echo &quot;数值小于100&quot;</p>
+<p>例：判断磁盘使用量<br>
+[root@lala ~]# df -hT<br>
+文件系统            类型      容量  已用  可用 已用% 挂载点<br>
+/dev/mapper/cl-root xfs        97G  4.1G   93G    5% /<br>
+devtmpfs            devtmpfs  897M     0  897M    0% /dev<br>
+tmpfs               tmpfs     912M  144K  912M    1% /dev/shm<br>
+tmpfs               tmpfs     912M   17M  895M    2% /run<br>
+tmpfs               tmpfs     912M     0  912M    0% /sys/fs/cgroup<br>
+/dev/sda1           xfs       197M  150M   47M   77% /boot<br>
+tmpfs               tmpfs     183M   16K  183M    1% /run/user/0<br>
+/dev/sr0            iso9660   4.1G  4.1G     0  100% /media/dvd<br>
+[root@lala ~]# df -hT | grep &quot;/boot<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 75: …t
+[root@lala ~]#̲ df -hT | grep …'>&quot;
+/dev/sda1           xfs       197M  150M   47M   77% /boot
+[root@lala ~]# df -hT | grep &quot;/boot</span>&quot; | awk '{print <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;}&#039; at position 2: 6}̲&#039;
+77%
+[root@lal…'>6}&#039;
+77%
+[root@lala ~]# df -hT | grep &quot;/boot</span>&quot; | awk '{print $6}' | cut -d% -f1<br>
+77<br>
+[root@lala ~]# [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>d</mi><mi>f</mi><mo>−</mo><mi>h</mi><mi>T</mi><mi mathvariant="normal">∣</mi><mi>g</mi><mi>r</mi><mi>e</mi><mi>p</mi><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">/</mi><mi>b</mi><mi>o</mi><mi>o</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">(df -hT | grep &quot;/boot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">p</span><span class="mord">&quot;</span><span class="mord">/</span><span class="mord mathdefault">b</span><span class="mord mathdefault">o</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span></span></span></span>&quot; | awk '{print $6}' | cut -d% -f1) -ge 60 ] &amp;&amp; echo &quot;too many&quot;<br>
+too many</p>
+<p>例：判断内存<br>
+[root@lala ~]# free<br>
+total        used        free      shared  buff/cache   available<br>
+Mem:        1867264      581368      324024       19444      961872     1033020<br>
+Swap:       2097148           0     2097148<br>
+[root@lala ~]# free | grep &quot;Mem:&quot;<br>
+Mem:        1867264      581740      323652       19444      961872     1032680<br>
+[root@lala ~]# free | grep &quot;Mem:&quot; | awk '{print <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;}&#039; at position 2: 4}̲&#039;
+323388
+[root@…'>4}&#039;
+323388
+[root@lala ~]# b=</span>(free | grep &quot;Mem:&quot; | awk '{print $4}')<br>
+[root@lala ~]# [ $b -lt 500000 ] &amp;&amp; echo ${b}MB</p>
+<p>【4】、字符串比较<br>
+=:字符串相同<br>
+!=：字符串不同（! 号表示相反的意思）<br>
+-z：字符串是否为空</p>
+<p>例：<br>
+[root@lala ~]# echo $LANG<br>
+zh_CN.UTF-8<br>
+[root@lala ~]# [ $LANG != &quot;zh_CN.UTF-8&quot; ] &amp;&amp; echo &quot;不是中文&quot; || echo &quot;中文&quot;<br>
+中文</p>
+<p>例：<br>
+[root@lala ~]# read -p &quot;Do you love me?(yes/no)&quot; ack<br>
+Do you love me?(yes/no)yes<br>
+[root@lala ~]# [ $ack = &quot;yes&quot; ] &amp;&amp; echo &quot;I love you too&quot; || echo &quot;But I love you very much&quot;<br>
+I love you too<br>
+[root@lala ~]# [ $ack = &quot;no&quot; ] &amp;&amp; echo &quot;I love you too&quot; || echo &quot;But I love you very much&quot;<br>
+But I love you very much<br>
+例：<br>
+[root@localhost ~]# [ -z ]<br>
+[root@localhost ~]# echo $?<br>
+0<br>
+[root@localhost ~]# [ -z 123456 ]<br>
+[root@localhost ~]# echo $?<br>
+1<br>
+特殊示例：<br>
+a=               {变量值不能为空}<br>
+b=123.com<br>
+[ $a = $b ]<br>
+echo $?<br>
+2<br>
+[root@localhost ~]# [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">a=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>b ]        //不加空格相当等式了！！！<br>
+[root@localhost ~]# echo $?<br>
+0</p>
+<p>【5】、逻辑测试<br>
+-a或&amp;&amp;：逻辑与（and）         #多个测试条件进行链接，当前面的测试条件满足时，进行后面的条件测试<br>
+-o或||    ：逻辑或/否则（or）  #多个测试条件满足任意一个（[ $a -lt 90 ] || [ $a -ge 80 ] ）<br>
+！          ：逻辑非（取反）<br>
+应用环境：||一般用于多个&amp;&amp;测试条件之后，当前面的测试都不满足时，最后默认生效的测试。<br>
+num=101<br>
+[ $num -gt 100 ] &amp;&amp; echo &quot;数值大于100&quot; || echo &quot;数值小于100&quot;</p>
+<p>例：<br>
+[root@lala ~]# [ $USER != root ] &amp;&amp; echo &quot;not root&quot; || echo &quot;hello good man&quot;<br>
+hello good man<br>
+[root@lala ~]# [ $USER = root ] &amp;&amp; echo &quot;hello muhuaijun is a good man&quot; || echo &quot;not root&quot;<br>
+hello muhuaijun is a good man</p>
+<p>例：判断用户是否存在<br>
+[root@lala ~]# id<br>
+uid=0(root) gid=0(root) 组=0(root) 环境=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023<br>
+[root@lala ~]# id abc<br>
+id: abc: no such user<br>
+写一个脚本，检查用户abc是否存在，如果存在，则显示“abc is user”，如果不存在则创建<br>
+vim useradd.sh<br>
+#!/bin/bash<br>
+id abc &amp;&gt; /dev/null &amp;&amp; echo &quot;abc is user&quot; || useradd abc</p>
+<p>[root@lala ~]# sh useradd.sh<br>
+[root@lala ~]# tail -1 /etc/passwd<br>
+abc：x：1001:1001::/home/abc:/bin/bash</p>
+<h1 id="例rootlala-~-vim-diskshbinbashdiskuserdf-ht-grep-boot-awk-print-6-cut-d-f1-diskuser-ge-60-echo-space-is-low-echo-space-is-muchrootlala-~-sh-diskshspace-is-low例rootlocalhost-~-z-pass1-rootlocalhost-~-echo-1rootlocalhost-~-pass14566rootlocalhost-~-z-pass1-rootlocalhost-~-echo-0">例：<br>
+[root@lala ~]# vim disk.sh<br>
+#!/bin/bash<br>
+diskuser=<code>df -hT | grep &quot;/boot$&quot; | awk '{print $6}' | cut -d% -f1</code><br>
+[ $diskuser -ge 60 ] &amp;&amp; echo &quot;space is low&quot; || echo &quot;space is much&quot;<br>
+[root@lala ~]# sh disk.sh<br>
+space is low<br>
+例：<br>
+[root@localhost ~]# ! [ -z $pass1 ]<br>
+[root@localhost ~]# echo $?<br>
+1<br>
+[root@localhost ~]# pass1=4566<br>
+[root@localhost ~]# ! [ -z $pass1 ]<br>
+[root@localhost ~]# echo $?<br>
+0</h1>
+<p>练习：<br>
+1、测试/opt/backup目录是否存在<br>
+[root@lala ~]# vim di.sh<br>
+#!/bin/bash<br>
+[ -d /opt/backup ] &amp;&amp; echo &quot;yes&quot; || echo &quot;no&quot;</p>
+<p>[root@lala ~]# sh di.sh<br>
+no</p>
+<p>2、查询当前的活动进程数，并测试是否小于100<br>
+[root@lala ~]# vim ps.sh<br>
+#!/bin/bash<br>
+pss=<code>ps aux | wc -l</code><br>
+[ $pss -lt 100 ] &amp;&amp; echo &quot;yes&quot; || echo &quot;no&quot;<br>
+[root@lala ~]# sh ps.sh<br>
+no</p>
+<p>3、测试是否已经安装sysstat软件包<br>
+[root@lala ~]# vim sys.sh<br>
+#!/bin/bash<br>
+rpm -qa sysstat &amp;&gt; /dev/null<br>
+a=‘<code>echo $?</code>’<br>
+[ $a -ne 0 ] &amp;&amp; echo &quot;not installed&quot; || echo &quot;installed&quot;</p>
+<h1 id="4-测试user1是否存在若不存在则创建rootlala-~-vim-users2shbinbashid-user1-devnull-echo-有此用户-echo-正在创建此用户-useradd-user1-id-user10-devnull-useradd-user10-echo-user10-passwd-stdin-123com-devnull-echo-user10-shigeyonghu-id-user20-devnull-useradd-user20-echo-user20-passwd-stdin-123com-devnull-echo-user20-shigeyonghu-id-user30-devnull-useradd-user30-echo-user30-passwd-stdin-123com-devnull-echo-user30-shigeyonghu-id-user40-devnull-useradd-user40-echo-user40-passwd-stdin-123com-devnull-echo-user40-shigeyonghu-id-user50-devnull-useradd-user50-echo-user50-passwd-stdin-123com-devnull-echo-user50-shigeyonghu">4、测试user1是否存在，若不存在则创建<br>
+[root@lala ~]# vim users2.sh<br>
+#!/bin/bash<br>
+id user1 &amp;&gt; /dev/null &amp;&amp; echo 有此用户 || echo 正在创建此用户 &amp;&amp; useradd user1<br>
+! id user10 &amp;&gt; /dev/null &amp;&amp; useradd user10 &amp;&amp; echo &quot;user10&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user10 shigeyonghu&quot;<br>
+! id user20 &amp;&gt; /dev/null &amp;&amp; useradd user20 &amp;&amp; echo &quot;user20&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user20 shigeyonghu&quot;<br>
+! id user30 &amp;&gt; /dev/null &amp;&amp; useradd user30 &amp;&amp; echo &quot;user30&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user30 shigeyonghu&quot;<br>
+! id user40 &amp;&gt; /dev/null &amp;&amp; useradd user40 &amp;&amp; echo &quot;user40&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user40 shigeyonghu&quot;<br>
+! id user50 &amp;&gt; /dev/null &amp;&amp; useradd user50 &amp;&amp; echo &quot;user50&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user50 shigeyonghu&quot;</h1>
+<p>if语句结构<br>
+if……then……：如果……那么……</p>
+<p>每个if语句都要用fi结束，而且是每一个if都要对应一个fi。<br>
+整个if语句用fi闭合起来才算完整，书写时if和fi要垂直对齐以方便查看。</p>
+<p>格式举例：<br>
+if  condition                                   condition：状态<br>
+then<br>
+    command1<br>
+    command2                                command：命令，指令<br>
+fi</p>
+<p>condition是判断条件，如果 condition 成立（返回“真”），那么 then 后边的语句将会被执行；如果 condition 不成立（返回“假”），那么不会执行任何语句。最后必须以fi来闭合，fi 就是 if 倒过来拼写，即使有多条语句也不需要用{ }包围起来。</p>
+<p>【1】单分支语法格式（两种写法）<br>
+if  条件测试操作		if  条件测试操作；then 命令序列                      解析：【1】如果if和then在同一行，必有;       【2】不在一行;可以省略！！！<br>
+then 命令序列		fi<br>
+fi</p>
+<p>单分支执行流程：<br>
+1）首先判断条件测试操作的结果。<br>
+2）如果返回值为0，表示条件成立，则执行then后面的命令序列，一直到遇见fi结束判断为止，继续执行其他脚本代码；<br>
+3）如果返回值不为0，则忽略then后面的命令序列，直接跳转至fi行以后执行其他脚本代码。</p>
+<p>例：<br>
+[root@localhost ~]# vim mount.sh<br>
+#!/bin/bash<br>
+mou=&quot;/var/www/html&quot;<br>
+if [ ! -d $mou ]<br>
+then<br>
+mkdir -p $mou<br>
+fi</p>
+<p>例：<br>
+[root@localhost ~]# vim us.sh<br>
+#!/bin/bash<br>
+if [ $USER != &quot;abc&quot; ]<br>
+then<br>
+echo &quot;abc is not user&quot;                //执行脚本，返回abc is not user（如果有abc用户，将什么都不显示！）<br>
+fi</p>
+<p>【2】双分支语法格式<br>
+判断条件表达式中的结果是否满足，如果满足条件则执行命令序列1，如果不满足条件，则执行命令序列2。</p>
+<p>语法格式：<br>
+if [ 条件测试操作 ];then                                                   *  then：接着，当时                else：其他的，另外的 *<br>
+满足条件后执行的语句 （命令序列1）<br>
+else<br>
+不满足添加后执行的语句（命令序列2）<br>
+fi</p>
+<p>注：else在一组if语句中只能使用一次。<br>
+在程序或脚本中，大部分的逻辑判断都是使用双分支语句，</p>
+<p>执行流程：<br>
+首先判断条件测试操作的结果！<br>
+如果条件成立，则执行then后面的命令序列1，忽略else及后面的命令序列2，直到遇见fi结束判断；<br>
+如果条件不成立，则忽略then及后面的命令序列1，直接跳至else后面的命令序列2，直到遇见fi结束判断。</p>
+<p>例：<br>
+[root@localhost www]# vim httpd.sh<br>
+#!/bin/bash<br>
+netstat -anpt | grep 80<br>
+a=<code>echo $?</code><br>
+if [ $a -eq 0 ];then<br>
+echo &quot;httpd is running&quot;<br>
+else<br>
+systemctl restart httpd &amp;&amp; echo &quot;httpd is run!!!&quot;<br>
+fi</p>
+<p>例：<br>
+[root@localhost www]# vim ping.sh<br>
+#!/bin/bash<br>
+ping -c 3 -i 0.2 -W 3 $1 &amp;&gt; /dev/null<br>
+if [ $? -eq 0 ]<br>
+then<br>
+echo &quot;host $1 is up&quot;<br>
+else<br>
+echo &quot;host $1 is down&quot;<br>
+fi</p>
+<p>-c    3:只发送3个测试包<br>
+-i    0.2：间隔0.2秒<br>
+-W     3：超时3秒<br>
+$1：位置变量，如果改成$2，则要写两个ip地址，第一个不被使用，直接使用第二个</p>
+<p>[root@localhost www]# chmod +x ping.sh<br>
+[root@localhost www]# ./ping.sh 192.168.6.20</p>
+<p>【3】多分支语句结构<br>
+判断条件中，多于两个以上的对比值，使用多分支判断，对不用值的语句调用。<br>
+if  条件测试操作1<br>
+then 命令序列1<br>
+elif 条件测试操作2                               elif：否则如果<br>
+then 命令序列2<br>
+else  命令序列3<br>
+fi</p>
+<p>执行流程：<br>
+1）首先判断条件测试操作1的结果，如果条件1成立，则执行命令序列1，然后跳至fi结束判断；<br>
+2）如果条件1不成立，则继续判断条件测试操作2的结果，如果条件2成立，则执行命令序列2，然后跳至fi结束判断……<br>
+3）如果所有条件都不满足，则执行then及后面的命令序列n，直接跳至else后面的命令序列2，直到遇见fi结束判断。</p>
+<p>例：<br>
+vim name.sh<br>
+#!/bin/bash<br>
+read -p &quot;what's your name?(xuesenwei,lianpeng,yuxinyu,boge):&quot;  name<br>
+if [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>=</mo><mi mathvariant="normal">&quot;</mi><mi>x</mi><mi>u</mi><mi>e</mi><mi>s</mi><mi>e</mi><mi>n</mi><mi>w</mi><mi>e</mi><mi>i</mi><mi mathvariant="normal">&quot;</mi><mo>]</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>o</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">name = &quot;xuesenwei&quot; ]
+then
+echo &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&quot;</span><span class="mord mathdefault">x</span><span class="mord mathdefault">u</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">e</span><span class="mord mathdefault">i</span><span class="mord">&quot;</span><span class="mclose">]</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord">&quot;</span></span></span></span>name is pig&quot;<br>
+elif [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>=</mo><mi mathvariant="normal">&quot;</mi><mi>l</mi><mi>i</mi><mi>a</mi><mi>n</mi><mi>p</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi mathvariant="normal">&quot;</mi><mo>]</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>o</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">name = &quot;lianpeng&quot; ]
+then
+echo &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&quot;</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">&quot;</span><span class="mclose">]</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord">&quot;</span></span></span></span>name is monkey&quot;<br>
+elif [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>=</mo><mi mathvariant="normal">&quot;</mi><mi>y</mi><mi>u</mi><mi>x</mi><mi>i</mi><mi>n</mi><mi>y</mi><mi>u</mi><mi mathvariant="normal">&quot;</mi><mo>]</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>e</mi><mi>c</mi><mi>h</mi><mi>o</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">name = &quot;yuxinyu&quot; ]
+then
+echo &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&quot;</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">u</span><span class="mord mathdefault">x</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">u</span><span class="mord">&quot;</span><span class="mclose">]</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord">&quot;</span></span></span></span>name is dashu&quot;<br>
+else<br>
+echo &quot;$name is niu&quot;<br>
+fi</p>
+<p>[root@lala ~]# sh name.sh<br>
+what's your name?(xuesenwei,lianpeng,yuxinyu,boge):yuxinyu<br>
+yuxinyu is dashu</p>
+<p>例：<br>
+[root@lala ~]# vim fen.sh           --书上的示例<br>
+#!/bin/bash<br>
+read -p &quot;qing shu ru nin de fen shu(0-100):&quot;    fenshu<br>
+if<br>
+[ $fenshu -ge 85 ] &amp;&amp; [ $fenshu -le 100 ];<br>
+then<br>
+echo &quot;chengji is couhe&quot;<br>
+elif<br>
+[ $fenshu -ge 70 ] &amp;&amp; [ $fenshu -le 84 ];<br>
+then<br>
+echo &quot;chengji is youxiu&quot;<br>
+elif<br>
+[ $fenshu -ge 60 ] &amp;&amp; [ $fenshu -le 69 ];<br>
+then<br>
+echo &quot;chengji is hege&quot;<br>
+else<br>
+echo &quot;chengji is bujige&quot;<br>
+fi</p>
+<h2 id="rootlala-~-sh-fenshqing-shu-ru-nin-de-fen-shu0-10085chengji-is-couherootlala-~-sh-fenshqing-shu-ru-nin-de-fen-shu0-10074chengji-is-youxiu">[root@lala ~]# sh fen.sh<br>
+qing shu ru nin de fen shu(0-100):85<br>
+chengji is couhe<br>
+[root@lala ~]# sh fen.sh<br>
+qing shu ru nin de fen shu(0-100):74<br>
+chengji is youxiu</h2>
+<p>判断分数范围，分出优秀、合格、不合格三档（中文版）<br>
+#!/bin/bash<br>
+read -p 请输入成绩： a<br>
+if [ $a -le 100 ] &amp;&amp;  [ $a -ge 90 ]<br>
+then   echo 优<br>
+elif [ $a -lt 90 ] &amp;&amp; [ $a -ge 80 ]<br>
+then echo 良<br>
+elif [ $a -lt 80 ] &amp;&amp; [ $a -ge 70 ]; then<br>
+echo 好<br>
+elif [ $a -lt 70 ] &amp;&amp; [ $a -ge 60 ];then echo 合格<br>
+elif [ $a -ge 100 ];<br>
+then echo 你牛逼<br>
+else<br>
+echo 不合格<br>
+fi<br>
+[root@localhost ~]# source 1.sh<br>
+请输入成绩：105<br>
+你牛逼<br>
+[root@localhost ~]# source 1.sh<br>
+请输入成绩：35<br>
+不合格<br>
+[root@localhost ~]# source 1.sh<br>
+请输入成绩：85<br>
+良</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+            </div>
+            <hr style="width: 80%;">
+            
+            <div class="sharebtnContainer">
+                <button type="button" class="sharebtn">转载分享</button>
+            </div>
+            <div class="shareContainer">
+                <div class="share" style="height:30px;background: white;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/QQ.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/wechat.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/weibo.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/qzone.png" alt=""></i></a>
+                    <a class="douban" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/douban.png" alt=""></i></a>
+                    <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/facebook.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/twitter.png" alt=""></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="donateContainer">
+                <img src="https://www.zhz666.cf/media/images/donate.png" alt="" class="donateImg">
+            </div>
+            <div class="donateContainer">
+                <img src="" alt="" class="donate">
+            </div>
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong></li>
+            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/shell-jiao-ben-de-pan-duan-yu-ju/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
+        </div>
+        <div id="otherpost">
+            
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/';return false">
+                    
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1606187903736&amp;di=2c377613dc89d2b676fb80bf0c66bfc7&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-12-20%2F5c1b8191cc15e.jpg" style="width: 100%;" class="opimg">
+                    
+                    <h4 class="optitle">Centos7安装VMware-Tools</h4>
+                </div>
+            </div>
+            <div class="next-post">
+                下一篇 <a href="https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/">Centos7安装VMware-Tools</a>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
+</script>
+                <div id="comment"  class="comment" style="background: white">
+                    <div class="commentcontainer">
+                        
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '14fe10b1d4b6db21a3dd',
+    clientSecret: 'd1a4725138d4dd6cbb8abfab424fe98292ee8039 ',
+    repo: 'xiaozhezhe.github.io',
+    owner: '145d',
+    admin: ['145d'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                        
+                        
+                        
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-1 col-lg-2"></div>
+                <div id="bg">
+                </div>
+            </div>
+            
+        
+        <div class="toc-container">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E4%BE%8Brootlala-~-vim-diskshbinbashdiskuserdf-ht-grep-boot-awk-print-6-cut-d-f1-diskuser-ge-60-echo-space-is-low-echo-space-is-muchrootlala-~-sh-diskshspace-is-low%E4%BE%8Brootlocalhost-~-z-pass1-rootlocalhost-~-echo-1rootlocalhost-~-pass14566rootlocalhost-~-z-pass1-rootlocalhost-~-echo-0">例：<br>
+[root@lala ~]# vim disk.sh<br>
+#!/bin/bash<br>
+diskuser=<code>df -hT | grep &quot;/boot$&quot; | awk '{print $6}' | cut -d% -f1</code><br>
+[ $diskuser -ge 60 ] &amp;&amp; echo &quot;space is low&quot; || echo &quot;space is much&quot;<br>
+[root@lala ~]# sh disk.sh<br>
+space is low<br>
+例：<br>
+[root@localhost ~]# ! [ -z $pass1 ]<br>
+[root@localhost ~]# echo $?<br>
+1<br>
+[root@localhost ~]# pass1=4566<br>
+[root@localhost ~]# ! [ -z $pass1 ]<br>
+[root@localhost ~]# echo $?<br>
+0</a></li>
+<li><a href="#4-%E6%B5%8B%E8%AF%95user1%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%8B%A5%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%88%99%E5%88%9B%E5%BB%BArootlala-~-vim-users2shbinbashid-user1-devnull-echo-%E6%9C%89%E6%AD%A4%E7%94%A8%E6%88%B7-echo-%E6%AD%A3%E5%9C%A8%E5%88%9B%E5%BB%BA%E6%AD%A4%E7%94%A8%E6%88%B7-useradd-user1-id-user10-devnull-useradd-user10-echo-user10-passwd-stdin-123com-devnull-echo-user10-shigeyonghu-id-user20-devnull-useradd-user20-echo-user20-passwd-stdin-123com-devnull-echo-user20-shigeyonghu-id-user30-devnull-useradd-user30-echo-user30-passwd-stdin-123com-devnull-echo-user30-shigeyonghu-id-user40-devnull-useradd-user40-echo-user40-passwd-stdin-123com-devnull-echo-user40-shigeyonghu-id-user50-devnull-useradd-user50-echo-user50-passwd-stdin-123com-devnull-echo-user50-shigeyonghu">4、测试user1是否存在，若不存在则创建<br>
+[root@lala ~]# vim users2.sh<br>
+#!/bin/bash<br>
+id user1 &amp;&gt; /dev/null &amp;&amp; echo 有此用户 || echo 正在创建此用户 &amp;&amp; useradd user1<br>
+! id user10 &amp;&gt; /dev/null &amp;&amp; useradd user10 &amp;&amp; echo &quot;user10&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user10 shigeyonghu&quot;<br>
+! id user20 &amp;&gt; /dev/null &amp;&amp; useradd user20 &amp;&amp; echo &quot;user20&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user20 shigeyonghu&quot;<br>
+! id user30 &amp;&gt; /dev/null &amp;&amp; useradd user30 &amp;&amp; echo &quot;user30&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user30 shigeyonghu&quot;<br>
+! id user40 &amp;&gt; /dev/null &amp;&amp; useradd user40 &amp;&amp; echo &quot;user40&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user40 shigeyonghu&quot;<br>
+! id user50 &amp;&gt; /dev/null &amp;&amp; useradd user50 &amp;&amp; echo &quot;user50&quot; | passwd --stdin &quot;123.com&quot; &amp;&gt; /dev/null || echo &quot;user50 shigeyonghu&quot;</a>
+<ul>
+<li><a href="#rootlala-~-sh-fenshqing-shu-ru-nin-de-fen-shu0-10085chengji-is-couherootlala-~-sh-fenshqing-shu-ru-nin-de-fen-shu0-10074chengji-is-youxiu">[root@lala ~]# sh fen.sh<br>
+qing shu ru nin de fen shu(0-100):85<br>
+chengji is couhe<br>
+[root@lala ~]# sh fen.sh<br>
+qing shu ru nin de fen shu(0-100):74<br>
+chengji is youxiu</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    </div>
+    </div>
+    <div class="tog">
+        <div class="toggleContainer">
+            <div class="toggle">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+        </div>
+    </div>
+    <div id="bgchoice" style="display: none">default</div>
+    
+    <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+    
+    </div>
+</body>
+<script>
+    var img = $("img");
+    for (var i = 0; i < img.length; i++) {
+        if (img.eq(i).attr("class") == undefined) {
+            img.eq(i).attr("class", "lazyload");
+            var imgsrc = img.eq(i).attr("src");
+            img.eq(i).attr("data-original", imgsrc);
+            img.eq(i).attr("src", "");
+            img.eq(i).hide();
+        }
+    }
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+    //寻找所有code标签，加复制按钮鸭！(行内代码除外)
+    var codes = document.getElementsByTagName('code');
+    if (codes.length) {
+        for (var i = 0; i < codes.length; i++) {
+            //高度/行高=文本行数
+            // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
+            // console.log("当前有"+rowNum+"行");
+            var code_id = "code_id_" + i;
+            codes[i].setAttribute("id", code_id);
+            var ci = "#" + code_id;
+            var codedot = $(ci);
+            var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
+            if (rowNum <= 1) continue;
+            var btn = document.createElement("button");
+            btn.setAttribute("class", "copybt");
+            btn.setAttribute("data-clipboard-target", "#" + code_id);
+            btn.innerHTML = '复制代码';
+            codes[i].parentNode.insertBefore(btn, codes[i]);
+        }
+    };
+    var cop = new ClipboardJS('.copybt');
+    var codeCopyText = $("#codeCopyText").html();
+    cop.on('success', function (e) {
+        alert(codeCopyText);
+        e.clearSelection();
+    });
+    cop.on('error', function (e) {
+        alert("矮油，复制失败了...手动复制吧勇士！");
+        e.clearSelection();
+    });
+</script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
+<script type="text/javascript" src="https://www.zhz666.cf/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://www.zhz666.cf/media/live2d/assets/tororo.model.json");
+</script>
+
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
+
+<script>
+    var bgchoice = $('#bgchoice').html();
+    var bg = $('#bg');
+    var bgurl = document.getElementById("bgurl").innerHTML;
+    if (bgchoice == 'default')
+        for (var i = 0; i < 3; i++)
+            bgurl = bgurl.replace("\\", "/");
+    bg.css("background", "url('" + bgurl + "')");
+</script>
+
+
+<script src="https://www.zhz666.cf/media/js/index.js"></script>
+
+
+
+<!-- 动态更改上(下)一篇博客图片框长宽 -->
+<script>
+    npcontainer = document.querySelector('#npcontainer');
+    npstyle = window.getComputedStyle(npcontainer, null);
+    npwidth = npstyle.width;
+    npheight = 0.6 * Number(npwidth.replace("px", ""));
+    npheight = npheight.toString() + "px";
+    var op = $(".opimg");
+    op.css("height", npheight);
+</script>
+
+<script src="https://www.zhz666.cf/media/share/dist/Share.js"></script>
+
+<script>
+    var avatarSrc = $(".avatar").attr("src");
+    var dp = document.getElementsByClassName("describtion")[0].innerHTML;
+</script>
+
+
+<script>
+    var title = document.getElementById("texttitle").getElementsByTagName("h2");
+    
+    var share = new Share('.share', {
+        title: title[0].innerHTML,
+        initialized: true,
+        //默认获取网站描述
+        description: dp,
+        //网站图片默认获取的是设置的用户头像
+        image: avatarSrc,
+        //激活的分享网站
+        sites: ["weibo", "qq", "wechat", "douban", "qzone", "facebook", "twitter", "google"],
+        //微信分享PC端会生成二维码分享,移动端如果可以唤起微信最好
+        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+        wechatQrcodeHelper: '<p>微信里扫一下二维码</p><p>便可将本文分享至朋友圈。</p>',
+        //关闭的网站分享
+        disabled: ['google', 'linkedin'],
+        wechatQrcodePosition: 'bottom'
+    });
+
+    //点击分享按钮展现出分享icons
+    var sharebtnTag = false;
+    $(".sharebtn").click(function () {
+        if(!sharebtnTag)
+        {
+            $(".share").show();
+            sharebtnTag = true;
+        }
+        else
+        {
+            $(".share").hide();
+            sharebtnTag = false;
+        }
+    })
+
+    var donatebtnTag = false;
+    $(".donateImg").click(function () {
+        if(!donatebtnTag)
+        {
+            $(".donate").show();
+            donatebtnTag = true;
+        }
+        else{
+            $(".donate").hide();
+            donatebtnTag = false;
+        }
+    })
+
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload=function(){
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);
+        document.getElementById("veditor").setAttribute("placeholder", jrsc);
+        aplayerbtnInit();
+    }
+</script>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        function lazyload() {
+            var oLazyload = $("img.lazyload"),
+                fLazyload = function (hLazyload) {
+                    var nLazyload = $(window).height() + $(document).scrollTop();
+                    oLazyload.each(function () {
+                        $(this).offset().top < nLazyload && ($(this).trigger("appear"), oLazyload =
+                            oLazyload.not(this));
+                    }), 0 == oLazyload.length && $(window).unbind("scroll", fLazyload);
+                };
+            oLazyload.each(function () {
+                $(this).one("appear", function () {
+                    $(this).attr("src", $(this).attr("data-original"));
+                    $(this).fadeIn(500);
+                });
+            }), $(window).bind("scroll", fLazyload), fLazyload();
+        }
+        lazyload();
+    });
+</script>
+
+<!-- <script src="https://www.zhz666.cf/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
+
+<script>
+    function getHotnum() {
+        //文章阅读热度（重构，利用leancloud原生api）
+        var pl = $("#pl").html();
+        var rootaddr = $("#rootaddr").html();
+        pl = pl.replace(rootaddr, "");
+
+        var appid = '';
+        var appkey = '';
+        console.log(appid, appkey)
+        if(AV==undefined)
+            AV.init({
+                appId: appid,
+                appKey: appkey
+            });
+        const query = new AV.Query('Counter');
+        query.equalTo('url', pl);
+        var time = 'Loading...';
+        query.find().then(function (results) {
+            console.log(results)
+            if (results.length == 0) {
+                console.log("0")
+                var NewCounter = AV.Object.extend('Counter');
+                var nc = new NewCounter();
+                nc.save({
+                    time: 1,
+                    title: "Shell脚本的“判断语句”",
+                    url: pl,
+                    xid: pl,
+                }).then(function (object) {
+                    $(".hotnum").eq(0).html(1);
+                    $(".hotnum").eq(1).html(1);
+                });
+            } else {
+                id = results[0].id;
+                var todo = AV.Object.createWithoutData('Counter', id);
+                time = results[0].attributes.time + 1;
+                todo.set("time", time);
+                todo.save();
+                console.log(todo);
+                $(".hotnum").eq(0).html(time);
+                $(".hotnum").eq(1).html(time);
+            }
+
+        }, function (error) {
+            console.log(error)
+        });
+    }
+</script>
