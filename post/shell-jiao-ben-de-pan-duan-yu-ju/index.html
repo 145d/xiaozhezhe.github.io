@@ -173,7 +173,7 @@
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://www.zhz666.cf/images/avatar.png?v=1606953195650" class="avatar">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1606954484654" class="avatar">
         </div>
         <div class="sitename">欢迎来到德莱联盟</div>
         <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
@@ -633,7 +633,7 @@ no</p>
 <p>2、查询当前的活动进程数，并测试是否小于100<br>
 [root@lala ~]# vim ps.sh<br>
 #!/bin/bash<br>
-pss=<code>ps aux | wc -l</code><br>
+<font color="#dddd00">pss=$(ps aux | wc -l)</font><br /><br>
 [ $pss -lt 100 ] &amp;&amp; echo &quot;yes&quot; || echo &quot;no&quot;<br>
 [root@lala ~]# sh ps.sh<br>
 no</p>
@@ -641,7 +641,7 @@ no</p>
 [root@lala ~]# vim sys.sh<br>
 #!/bin/bash<br>
 rpm -qa sysstat &amp;&gt; /dev/null<br>
-a=‘<code>echo $?</code>’<br>
+<font color="#dddd00">a=$(echo $?)</font><br /><br>
 [ $a -ne 0 ] &amp;&amp; echo &quot;not installed&quot; || echo &quot;installed&quot;</p>
 <h1 id="4-测试user1是否存在若不存在则创建rootlala-~-vim-users2shbinbashid-user1-devnull-echo-有此用户-echo-正在创建此用户-useradd-user1-id-user10-devnull-useradd-user10-echo-user10-passwd-stdin-123com-devnull-echo-user10-shigeyonghu-id-user20-devnull-useradd-user20-echo-user20-passwd-stdin-123com-devnull-echo-user20-shigeyonghu-id-user30-devnull-useradd-user30-echo-user30-passwd-stdin-123com-devnull-echo-user30-shigeyonghu-id-user40-devnull-useradd-user40-echo-user40-passwd-stdin-123com-devnull-echo-user40-shigeyonghu-id-user50-devnull-useradd-user50-echo-user50-passwd-stdin-123com-devnull-echo-user50-shigeyonghu">4、测试user1是否存在，若不存在则创建<br>
 [root@lala ~]# vim users2.sh<br>
