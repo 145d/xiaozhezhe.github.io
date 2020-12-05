@@ -2067,3 +2067,24 @@ a {
     display: none;
   }
 }
+
+      .posttitlewithoutimg {
+        color: #cc5de8;
+      }
+    
+        .describtion {
+          color: #3bc9db;
+        }
+      
+        .posttitle {
+          color: #f03e3e;
+        }
+      
+        #sitegotimeDate,#sitegotimes,#footinfo,#footinfo a{
+          color: #cc5de8;
+        }
+      
+        .mobiledescribtion{
+          color: #cc5de8;
+        }
+      
