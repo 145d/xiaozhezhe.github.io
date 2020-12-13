@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.zhz666.cf</id>
     <title>欢迎来到德莱联盟</title>
-    <updated>2020-12-13T04:15:18.830Z</updated>
+    <updated>2020-12-13T05:28:59.069Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.zhz666.cf"/>
     <link rel="self" href="https://www.zhz666.cf/atom.xml"/>
@@ -10,6 +10,107 @@
     <logo>https://www.zhz666.cf/images/avatar.png</logo>
     <icon>https://www.zhz666.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, 欢迎来到德莱联盟</rights>
+    <entry>
+        <title type="html"><![CDATA[什么是repo文件？ ]]></title>
+        <id>https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/</id>
+        <link href="https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/">
+        </link>
+        <updated>2020-12-13T04:35:52.000Z</updated>
+        <content type="html"><![CDATA[<p>repo文件是Fedora中yum源（软件仓库）的配置文件，通常一个repo文件定义了一个或者多个软件仓库的细节内容，例如我们将从哪里下载需要安装或者升级的软件包，repo文件中的设置内容将被yum读取和应用！<br>
+YUM的工作原理并不复杂，每一个 RPM软件的头（header）里面都会纪录该软件的依赖关系，那么如果可以将该头的内容纪录下来并且进行分析，可以知道每个软件在安装之前需要额外安装 哪些基础软件。也就是说，在服务器上面先以分析工具将所有的RPM档案进行分析，然后将该分析纪录下来，只要在进行安装或升级时先查询该纪录的文件，就可 以知道所有相关联的软件。所以YUM的基本工作流程如下：</p>
+<h2 id="服务器端在服务器上面存放了所有的rpm软件包然后以相关的功能去分析每个rpm文件的依赖性关系将这些数据记录成文件存放在服务器的某特定目录内-客户端如果需要安装某个软件时先下载服务器上面记录的依赖性关系文件可通过www或ftp方式通过对服务器端下载的纪录数据进行分析然后取得所有相关的软件一次全部下载下来进行安装">服务器端：在服务器上面存放了所有的RPM软件包，然后以相关的功能去分析每个RPM文件的依赖性关系，将这些数据记录成文件存放在服务器的某特定目录内。<br>
+客户端：如果需要安装某个软件时，先下载服务器上面记录的依赖性关系文件(可通过WWW或FTP方式)，通过对服务器端下载的纪录数据进行分析，然后取得所有相关的软件，一次全部下载下来进行安装。</h2>
+<p>rpm    --nodeps：安装时忽略依赖关系。<br>
+缺少依赖关系，导致部分软件不能正常使用<br>
+yum：由redhat推出的服务，rpm包管理器，对依赖数据包进行更新安装工具</p>
+<p>yum主配置目录：/etc/yum.repos.d/<br>
+yum主配置文件:  /etc/yum.conf<br>
+YUM主配文件:/etc/yum.conf</p>
+<h2 id="font-colordd0000yum重要的目录和文件fontpackages存储rpm包repodata记录软件依赖关系cd-repodatarepomdxml-xml列表-查找软件依赖关系"><font color="#dd0000">yum重要的目录和文件：</font><br>
+Packages	存储rpm包<br>
+repodata	记录软件依赖关系<br>
+cd repodata→repomd.xml  （xml列表 查找软件依赖关系）</h2>
+<p>[root@localhost ~]# ll /etc/yum.repos.d/<br>
+总用量 28<br>
+-rw-r--r--. 1 root root 1664 11月 30 2016 CentOS-Base.repo                                           //联网后基础的源<br>
+-rw-r--r--. 1 root root 1309 11月 30 2016 CentOS-CR.repo<br>
+-rw-r--r--. 1 root root  649 11月 30 2016 CentOS-Debuginfo.repo                                    //和内核相关的更新和软件安装<br>
+-rw-r--r--. 1 root root  314 11月 30 2016 CentOS-fasttrack.repo<br>
+-rw-r--r--. 1 root root  630 11月 30 2016 CentOS-Media.repo                                               //使用光盘挂载后调用的文件<br>
+-rw-r--r--. 1 root root 1331 11月 30 2016 CentOS-Sources.repo<br>
+-rw-r--r--. 1 root root 2893 11月 30 2016 CentOS-Vault.repo                                                   //最近新版本的加入的（老版本的yum源配置）<br>
+工作原理！<br>
+yum通过读取yum源配置文件，确认软件包源文件路径，读取路径中，两个目录中的文件信息。<br>
+1.repodata目录：软件包依赖环境参照表。目录中有*.xml文件，文件中记录了软件的依赖环境。<br>
+2.Packages目录：统计完需要安装的依赖关系后，从此目录中读取相关软件包。<br>
+3.将软件包复制到缓存后，进行解压安装。</p>
+<p><font color="#00dddd" size=5>第一部分：</font><br>
+vim  /etc/yum.conf<br>
+[main]<br>
+cachedir=/var/cache/yum/$ basearch/$ releasever          #cachedir：yum缓存的目录，yum在此存储下载的rpm包和数据库，一般是/var/cache/yum/$ basearch/$ releasever。</p>
+<p>keepcache=1<br>
+#keepcache：是否保留缓存内容，0：表示安装后删除软件包，1表示安装后保留软件包</p>
+<p>debuglevel=2<br>
+#debuglevel：除错级别，0──10,默认是2 貌似只记录安装和删除记录<br>
+logfile=/var/log/yum.log<br>
+pkgpolicy=newest<br>
+#pkgpolicy： 包的策略。一共有两个选项，newest和last，这个作用是如果你设置了多个repository，而同一软件在不同的repository中同时存 在，yum应该安装哪一个，如果是newest，则yum会安装最新的那个版本。如果是last，则yum会将服务器id以字母表排序，并选择最后的那个 服务器上的软件安装。一般都是选newest。</p>
+<p>distroverpkg=centos-release<br>
+#指定一个软件包，yum会根据这个包判断你的发行版本，默认是redhat-release，也可以是安装的任何针对自己发行版的rpm包。</p>
+<p>tolerant=1<br>
+#tolerent，也有1和0两个选项，表示yum是否容忍命令行发生与软件包有关的错误，比如你要安装1,2,3三个包，而其中3此前已经安装了，如果你设为1,则yum不会出现错误信息。默认是0。<br>
+exactarch=1<br>
+#exactarch，有两个选项1和0,代表是否只升级和你安装软件包cpu体系一致的包，如果设为1，则如你安装了一个i386的rpm，则yum不会用1686的包来升级。</p>
+<p>retries=20<br>
+#retries，网络连接发生错误后的重试次数，如果设为0，则会无限重试。<br>
+obsoletes=1<br>
+gpgcheck=1<br>
+#gpgchkeck= 有1和0两个选择，分别代表是否是否进行gpg校验，如果没有这一项，默认是检查的。<br>
+reposdir=/etc/yy.rm #默认是 /etc/yum.repos.d/ 低下的 xx.repo后缀文件<br>
+#默认都会被include 进来 也就是说 /etc/yum.repos.d/xx.repo 无论配置文件有多少个 每个里面有多少个[name] 最后其实都被整合到 一个里面看就是了 重复的[name]后面的覆盖前面的<br>
+exclude=xxx<br>
+#exclude 排除某些软件在升级名单之外，可以用通配符，列表中各个项目要用空格隔开，这个对于安装了诸如美化包，中文补丁的朋友特别有用。<br>
+keepcache=[1 or 0]<br>
+#　　设置 keepcache=1，yum 在成功安装软件包之后保留缓存的头文件 (headers) 和软件包。默认值为 keepcache=0 不保存</p>
+<p>reposdir=[包含 .repo 文件的目录的绝对路径]<br>
+#　　该选项用户指定 .repo 文件的绝对路径。.repo 文件包含软件仓库的信息 (作用与 /etc/yum.conf 文件中的 [repository] 片段相同)。</p>
+<p><font color="#00dddd" size=5>第二部分：</font><br>
+vi /etc/yum.repo.d/xx.repo<br>
+这个字段其实也可以在yum.conf里面直接配置</p>
+<p>[serverid]<br>
+#其中serverid是用于区别各个不同的repository，必须有一个独一无二的名称。 重复了 前面覆盖后面--还是反过来呢？？？用enabled 测试是后面覆盖前面<br>
+name=Some name for this server<br>
+#name，是对repository的描述，支持像$releasever $basearch这样的变量; name=Fedora Core $releasever - $basearch - Released Updates</p>
+<p><font color="#dd0000">baseurl=url://path/to/repository/ </font><br>
+#baseurl是服务器设置中最重要的部分，只有设置正确，才能从上面获取软件。它的格式是：<br>
+baseurl=url://server1/path/to/repository/<br>
+url://server2/path/to/repository/<br>
+url://server3/path/to/repository/<br>
+#其中url支持的协议有 http:// ftp:// file://三种。baseurl后可以跟多个url，你可以自己改为速度比较快的镜像站，但baseurl只能有一个，也就是说不能像如下格式：<br>
+baseurl=url://server1/path/to/repository/<br>
+baseurl=url://server2/path/to/repository/<br>
+baseurl=url://server3/path/to/repository/<br>
+其中url指向的目录必须是这个repository header目录的上一级，它也支持$releasever $basearch这样的变量。</p>
+<p>#mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 11: releasever&amp;̲arch='>releasever&amp;arch=</span>basearch<br>
+#上面的这一行是指定一个镜像服务器的地址列表，通常是开启的，本例中加了注释符号禁用了，我们可以试试，将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>s</mi><mi>e</mi><mi>v</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">和</mi></mrow><annotation encoding="application/x-tex">releasever和</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord cjk_fallback">和</span></span></span></span>basearch替换成自己对应的版本和架构，例如10和i386，在浏览器中打开，我们就能看到一长串镜可用的镜像服务器地址列表。</p>
+<p><font color="#dd00dd">url之后可以加上多个选项，如gpgcheck、exclude、failovermethod等，比如：</font><br>
+gpgcheck=1<br>
+exclude=gaim<br>
+#其中gpgcheck，exclude的含义和[main]部分相同，但只对此服务器起作用，<br>
+failovermethod=priority<br>
+#failovermethode 有两个选项roundrobin和priority，意思分别是有多个url可供选择时，yum选择的次序，roundrobin是随机选择，如果连接失 败则使用下一个，依次循环，priority则根据url的次序从第一个开始。如果不指明，默认是roundrobin。</p>
+<p>enabled=[1 or 0]<br>
+#当某个软件仓库被配置成 enabled=0 时，yum 在安装或升级软件包时不会将该仓库做为软件包提供源。使用这个选项，可以启用或禁用软件仓库。<br>
+#通过 yum 的 --enablerepo=[repo_name] 和 --disablerepo=[repo_name] 选项，或者通过 PackageKit 的&quot;添加/删除软件&quot;工具，也能够方便地启用和禁用指定的软件仓库</p>
+<p>几个变量<br>
+$ releasever，发行版的版本，从[main]部分的distroverpkg获取，如果没有，则根据redhat-release包进行判断。<br>
+$ arch，cpu体系，如i686,athlon等<br>
+$basearch，cpu的基本体系组，如i686和athlon同属i386，alpha和alphaev6同属alpha。<br>
+对yum.conf设定完成，我们就可以好好体验yum带来的方便了。</p>
+<p>还有一件事没有做。那就是导入每个reposity的GPG key，前面说过，yum可以使用gpg对包进行校验，确保下载包的完整性，所以我们先要到各个repository站点找到gpg key，一般都会放在首页的醒目位置，一些名字诸如 RPM-GPG-KEY.txt之类的纯文本文件，把它们下载，然后用rpm --import xxx.txt命令将它们导入，最好把发行版自带GPG-KEY也导入。<br>
+rpm --import /usr/share/doc/redhat-release-*/RPM-GPG-KEY 官方软件升级用的上。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Yum库的搭建]]></title>
         <id>https://www.zhz666.cf/post/yum-ku-de-da-jian/</id>
