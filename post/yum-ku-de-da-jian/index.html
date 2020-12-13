@@ -167,7 +167,7 @@ Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentO
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://www.zhz666.cf/images/avatar.png?v=1607832039391" class="avatar">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1607832639360" class="avatar">
         </div>
         <div class="sitename">欢迎来到德莱联盟</div>
         <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
@@ -462,7 +462,7 @@ Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentO
                 </span>
             </div>
             <div class="text ">
-                <p><font color="#dd0000" size=5>（一）yum介绍</font><br>
+                <p><font color="#dd0000" size=5.5>（一）yum介绍</font><br>
 <a href="https://baike.baidu.com/item/yum/2835771?fr=aladdin"><font color="#00dddd">yum库参考</font></a><br>
 Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
 <!-- more -->
@@ -478,7 +478,7 @@ Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentO
 <p>3、更新yum仓库<br>
 将新版本的rpm软件包复制到yum仓库目录中，相关的依赖关系软件包也复制到yum仓库目录中，更新xml列表文件。<br>
 xml列表文件有两种更新方式：（1）手动更新（2）复制软件开发者制作的xml列表。</p>
-<p><font size="4">【1】</font><br>
+<p><font size="4.5">【1】</font><br>
 本地源：在服务器本地目录中存储rpm包<br>
 优点：安装速度快<br>
 缺点：只能本服务器自己使用<br>
@@ -496,7 +496,7 @@ enabled=1<br>
 gpgcheck=0</p>
 <p>mount /dev/cdrom /media/dvd（自己创建dvd目录）<br>
 yum -y install httpd</p>
-<p><font size="4">【2】</font><br>
+<p><font size="4.5">【2】</font><br>
 FTP源：适用于局域网中，构建一台ftp服务器，将rpm包存储在FTP上，所有客户端的yum源指向FTP服务器<br>
 优点：更新软件包时只需要更新FTP上的rpm包<br>
 缺点：用户负载量低，不适用于广域网中大量的用户范围<br>
@@ -533,7 +533,7 @@ enabled=1<br>
 yum -y install vsftpd<br>
 yum -y install httpd<br>
 yum -y remove httpd</p>
-<p><font size="4">【3】</font><br>
+<p><font size="4.5">【3】</font><br>
 HTTP源：适用于广域网，使用http服务器构建yum源。最多的一种yum仓库环境，传输速度相对比较稳定。<br>
 优点：用户承载量大<br>
 缺点：下载速度较慢<br>
@@ -566,7 +566,7 @@ gpgcheck=0<br>
 enabled=1<br>
 5、客户端测试<br>
 yum -y install dhcp</p>
-<p><font size="4">【4】CentOS，是基于 Red Hat Linux 提供的可自由使用源代码的企业级 Linux 发行版本；是一个稳定，可预测，可管理和可复制的免费企业级计算平台。     【都需要虚拟机连网！！】</font><br>
+<p><font size="4.5">【4】CentOS，是基于 Red Hat Linux 提供的可自由使用源代码的企业级 Linux 发行版本；是一个稳定，可预测，可管理和可复制的免费企业级计算平台。     【都需要虚拟机连网！！】</font><br>
 <font color="#00dd00" size=5><font face="楷体">阿里源：</font></font><br>
 [qwer]                                   #这个是自定义yum仓库，其实根本就不需要自定义！      因为你（下载的“源”文件会将“本地源”给覆盖掉，就可以使用了~）<br>
 baseurl=https://mirrors.aliyun.com/repo/Centos-7.repo         #如果后续出错，就将这个文件下载到本地进行yum -y install makecache<br>
