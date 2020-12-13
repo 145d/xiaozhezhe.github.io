@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.zhz666.cf</id>
     <title>欢迎来到德莱联盟</title>
-    <updated>2020-12-10T12:19:50.985Z</updated>
+    <updated>2020-12-13T04:01:20.971Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.zhz666.cf"/>
     <link rel="self" href="https://www.zhz666.cf/atom.xml"/>
@@ -10,6 +10,182 @@
     <logo>https://www.zhz666.cf/images/avatar.png</logo>
     <icon>https://www.zhz666.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, 欢迎来到德莱联盟</rights>
+    <entry>
+        <title type="html"><![CDATA[Yum库的搭建]]></title>
+        <id>https://www.zhz666.cf/post/yum-ku-de-da-jian/</id>
+        <link href="https://www.zhz666.cf/post/yum-ku-de-da-jian/">
+        </link>
+        <updated>2020-12-13T03:34:25.000Z</updated>
+        <summary type="html"><![CDATA[<p><font color="#dd0000" size=5>（一）yum介绍</font><br>
+<a href="https://baike.baidu.com/item/yum/2835771?fr=aladdin"><font color="#00dddd">yum库参考</font></a><br>
+Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><font color="#dd0000" size=5>（一）yum介绍</font><br>
+<a href="https://baike.baidu.com/item/yum/2835771?fr=aladdin"><font color="#00dddd">yum库参考</font></a><br>
+Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<!-- more -->
+<p><font color="#dd0000" size=5>（二）yum源实验</font><br>
+使用YUM机制来更新系统和软件，需要有一个包含各种rpm安装包文件及其依赖的软件仓库（repository），提供软件仓库的服务器也称为“源”服务器。<br>
+在客户机中只要正确指定软件仓库的地址等信息，就可以通过对应的“源”服务器来安装或更新软件了。<br>
+1、yum<br>
+使用rpm安装的软件有一个很大的弊端，在更新软件时，对依赖关系的版本号要求比较严格。yum可以帮助用户通过列表(xml)查询软件安装时所需的依赖关系，并且通过预定义的yum源下载和安装依赖关系。<br>
+2、常用的yum源</p>
+<p>1.本地源：在单服务器运行时常用的方式，将rpm软件包保存在本地目录中，安装软件时从本地读取文件，速度快，但更新维护比较繁琐。       将系统光盘或系统镜像文件挂载到指定目录，配置yum源。</p>
+<p>2.ftp源：在公司的机房中，局域网中使用，将rpm软件包保存在ftp服务器的站点目录下，客户端配置ftp源，安装软件时可以通过ftp下载数据。ftp服务的弊端，访问并发量少，当访问用户比较多时，下载速度比较慢。</p>
+<p>3.http源：使用web服务中,http协议的文件传输功能，通过广域网下载rpm软件包。便于推广，控制下载流量，并发连接数高。</p>
+<p>3、更新yum仓库<br>
+将新版本的rpm软件包复制到yum仓库目录中，相关的依赖关系软件包也复制到yum仓库目录中，更新xml列表文件。<br>
+xml列表文件有两种更新方式：（1）手动更新（2）复制软件开发者制作的xml列表。</p>
+<p><font size="4">【1】</font><br>
+本地源：在服务器本地目录中存储rpm包<br>
+优点：安装速度快<br>
+缺点：只能本服务器自己使用<br>
+[local]<br>
+name=local<br>
+baseurl=file://[目录]<br>
+enabled=1                   #启用yum软件仓库<br>
+gpgcheck=0                #取消gpg校验，一种密钥方式签名（默认检查）</p>
+<p>例：<br>
+rm -rf /etc/yum.repos.d/*<br>
+vim /etc/yum.repos.d/yum.repo<br>
+[yum]<br>
+baseurl=file:///media/dvd<br>
+enabled=1<br>
+gpgcheck=0</p>
+<p>mount /dev/cdrom /media/dvd（自己创建dvd目录）<br>
+yum -y install httpd</p>
+<p><font size="4">【2】</font><br>
+FTP源：适用于局域网中，构建一台ftp服务器，将rpm包存储在FTP上，所有客户端的yum源指向FTP服务器<br>
+优点：更新软件包时只需要更新FTP上的rpm包<br>
+缺点：用户负载量低，不适用于广域网中大量的用户范围<br>
+应用场景：<br>
+适用于公司内部网络环境，和机房内部环境调用。不适用于广域网的原因：<br>
+1.ftp用户身份验证的问题。<br>
+2.ftp上下行工作机制导致传输效率比较低。<br>
+3.ftp访问并发量较低。<br>
+[ftp]<br>
+name=ftp<br>
+baseurl=ftp://ftp服务器IP地址/[目录]<br>
+gpgcheck=0<br>
+enabled=1</p>
+<p>例：<br>
+1、安装ftp服务器<br>
+yum -y install vsftpd<br>
+2、在FTP根目录中创建centos7的子目录<br>
+默认目录/var/ftp<br>
+mkdir /var/ftp/centos7                                                                     #默认匿名用户访问的“宿主根目录”为/var/ftp/目录~<br>
+3、复制光盘中Packages和repodata目录到ftp根目录中（或者直接挂载到那个目录下）<br>
+cp -r /media/dvd/Packages/ /var/ftp/centos7/<br>
+cp -r /media/dvd/repodata/ /var/ftp/centos7/</p>
+<p>systemctl restart vsftpd<br>
+systemctl stop firewalld<br>
+setenforce 0<br>
+4、客户端配置<br>
+rm -rf /etc/yum.repos.d/*<br>
+[ftp]<br>
+name=ftp<br>
+baseurl=ftp://192.168.1.1/centos7<br>
+gpgcheck=0<br>
+enabled=1<br>
+5、客户端测试<br>
+yum -y install vsftpd<br>
+yum -y install httpd<br>
+yum -y remove httpd</p>
+<p><font size="4">【3】</font><br>
+HTTP源：适用于广域网，使用http服务器构建yum源。最多的一种yum仓库环境，传输速度相对比较稳定。<br>
+优点：用户承载量大<br>
+缺点：下载速度较慢<br>
+[http]<br>
+name=httpd<br>
+baseurl=http://http服务器IP地址/[目录]<br>
+gpgcheck=0<br>
+enabled=1</p>
+<p>例：<br>
+1、安装httpd服务器<br>
+yum -y install httpd                                                                    （注意：不能使用rpm -ivh的方式安装httpd）<br>
+2、在站点根目录中创建centos7的子目录<br>
+默认网页根目录/var/www/html<br>
+mkdir /var/www/html/centos7<br>
+3、复制光盘中Packages和repodata目录到ftp根目录中            （同理，也可以直接挂载到你创建的centos7目录）<br>
+cp -r /media/dvd/Packages/ /var/www/html/centos7/       #这种方法太慢了，不如直接挂载！！！<br>
+cp -r /media/dvd/repodata/ /var/www/html/centos7/</p>
+<p>4.[root@localhost ~]# vim /etc/httpd/conf/httpd.conf（可省）<br>
+修改：<br>
+ServerName 192.168.10.1:80</p>
+<p>systemctl restart httpd<br>
+systemctl stop firewalld<br>
+setenforce 0<br>
+4、客户端配置<br>
+rm -rf /etc/yum.repos.d/*<br>
+[http]<br>
+name=httpd<br>
+baseurl=http://192.168.6.20/centos7<br>
+gpgcheck=0<br>
+enabled=1<br>
+5、客户端测试<br>
+yum -y install dhcp</p>
+<p><font size="4">【4】CentOS，是基于 Red Hat Linux 提供的可自由使用源代码的企业级 Linux 发行版本；是一个稳定，可预测，可管理和可复制的免费企业级计算平台。     【都需要虚拟机连网！！】</font><br>
+<font color="#00dd00" size=5><font face="楷体">阿里源：</font></font><br>
+[qwer]                                   #这个是自定义yum仓库，其实根本就不需要自定义！      因为你（下载的“源”文件会将“本地源”给覆盖掉，就可以使用了~）<br>
+baseurl=https://mirrors.aliyun.com/repo/Centos-7.repo         #如果后续出错，就将这个文件下载到本地进行yum -y install makecache<br>
+enable=1<br>
+gpgcheck=0                           --可省了</p>
+<p>Linux客户端配置方法：</p>
+<ol>
+<li>备份你的原镜像文件，以免出错后可以恢复<br>
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup<br>
+2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/<br>
+CentOS 7：<br>
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo<br>
+或者<br>
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</li>
+<li>清楚原有yum缓存   yum clean all，并运行 yum makecache 生成缓存        【可以通过yum repolist命令查看配置好的yum源是否正常】</li>
+<li>其他<br>
+非阿里云ECS用户会出现 Couldn't resolve host 'mirrors.cloud.aliyuncs.com' 信息，不影响使用。用户也可自行修改相关配置: eg:</li>
+</ol>
+<p>sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo<br>
+[5] 更新系统(时间比较久,主要看个人网速)  yum -y update<br>
+[6] 安装vim编辑器  yum -y install vim*</p>
+<p><font color="#00dd00" size=5><font face="楷体">华为源：</font></font><br>
+1、备份配置文件：<br>
+cp -a /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak<br>
+2、两种方案，请大家自行选取。<br>
+<strong>方案一：</strong><br>
+下载新的CentOS-Base.repo文件到/etc/yum.repos.d/目录下，选择CentOS版本：<br>
+CentOS 7<br>
+执行如下命令：<br>
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo</p>
+<h2 id="方案二修改centos-baserepo文件取消baseurl开头的行的注释并增加mirrorlist开头的行的注释-将文件中的httpmirrorcentosorg替换成httpsmirrorshuaweicloudcom可以参考如下命令sed-i-sbaseurlbaseurlg-etcyumreposdcentos-basereposed-i-smirrorlisthttpmirrorlisthttpg-etcyumreposdcentos-basereposed-i-shttpmirrorcentosorghttpsmirrorshuaweicloudcomg-etcyumreposdcentos-baserepo3-执行yum-clean-all清除原有yum缓存-4-执行yum-makecache刷新缓存或者yum-repolist-all查看所有配置可以使用的文件会自动刷新缓存"><strong>方案二：</strong><br>
+修改CentOS-Base.repo文件，取消baseurl开头的行的注释，并增加mirrorlist开头的行的注释。将文件中的http://mirror.centos.org替换成https://mirrors.huaweicloud.com，可以参考如下命令：<br>
+sed -i &quot;s/#baseurl/baseurl/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s/mirrorlist=http/#mirrorlist=http/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s@http://mirror.centos.org@https://mirrors.huaweicloud.com@g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+3、执行yum clean all清除原有yum缓存。<br>
+4、执行yum makecache（刷新缓存）或者yum repolist all（查看所有配置可以使用的文件，会自动刷新缓存）。</h2>
+<p><font color="#0000dd" size=6>yum命令：</font><br>
+增加“-y”选项，自动确认yum操作</p>
+<p>yum -y install 软件名			//安装软件（常用）<br>
+yum -y remove 软件名		//删除软件<br>
+（只是删除本软件，不会删除依赖关系）	<br>
+yum -y update			//更新软件<br>
+yum info 软件名			//查看软件信息<br>
+yum  list				//查看yum可用的软件列表<br>
+yum -y groupinstall 软件组		//安装软件组<br>
+例：<br>
+yum -y groupinstall &quot;KDE&quot;</p>
+<p>yum -y repolist			//查看可用yum源列表<br>
+yum -y grouplist			//查看可用软件包组列表<br>
+yum -y groupupdate 软件组		//更新软件组<br>
+yum -y groupremove 软件组		//移除软件组<br>
+（只是删除本软件，不会删除依赖关系）	<br>
+yum -y clean all                                                 //清除yum缓存列表（常用）                                  clean：去除               search：搜索，查找</p>
+<p>yum -y  search   命令字		//查看某命令属于哪个软件包<br>
+例：<br>
+yum -y search finger<br>
+yum -y search rpm<br>
+yum -y search yum</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Shell脚本的“判断语句”]]></title>
         <id>https://www.zhz666.cf/post/shell-jiao-ben-de-pan-duan-yu-ju/</id>

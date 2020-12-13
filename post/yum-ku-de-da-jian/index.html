@@ -1,14 +1,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="description" content="
->en						用户模式
-#conf t						特权模式
-(config)#int f0/0					全局模式
-(config-if)#					接口模式
-#disable  →>
-(config)#hostname  name		..." />
-    <meta name="keywords" content="" />
+    <meta name="description" content="（一）yum介绍
+yum库参考
+Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并..." />
+    <meta name="keywords" content="Linux" />
     <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
     
@@ -440,21 +436,25 @@
         <div class="postshow" style="padding-bottom: 0;">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;">
-                <img src="https://p0.piqsels.com/preview/721/528/930/japan-odaiba-minato-gundam.jpg" class="postimage" style="cursor:auto">
+                <img src="https://w.wallhaven.cc/full/m9/wallhaven-m9p2w9.png" class="postimage" style="cursor:auto">
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-11-15</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 5 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-12-13</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
                 <div class="posttag">
+                    
+                    <a href="https://www.zhz666.cf/tag/0mckH4XPX/" class="postlink">
+                        <i class="fa fa-tag"></i> Linux
+                    </a>
                     
                 </div>
             </div>
             
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>我的世界</h2>
+                <h2>Yum库的搭建</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://www.zhz666.cf/post/wo-de-shi-jie/</div>
+                <div id="pl" style="display:none">https://www.zhz666.cf/post/yum-ku-de-da-jian/</div>
                 <div id="rootaddr" style="display:none">https://www.zhz666.cf</div>
                 <span id="hotnum">
                     <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
@@ -462,75 +462,170 @@
                 </span>
             </div>
             <div class="text ">
-                <iframe  class="music" frameborder="no" src="//music.163.com/outchain/player?type=1&id=89680147&auto=1&height=90"></iframe>
->en						用户模式
-#conf t						特权模式
-(config)#int f0/0					全局模式
-(config-if)#					接口模式
-#disable  →>
-(config)#hostname  name				修改主机名
-<p>switch(config)#vlan vlan-number			划分VLAN<br>
-switch(config-vl)#name vlan-name			vlan命名<br>
-switch(config)#int range f0/1-5			同时进入f0/1-5端口<br>
-Switch(config-if-range)#switchport mode access		把端口设置成接入链路<br>
-Switch(config-if-range)#switchport access vlan 2		把端口加入到vlan2<br>
-switch(config-if-range)#switchport mode trunk		把端口设置成中继链路<br>
-switch(config-if-range)#channel-group 1 mode on 	把几个端口捆绑成以太网通道1<br>
-switch(config)#vtp domain vtp-name			设置VTP名称<br>
-switch(config)#vtp password vtp-password		设置VTP密码<br>
-switch(config)#vtp mode server|client			设置成VTP服务器|客户端<br>
-switch(config)#ip default-gateway 默认网关		设置交换机默认网关	<br>
-(config)#enable secret pwd1				设置特权模式密码(密文)<br>
-(config)#enable password pwd1			设置特权模式密码(明文)<br>
-(config)#service password-encryption			对明文密码加密<br>
-(config-if)#ip address IP地址 子网掩码 			设置IP地址(交换机的IP地址只能设置在虚拟端口vlan上)<br>
-(config-if)#no shutdown				手动开启端口<br>
-(config)#line vty 0 4				开启0~4端口(一共5个)<br>
-(config)#password vty-password			设置vty密码<br>
-(config)#login					开启登录模式<br>
-(config)#line console 0 				进入配置口<br>
-(config)#password con-password			设置配置口密码<br>
-(config)#login					开启登录模式<br>
-vty		远程访问的时候需要<br>
-console		直接用配置线对设备配置时需要<br>
-router(config)#ip route 目标网段 子网掩码 IP地址|端口号 num	设置静态路由<br>
-router(config)#ip route 192.168.6.0 255.255.255.0 f0/1<br>
-IP地址指向下一个路由器(下一个路由器接收口的IP地址)<br>
-端口号指自身的端口(当前路由器的出口)<br>
-num数值1~255  数值越小优先级越高<br>
-目标网段 不能是具体IP地址(192.168.10.0      2.0.0.0)<br>
-router(config)#ip dhcp pool dhcp-name		设置DHCP并命名<br>
-router(dhcp-config)#network 分配的网段 子网掩码		设置地址池<br>
-分配的网段  (192.168.5.0  6.0.0.0)<br>
-router(dhcp-config)#default-router 默认网关		DHCP分配的默认网关<br>
-router(config)#int f 0/0.1				进入子端口<br>
-f0/0.1指 f0/0的第一个子端口<br>
-f0/1.2指 f0/1的第二个子端口<br>
-Router(config-subif)#en do vlan-number		把子端口绑定到vlan<br>
-Router(config-subif)#en do 2				把子端口绑定到vlan2</p>
-<p>telnet 目标IP地址					PC上远程访问设备<br>
-#reload						正常使用时重启<br>
-#show running-config				查看运行时配置<br>
-#show startup-config				查看保存的配置<br>
-(config)#do show running-config			其他模式下查看前面+do</p>
-<p>#copy running-config startup-config			把当前配置保存到NVRAM<br>
-#write						保存运行时配置(效果同上)<br>
-#copy startup-config running-config			用NVRAM覆盖当前配置</p>
-<p>#erase nvram: 					删除保存的配置</p>
-<p>#copy tftp flash					从TFTP服务器下载系统到路由器	<br>
-#copy flash tftp					从路由器上传系统到服务器<br>
-(config)#ip ftp username s1t161			在路由器上设置ftp的用户名<br>
-(config)#ip ftp password s1t161			在路由器上设置ftp的密码</p>
-<p>rommon 1 &gt; tftpdnld     				(download)<br>
-rommon 2 &gt; IP_ADDRESS=1.1.1.1			设置路由器的IP地址<br>
-rommon 3 &gt; IP_SUBNET_MASK=255.0.0.0		设置路由器的子网掩码<br>
-rommon 4 &gt; DEFAULT_GATEWAY=1.2.2.2		设置路由器的默认网关(TFTP的IP地址)<br>
-rommon 5 &gt; TFTP_SERVER=1.2.2.2			设置下载系统的原位置的IP地址(TFTP的IP地址)<br>
-rommon 6 &gt; TFTP_FILE=c1841-ipbasek9-mz.124-12.bin	设置要下载的文件名<br>
-rommon 7 &gt; tftpdnld</p>
-<p>Do you wish to continue? y/n:  [n]:  y			输入y继续<br>
-rommon 8 &gt; reset					重启<br>
-😙</p>
+                <p><font color="#dd0000" size=5>（一）yum介绍</font><br>
+<a href="https://baike.baidu.com/item/yum/2835771?fr=aladdin"><font color="#00dddd">yum库参考</font></a><br>
+Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<!-- more -->
+<p><font color="#dd0000" size=5>（二）yum源实验</font><br>
+使用YUM机制来更新系统和软件，需要有一个包含各种rpm安装包文件及其依赖的软件仓库（repository），提供软件仓库的服务器也称为“源”服务器。<br>
+在客户机中只要正确指定软件仓库的地址等信息，就可以通过对应的“源”服务器来安装或更新软件了。<br>
+1、yum<br>
+使用rpm安装的软件有一个很大的弊端，在更新软件时，对依赖关系的版本号要求比较严格。yum可以帮助用户通过列表(xml)查询软件安装时所需的依赖关系，并且通过预定义的yum源下载和安装依赖关系。<br>
+2、常用的yum源</p>
+<p>1.本地源：在单服务器运行时常用的方式，将rpm软件包保存在本地目录中，安装软件时从本地读取文件，速度快，但更新维护比较繁琐。       将系统光盘或系统镜像文件挂载到指定目录，配置yum源。</p>
+<p>2.ftp源：在公司的机房中，局域网中使用，将rpm软件包保存在ftp服务器的站点目录下，客户端配置ftp源，安装软件时可以通过ftp下载数据。ftp服务的弊端，访问并发量少，当访问用户比较多时，下载速度比较慢。</p>
+<p>3.http源：使用web服务中,http协议的文件传输功能，通过广域网下载rpm软件包。便于推广，控制下载流量，并发连接数高。</p>
+<p>3、更新yum仓库<br>
+将新版本的rpm软件包复制到yum仓库目录中，相关的依赖关系软件包也复制到yum仓库目录中，更新xml列表文件。<br>
+xml列表文件有两种更新方式：（1）手动更新（2）复制软件开发者制作的xml列表。</p>
+<p><font size="4">【1】</font><br>
+本地源：在服务器本地目录中存储rpm包<br>
+优点：安装速度快<br>
+缺点：只能本服务器自己使用<br>
+[local]<br>
+name=local<br>
+baseurl=file://[目录]<br>
+enabled=1                   #启用yum软件仓库<br>
+gpgcheck=0                #取消gpg校验，一种密钥方式签名（默认检查）</p>
+<p>例：<br>
+rm -rf /etc/yum.repos.d/*<br>
+vim /etc/yum.repos.d/yum.repo<br>
+[yum]<br>
+baseurl=file:///media/dvd<br>
+enabled=1<br>
+gpgcheck=0</p>
+<p>mount /dev/cdrom /media/dvd（自己创建dvd目录）<br>
+yum -y install httpd</p>
+<p><font size="4">【2】</font><br>
+FTP源：适用于局域网中，构建一台ftp服务器，将rpm包存储在FTP上，所有客户端的yum源指向FTP服务器<br>
+优点：更新软件包时只需要更新FTP上的rpm包<br>
+缺点：用户负载量低，不适用于广域网中大量的用户范围<br>
+应用场景：<br>
+适用于公司内部网络环境，和机房内部环境调用。不适用于广域网的原因：<br>
+1.ftp用户身份验证的问题。<br>
+2.ftp上下行工作机制导致传输效率比较低。<br>
+3.ftp访问并发量较低。<br>
+[ftp]<br>
+name=ftp<br>
+baseurl=ftp://ftp服务器IP地址/[目录]<br>
+gpgcheck=0<br>
+enabled=1</p>
+<p>例：<br>
+1、安装ftp服务器<br>
+yum -y install vsftpd<br>
+2、在FTP根目录中创建centos7的子目录<br>
+默认目录/var/ftp<br>
+mkdir /var/ftp/centos7                                                                     #默认匿名用户访问的“宿主根目录”为/var/ftp/目录~<br>
+3、复制光盘中Packages和repodata目录到ftp根目录中（或者直接挂载到那个目录下）<br>
+cp -r /media/dvd/Packages/ /var/ftp/centos7/<br>
+cp -r /media/dvd/repodata/ /var/ftp/centos7/</p>
+<p>systemctl restart vsftpd<br>
+systemctl stop firewalld<br>
+setenforce 0<br>
+4、客户端配置<br>
+rm -rf /etc/yum.repos.d/*<br>
+[ftp]<br>
+name=ftp<br>
+baseurl=ftp://192.168.1.1/centos7<br>
+gpgcheck=0<br>
+enabled=1<br>
+5、客户端测试<br>
+yum -y install vsftpd<br>
+yum -y install httpd<br>
+yum -y remove httpd</p>
+<p><font size="4">【3】</font><br>
+HTTP源：适用于广域网，使用http服务器构建yum源。最多的一种yum仓库环境，传输速度相对比较稳定。<br>
+优点：用户承载量大<br>
+缺点：下载速度较慢<br>
+[http]<br>
+name=httpd<br>
+baseurl=http://http服务器IP地址/[目录]<br>
+gpgcheck=0<br>
+enabled=1</p>
+<p>例：<br>
+1、安装httpd服务器<br>
+yum -y install httpd                                                                    （注意：不能使用rpm -ivh的方式安装httpd）<br>
+2、在站点根目录中创建centos7的子目录<br>
+默认网页根目录/var/www/html<br>
+mkdir /var/www/html/centos7<br>
+3、复制光盘中Packages和repodata目录到ftp根目录中            （同理，也可以直接挂载到你创建的centos7目录）<br>
+cp -r /media/dvd/Packages/ /var/www/html/centos7/       #这种方法太慢了，不如直接挂载！！！<br>
+cp -r /media/dvd/repodata/ /var/www/html/centos7/</p>
+<p>4.[root@localhost ~]# vim /etc/httpd/conf/httpd.conf（可省）<br>
+修改：<br>
+ServerName 192.168.10.1:80</p>
+<p>systemctl restart httpd<br>
+systemctl stop firewalld<br>
+setenforce 0<br>
+4、客户端配置<br>
+rm -rf /etc/yum.repos.d/*<br>
+[http]<br>
+name=httpd<br>
+baseurl=http://192.168.6.20/centos7<br>
+gpgcheck=0<br>
+enabled=1<br>
+5、客户端测试<br>
+yum -y install dhcp</p>
+<p><font size="4">【4】CentOS，是基于 Red Hat Linux 提供的可自由使用源代码的企业级 Linux 发行版本；是一个稳定，可预测，可管理和可复制的免费企业级计算平台。     【都需要虚拟机连网！！】</font><br>
+<font color="#00dd00" size=5><font face="楷体">阿里源：</font></font><br>
+[qwer]                                   #这个是自定义yum仓库，其实根本就不需要自定义！      因为你（下载的“源”文件会将“本地源”给覆盖掉，就可以使用了~）<br>
+baseurl=https://mirrors.aliyun.com/repo/Centos-7.repo         #如果后续出错，就将这个文件下载到本地进行yum -y install makecache<br>
+enable=1<br>
+gpgcheck=0                           --可省了</p>
+<p>Linux客户端配置方法：</p>
+<ol>
+<li>备份你的原镜像文件，以免出错后可以恢复<br>
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup<br>
+2.下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/<br>
+CentOS 7：<br>
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo<br>
+或者<br>
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</li>
+<li>清楚原有yum缓存   yum clean all，并运行 yum makecache 生成缓存        【可以通过yum repolist命令查看配置好的yum源是否正常】</li>
+<li>其他<br>
+非阿里云ECS用户会出现 Couldn't resolve host 'mirrors.cloud.aliyuncs.com' 信息，不影响使用。用户也可自行修改相关配置: eg:</li>
+</ol>
+<p>sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo<br>
+[5] 更新系统(时间比较久,主要看个人网速)  yum -y update<br>
+[6] 安装vim编辑器  yum -y install vim*</p>
+<p><font color="#00dd00" size=5><font face="楷体">华为源：</font></font><br>
+1、备份配置文件：<br>
+cp -a /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak<br>
+2、两种方案，请大家自行选取。<br>
+<strong>方案一：</strong><br>
+下载新的CentOS-Base.repo文件到/etc/yum.repos.d/目录下，选择CentOS版本：<br>
+CentOS 7<br>
+执行如下命令：<br>
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo</p>
+<h2 id="方案二修改centos-baserepo文件取消baseurl开头的行的注释并增加mirrorlist开头的行的注释-将文件中的httpmirrorcentosorg替换成httpsmirrorshuaweicloudcom可以参考如下命令sed-i-sbaseurlbaseurlg-etcyumreposdcentos-basereposed-i-smirrorlisthttpmirrorlisthttpg-etcyumreposdcentos-basereposed-i-shttpmirrorcentosorghttpsmirrorshuaweicloudcomg-etcyumreposdcentos-baserepo3-执行yum-clean-all清除原有yum缓存-4-执行yum-makecache刷新缓存或者yum-repolist-all查看所有配置可以使用的文件会自动刷新缓存"><strong>方案二：</strong><br>
+修改CentOS-Base.repo文件，取消baseurl开头的行的注释，并增加mirrorlist开头的行的注释。将文件中的http://mirror.centos.org替换成https://mirrors.huaweicloud.com，可以参考如下命令：<br>
+sed -i &quot;s/#baseurl/baseurl/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s/mirrorlist=http/#mirrorlist=http/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s@http://mirror.centos.org@https://mirrors.huaweicloud.com@g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+3、执行yum clean all清除原有yum缓存。<br>
+4、执行yum makecache（刷新缓存）或者yum repolist all（查看所有配置可以使用的文件，会自动刷新缓存）。</h2>
+<p><font color="#0000dd" size=6>yum命令：</font><br>
+增加“-y”选项，自动确认yum操作</p>
+<p>yum -y install 软件名			//安装软件（常用）<br>
+yum -y remove 软件名		//删除软件<br>
+（只是删除本软件，不会删除依赖关系）	<br>
+yum -y update			//更新软件<br>
+yum info 软件名			//查看软件信息<br>
+yum  list				//查看yum可用的软件列表<br>
+yum -y groupinstall 软件组		//安装软件组<br>
+例：<br>
+yum -y groupinstall &quot;KDE&quot;</p>
+<p>yum -y repolist			//查看可用yum源列表<br>
+yum -y grouplist			//查看可用软件包组列表<br>
+yum -y groupupdate 软件组		//更新软件组<br>
+yum -y groupremove 软件组		//移除软件组<br>
+（只是删除本软件，不会删除依赖关系）	<br>
+yum -y clean all                                                 //清除yum缓存列表（常用）                                  clean：去除               search：搜索，查找</p>
+<p>yum -y  search   命令字		//查看某命令属于哪个软件包<br>
+例：<br>
+yum -y search finger<br>
+yum -y search rpm<br>
+yum -y search yum</p>
 
             </div>
             <hr style="width: 80%;">
@@ -568,36 +663,24 @@ rommon 8 &gt; reset					重启<br>
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>劫夜_❤</li>
-            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/wo-de-shi-jie/</li>
+            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/yum-ku-de-da-jian/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/';return false">
-                    
-                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1606187903736&amp;di=2c377613dc89d2b676fb80bf0c66bfc7&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2018-12-20%2F5c1b8191cc15e.jpg" style="width: 100%;" class="opimg">
-                    
-                    <h4 class="optitle">Centos7安装VMware-Tools</h4>
-                </div>
-            </div>
-            <div class="prev-post">
-                上一篇 <a href="https://www.zhz666.cf/post/centos7-an-zhuang-vmware-tools/">Centos7安装VMware-Tools</a>
-            </div>
-            
             
             <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/hello-gridea/';return false">
+                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/shell-jiao-ben-de-pan-duan-yu-ju/';return false">
                     
-                    <img src="https://p2.piqsels.com/preview/800/873/293/clouds-mountain-road-sky.jpg" style="width: 100%;" class="opimg">
+                    <img src="https://w.wallhaven.cc/full/k7/wallhaven-k79xgm.jpg" style="width: 100%;" class="opimg">
                     
-                    <h4 class="optitle">Hello Gridea</h4>
+                    <h4 class="optitle">Shell脚本的“判断语句”</h4>
                 </div>
             </div>
             <div class="next-post">
-                下一篇 <a href="https://www.zhz666.cf/post/hello-gridea/">Hello Gridea</a>
+                下一篇 <a href="https://www.zhz666.cf/post/shell-jiao-ben-de-pan-duan-yu-ju/">Shell脚本的“判断语句”</a>
             </div>
             
         </div>
@@ -715,7 +798,20 @@ rommon 8 &gt; reset					重启<br>
 </script>
         
         <div class="toc-container">
-            
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%96%B9%E6%A1%88%E4%BA%8C%E4%BF%AE%E6%94%B9centos-baserepo%E6%96%87%E4%BB%B6%E5%8F%96%E6%B6%88baseurl%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A1%8C%E7%9A%84%E6%B3%A8%E9%87%8A%E5%B9%B6%E5%A2%9E%E5%8A%A0mirrorlist%E5%BC%80%E5%A4%B4%E7%9A%84%E8%A1%8C%E7%9A%84%E6%B3%A8%E9%87%8A-%E5%B0%86%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84httpmirrorcentosorg%E6%9B%BF%E6%8D%A2%E6%88%90httpsmirrorshuaweicloudcom%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4sed-i-sbaseurlbaseurlg-etcyumreposdcentos-basereposed-i-smirrorlisthttpmirrorlisthttpg-etcyumreposdcentos-basereposed-i-shttpmirrorcentosorghttpsmirrorshuaweicloudcomg-etcyumreposdcentos-baserepo3-%E6%89%A7%E8%A1%8Cyum-clean-all%E6%B8%85%E9%99%A4%E5%8E%9F%E6%9C%89yum%E7%BC%93%E5%AD%98-4-%E6%89%A7%E8%A1%8Cyum-makecache%E5%88%B7%E6%96%B0%E7%BC%93%E5%AD%98%E6%88%96%E8%80%85yum-repolist-all%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0%E7%BC%93%E5%AD%98"><strong>方案二：</strong><br>
+修改CentOS-Base.repo文件，取消baseurl开头的行的注释，并增加mirrorlist开头的行的注释。将文件中的http://mirror.centos.org替换成https://mirrors.huaweicloud.com，可以参考如下命令：<br>
+sed -i &quot;s/#baseurl/baseurl/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s/mirrorlist=http/#mirrorlist=http/g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+sed -i &quot;s@http://mirror.centos.org@https://mirrors.huaweicloud.com@g&quot; /etc/yum.repos.d/CentOS-Base.repo<br>
+3、执行yum clean all清除原有yum缓存。<br>
+4、执行yum makecache（刷新缓存）或者yum repolist all（查看所有配置可以使用的文件，会自动刷新缓存）。</a></li>
+</ul>
+</li>
+</ul>
+
     </div>
     </div>
     </div>
@@ -953,7 +1049,7 @@ rommon 8 &gt; reset					重启<br>
                 var nc = new NewCounter();
                 nc.save({
                     time: 1,
-                    title: "我的世界",
+                    title: "Yum库的搭建",
                     url: pl,
                     xid: pl,
                 }).then(function (object) {
