@@ -166,7 +166,7 @@ YUM的工作原理并不复杂，每..." />
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://www.zhz666.cf/images/avatar.png?v=1607837333838" class="avatar">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1607838413596" class="avatar">
         </div>
         <div class="sitename">欢迎来到德莱联盟</div>
         <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
@@ -489,12 +489,12 @@ yum通过读取yum源配置文件，确认软件包源文件路径，读取路�
 1.repodata目录：软件包依赖环境参照表。目录中有*.xml文件，文件中记录了软件的依赖环境。<br>
 2.Packages目录：统计完需要安装的依赖关系后，从此目录中读取相关软件包。<br>
 3.将软件包复制到缓存后，进行解压安装。</p>
-<p><font color="#00dddd" size=5>第一部分：</font><br>
-vim  /etc/yum.conf<br>
+<h1 id="font-color00dddd-size5第一部分font"><font color="#00dddd" size=5>第一部分：</font></h1>
+<p>vim  /etc/yum.conf<br>
 [main]<br>
 cachedir=/var/cache/yum/$ basearch/$ releasever          #cachedir：yum缓存的目录，yum在此存储下载的rpm包和数据库，一般是/var/cache/yum/$ basearch/$ releasever。</p>
-<p>keepcache=1<br>
-#keepcache：是否保留缓存内容，0：表示安装后删除软件包，1表示安装后保留软件包</p>
+<p><font color="#dd0000">keepcache=1<br>
+#keepcache：是否保留缓存内容，0：表示安装后删除软件包，1表示安装后保留软件包</font></p>
 <p>debuglevel=2<br>
 #debuglevel：除错级别，0──10,默认是2 貌似只记录安装和删除记录<br>
 logfile=/var/log/yum.log<br>
@@ -509,8 +509,8 @@ exactarch=1<br>
 <p>retries=20<br>
 #retries，网络连接发生错误后的重试次数，如果设为0，则会无限重试。<br>
 obsoletes=1<br>
-gpgcheck=1<br>
-#gpgchkeck= 有1和0两个选择，分别代表是否是否进行gpg校验，如果没有这一项，默认是检查的。<br>
+<font color="#dd0000">gpgcheck=1<br>
+#gpgchkeck= 有1和0两个选择，分别代表是否是否进行gpg校验，如果没有这一项，默认是检查的。 </font><br>
 reposdir=/etc/yy.rm #默认是 /etc/yum.repos.d/ 低下的 xx.repo后缀文件<br>
 #默认都会被include 进来 也就是说 /etc/yum.repos.d/xx.repo 无论配置文件有多少个 每个里面有多少个[name] 最后其实都被整合到 一个里面看就是了 重复的[name]后面的覆盖前面的<br>
 exclude=xxx<br>
@@ -519,15 +519,15 @@ keepcache=[1 or 0]<br>
 #　　设置 keepcache=1，yum 在成功安装软件包之后保留缓存的头文件 (headers) 和软件包。默认值为 keepcache=0 不保存</p>
 <p>reposdir=[包含 .repo 文件的目录的绝对路径]<br>
 #　　该选项用户指定 .repo 文件的绝对路径。.repo 文件包含软件仓库的信息 (作用与 /etc/yum.conf 文件中的 [repository] 片段相同)。</p>
-<p><font color="#00dddd" size=5>第二部分：</font><br>
-vi /etc/yum.repo.d/xx.repo<br>
+<h1 id="font-color00dddd-size5第二部分font"><font color="#00dddd" size=5>第二部分：</font></h1>
+<p>vi /etc/yum.repo.d/xx.repo<br>
 这个字段其实也可以在yum.conf里面直接配置</p>
 <p>[serverid]<br>
 #其中serverid是用于区别各个不同的repository，必须有一个独一无二的名称。 重复了 前面覆盖后面--还是反过来呢？？？用enabled 测试是后面覆盖前面<br>
 name=Some name for this server<br>
 #name，是对repository的描述，支持像$releasever $basearch这样的变量; name=Fedora Core $releasever - $basearch - Released Updates</p>
-<p><font color="#dd0000">baseurl=url://path/to/repository/ </font><br>
-#baseurl是服务器设置中最重要的部分，只有设置正确，才能从上面获取软件。它的格式是：<br>
+<p><font color="#dd0000">baseurl=url://path/to/repository/<br>
+#baseurl是服务器设置中最重要的部分，只有设置正确，才能从上面获取软件。它的格式是： </font><br>
 baseurl=url://server1/path/to/repository/<br>
 url://server2/path/to/repository/<br>
 url://server3/path/to/repository/<br>
@@ -547,7 +547,7 @@ failovermethod=priority<br>
 <p>enabled=[1 or 0]<br>
 #当某个软件仓库被配置成 enabled=0 时，yum 在安装或升级软件包时不会将该仓库做为软件包提供源。使用这个选项，可以启用或禁用软件仓库。<br>
 #通过 yum 的 --enablerepo=[repo_name] 和 --disablerepo=[repo_name] 选项，或者通过 PackageKit 的&quot;添加/删除软件&quot;工具，也能够方便地启用和禁用指定的软件仓库</p>
-<p>几个变量<br>
+<p><font face="楷体" size=5><font color="#dd00dd">几个变量 </font></font><br>
 $ releasever，发行版的版本，从[main]部分的distroverpkg获取，如果没有，则根据redhat-release包进行判断。<br>
 $ arch，cpu体系，如i686,athlon等<br>
 $basearch，cpu的基本体系组，如i686和athlon同属i386，alpha和alphaev6同属alpha。<br>
@@ -737,6 +737,8 @@ repodata	记录软件依赖关系<br>
 cd repodata→repomd.xml  （xml列表 查找软件依赖关系）</a></li>
 </ul>
 </li>
+<li><a href="#font-color00dddd-size5%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86font"><font color="#00dddd" size=5>第一部分：</font></a></li>
+<li><a href="#font-color00dddd-size5%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86font"><font color="#00dddd" size=5>第二部分：</font></a></li>
 </ul>
 
     </div>
