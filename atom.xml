@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.zhz666.cf</id>
     <title>欢迎来到德莱联盟</title>
-    <updated>2020-12-13T04:10:42.184Z</updated>
+    <updated>2020-12-13T04:13:21.246Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.zhz666.cf"/>
     <link rel="self" href="https://www.zhz666.cf/atom.xml"/>
@@ -178,7 +178,7 @@ yum -y grouplist			//查看可用软件包组列表<br>
 yum -y groupupdate 软件组		//更新软件组<br>
 yum -y groupremove 软件组		//移除软件组<br>
 （只是删除本软件，不会删除依赖关系）	<br>
-yum -y clean all                                                 //清除yum缓存列表（常用）                                  clean：去除               search：搜索，查找</p>
+yum -y clean all                                                 //清除yum缓存列表（常用）                                  clean：去除                search：搜索，查找</p>
 <p>yum -y  search   命令字		//查看某命令属于哪个软件包<br>
 例：<br>
 yum -y search finger<br>
