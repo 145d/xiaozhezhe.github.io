@@ -1,0 +1,1318 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="description" content="寄居架构：安装在操作系统之上，操作系统死亡，软件随之毁灭。抢夺操作系统的资源
+原生架构：直接安装在硬件之上，本身就属于一款操作系统。可以随时分配调节系统资源
+OSI 7层
+应用层：操作系统之上
+表示层
+会话层
+传输层
+网络层
+数据链路层
+物..." />
+    <meta name="keywords" content="Linux" />
+    <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/dracula.min.css">
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <title>欢迎来到德莱联盟</title>
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="codeCopyText" style="display: none">代码复制成功了哦</div>
+    <div id="domainname" style="display:none">https://www.zhz666.cf</div>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div>
+            <div id="bar">
+                <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/bootstrap.min.css">
+</head>
+<style>
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (max-width:768px){
+    .mbapspan{
+      padding: 0;
+    }
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+          aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://www.zhz666.cf">欢迎来到德莱联盟&nbsp;&nbsp;|</a>
+        <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+            style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf">
+              首页
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf/archives">
+              归档
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://www.zhz666.cf/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://www.zhz666.cf/talk">说说</a></li>
+          
+          
+          <li><a href="https://www.zhz666.cf/friends">友链</a></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            </div>
+            <div class="row">
+                <div class="side"><body>
+    
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://www.zhz666.cf/images/avatar.png?v=1609480075903" class="avatar">
+        </div>
+        <div class="sitename">欢迎来到德莱联盟</div>
+        <span class="describtion" data-text='["笑着面对生活，爱你呦~"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        <a href="https://github.com/145d/xiaozhezhe.github.io" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://www.zhz666.cf/media/images/github.png" alt=""></i></a>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://www.zhz666.cf/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none">1684629789</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/talk" class="menubutton">说说</a>
+    </div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://www.zhz666.cf/friends" class="menubutton">友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    <div class="sitetime"><div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div></div>
+    <div id="cussitetime" style="display:none">02/02/2020</div>
+    
+    
+    </div>
+
+
+<script src="https://www.zhz666.cf/media/js/wordshow.js"></script>
+    
+    <script>
+        //----------------------站点运行时间
+        var now = new Date();
+
+        function createtime() {
+            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+        setInterval("createtime()", 250);
+    </script>
+    
+
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+                <div id="main" class="col-xs-12 col-sm-12 col-md-10 col-lg-7">
+                    <link rel="stylesheet" href="https://www.zhz666.cf/media/css/font-awesome.css">
+
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow" style="padding-bottom: 0;">
+            
+            <div class="postdetailimg" style="width:100%;overflow: hidden;">
+                <img src="https://www.zhz666.cf/post-images/iptables-yu-fiewalld-fang-huo-qiang.png" class="postimage" style="cursor:auto">
+            </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-01-01</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 25 min read</div>
+                <div class="posttag">
+                    
+                    <a href="https://www.zhz666.cf/tag/0mckH4XPX/" class="postlink">
+                        <i class="fa fa-tag"></i> Linux
+                    </a>
+                    
+                </div>
+            </div>
+            
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2>iptables与fiewalld防火墙</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/</div>
+                <div id="rootaddr" style="display:none">https://www.zhz666.cf</div>
+                <span id="hotnum">
+                    <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
+                            class="hotnum">loading...</i></h4>
+                </span>
+            </div>
+            <div class="text ">
+                <p>寄居架构：安装在操作系统之上，操作系统死亡，软件随之毁灭。抢夺操作系统的资源<br>
+原生架构：直接安装在硬件之上，本身就属于一款操作系统。可以随时分配调节系统资源</p>
+<p>OSI 7层<br>
+应用层：操作系统之上<br>
+表示层<br>
+会话层<br>
+传输层<br>
+网络层<br>
+数据链路层<br>
+物理层</p>
+<p><font color="#660000" size=5>【1】防火墙相关知识</font><br>
+软件级（类似于寄居架构）：安装在操作系统之上的一个防火墙软件。<br>
+优点：<br>
+工作在应用层，功能强大。可以针对IP地址进行过滤，还可以针对用户名进行过滤，组进行过滤。<br>
+缺点：<br>
+工作在应用层，代理级的。对包的执行效率非常低。兼容性问题。安全漏洞问题。（后期的软件防火墙大部分用于“本地主机保护”）<br>
+常见的软件防火墙：<br>
+Windows：ISA 2012		天网		系统本身自带：Linux：iptables	firewalld</p>
+<h2 id="硬件级类似于原生架构独立硬件嵌入式应用程序-这个操作系统本身就是防火墙-不需要开启那么多功能和接口-只开启防火墙相对应的功能和接口相对来说比较稳定-不会太卡重启即可-优点稳定-高效-根据数据包里的信息过滤-解决兼容性问题-安全漏洞问题较小-成本降低根据用户群体需求提升性能-作为网络安全防护的主要设备-缺点功能没有软件级那么强大font-color00dddd常见的硬件防火墙font华为-思科-天融信-深信服-飞塔-浪潮-中新金盾绿盟科技-juniper-启明星辰-网康-netgear">硬件级（类似于原生架构）：独立硬件，嵌入式应用程序。（这个操作系统本身就是防火墙）。不需要开启那么多功能和接口。只开启防火墙相对应的功能和接口，相对来说比较稳定。不会太卡，重启即可。<br>
+优点：<br>
+稳定、高效。根据数据包里的信息过滤。解决兼容性问题。安全漏洞问题较小。成本降低，根据用户群体需求提升性能。作为网络安全防护的主要设备。<br>
+缺点：<br>
+功能没有软件级那么强大<br>
+<font color="#00dddd">常见的硬件防火墙：</font><br>
+华为	         思科	         天融信         	深信服         	飞塔         	浪潮	         中新金盾		<br>
+绿盟科技	                           	Juniper	                           启明星辰	                           网康                           	NETGEAR</h2>
+<p><font color="#660000" size=5>【2】按功能分类</font><br>
+1）包过滤型防火墙<br>
+抓取通过设备的数据包，对数据流层的内容进行过滤。能够检查数据包中的服务端口、IP（目标、源）地址、MAC（目标、源）地址等信息。【在现在的防火墙技术中作为基本功能应用】<br>
+2）应用层防火墙<br>
+数据包分析功能工作在应用层，可以针对应用层的很多软件进行监听和防护。对信息类的数据进行监控分析，对传输的文件类型进行监控<br>
+3）包检测型防火墙<br>
+抓取用户的访问请求，预判用户的下一步动作，并对动作进行监听【判断是否是入侵行为，DDos攻击等】<br>
+4）网络行为管理防火墙<br>
+【在应用层+检测型防火墙基础上增加了更多分析和统计，记录功能】上网行为监控，域名访问记录、软件访问记录、搜索记录、论坛消息记录、QQ微信等软件聊天信息记录、电子邮件等5）华为称为下一代防火墙【是一款可以全面应对“应用层威胁”的高性能防火墙】</p>
+<h2 id="根据存放位置网络型主机防火墙">根据存放位置：<br>
+网络型<br>
+主机防火墙</h2>
+<p><font color="#660000" size=5>【3】防火墙概念</font><br>
+是指设置在不同网络与网络安全域之间的一系列部件的组合，也是不同安全域之间信息的唯一出口。通过检测、限制并更改跨越防火墙的数据流，尽可能的对外屏蔽网络内部信息、结构和运行状态，且有选择的接受外部网络访问。</p>
+<p><font color="#660000" size=5>【4】Linux包过滤防火墙</font><br>
+iptables：用户态，规则列表。为netfilter提供命令/规则的工具，由用户定义（位于/sbin/iptables）<br>
+firewalld：用户态，规则列表。为netfilter提供命令/规则的工具，由用户定义【CentOS7默认的管理防火墙规则的工具】<br>
+netfilter：内核态，内核模块。提供数据转发、丢弃等功能。执行规则。接受数据包、封装数据包、转发数据包、丢弃数据包。【系统内核对数据包的处理机制】<br>
+iptables/netfilter的最大优点是它可以配置有状态的防火墙（使用户可以完全控制防火墙配置和信息包过滤。从而制定自己的规则，只允许您想要的网络流量进入系统）</p>
+<p><font color="#dd0000" size=6><strong>iptables：</strong></font><br>
+【5】iptables防火墙规则<br>
+Iptables 是用来设置、维护和检查Linux内核的IP包过滤规则的。<br>
+可以定义不同的表，每个表都包含几个内部的链，也能包含用户定义的链。每个链都是一个规则列表，对对应的包进行匹配：每条规则指定应当如何处理与之相匹配的包。这被称作'target'（目标），也可以跳向同一个表内的用户定义的链。<br>
+<font color="#00dd00"><br>
+钩子函数：4表5链<br>
+规则：                             表代表数据包的处理区域        ；     链处理数据包的时机</font></p>
+<p><font color="#660066">5链：利用五种钩子函数存放过滤规则，叫做规则链</font><br>
+规则链：<br>
+规则的作用： 在链内设置规则，由规则负责对数据包过滤和处理<br>
+链的作用：容纳各种防火墙规则<br>
+链的分类依据：处理数据包的不同时机<font color="#dd0000"><br>
+默认包括5种规则链<br>
+input：处理入站数据<br>
+forward：处理转发的数据<br>
+output：处理出站数据<br>
+prerouting：路由之前检查（路由选择之前处理数据包，进行目标地址转换）<br>
+postrouting：路由之后检查（路由选择之后处理数据包，进行源地址转换）。PAT                           prerouting：路由之前                 postrouting：路由之后</font></p>
+<p><font color="#660066">4表：【规则链存放在表中，规则存放在规则链中】存放规则链的表叫做规则表  </font>                                raw：原始的，未经分析的     Mangle：压碎      Nat：地址转换    Filter：过滤，筛选<font color="#dd0000"><br>
+raw表：确定是否对数据包进行状态跟踪。                                                    包括：prerouting、output链<br>
+filter表：过滤表，决定是否放行数据包。                                                      包括：input、forward、output链<br>
+nat表：地址转换表。                                                                                     包括：prerouting、output、postrouting链<br>
+mangle表：为数据包做标记，数据包需要做什么。                                      包括：prerouting、input、forward、output、postrouting链</font><br>
+拓展：<br>
+security表：security是跟selinux相关的MAC模式的安全过滤。<br>
+表的作用：容纳各种规则链</p>
+<p><font color="#660000" size=5>【6】表和链的执行顺序</font><br>
+6-1）iptables数据流顺序（规则表之间的顺序）<br>
+raw→mangle→nat→filter</p>
+<p>6-2）规则链之间的顺序<br>
+】入站：prerouting→input<br>
+（prerouting：路由之前检查（路由选择之前处理数据包，目标地址转换））<br>
+外界的数据包到达防火墙后，首先被prerouting链处理（是否修改地址等），然后进行路由选择，如果数据包的目标地址是本机，那么内核将数据包传递给input进行处理，然后交给上层应用程序<br>
+】出站：output→postrouting<br>
+（postrouting：路由之后检查（路由选择之后处理数据包，源地址转换））<br>
+防火墙本机向外部地址发送的数据包，首先内output处理，然后进行路由选择，再交给postrouting处理<br>
+】转发：prerouting→forward→postrouting<br>
+外部数据包到达防火墙后，首先被prerouting链处理，然后进行路由选择~如果数据包的目标地址是其他外部地址，则内核交给forward链进行处理，最后交给postrouting链处理</p>
+<h2 id="规则链内的匹配顺序按顺序依次检查匹配即停止log策略例外若找不到相匹配的规则则按该链的默认策略处理">规则链内的匹配顺序<br>
+按顺序依次检查，匹配即停止（LOG策略例外）<br>
+若找不到相匹配的规则，则按该链的默认策略处理</h2>
+<p><font color="#660000" size=5>【7】iptables命令语法</font><br>
+<strong>1）语法格式</strong><br>
+iptables  [-t 表名]  参数  [链名]  [条件表达式]  [-j 控制类型]</p>
+<p><strong>2）[表名]：filter表   或   nat表（不加-t 表名选项，默认为filter表）</strong></p>
+<p><strong>3）参数：</strong><br>
+-A：添加一条规则，添加在链的尾部<br>
+-I:插入一条规则，插入对应的链（在链的开头或指定序号插入一条规则）<br>
+-C:将规则添加到用户定义链之前对其进行检查<br>
+-D:删除指定链中某条规则<br>
+-R:替换链上的某条规则<br>
+-P:定义某个链的默认规则<br>
+-N:自定义一个新的空链<br>
+-X:删除一个自定义的空链<br>
+-F：清空指定规则链，如果省略链，则可以实现删掉对应表的中所有链（常用）<br>
+-Z:重置指定链中的所有规则计数器<br>
+-E:重命名自定义的链，不改变链本身<br>
+-L:显示指定表中的规则<br>
+-n：以数字形式显示主机地址和端口号（-n -L 可合写为 -nL）<br>
+-v：显示详细规则信息<br>
+-vv：显示更详细信息<br>
+-x：显示计数器的精确值<br>
+--line-number：查看规则时，显示规则的序号</p>
+<p><strong>4）[条件表达式]：需要分析的数据包头部信息对象</strong><br>
+通用匹配<br>
+协议类：-p  tcp/udp/icmp<br>
+端口类：--dport  目标端口号	--sport  源端口号<br>
+地址类：-s  源IP地址/子网掩码		-d    目标IP地址/子网掩码               （单独主机地址地址不用加子网掩码）<br>
+接口类：-i   网卡接口名称        输入接口	例：-i   ens33<br>
+-o  网卡接口名称        输出接口             例：-o  ens37<br>
+特殊分类（隐含匹配）<br>
+TCP标记匹配：--tcp-flags 检查范围 被设置的标记<br>
+ICMP类型匹配：--icmp-type 类型ID            8请求    0回应    3不可达</p>
+<p><strong>5）其他分流（显示匹配）</strong><br>
+要求以“-m 扩展模块”的形式明确指出类型<br>
+多端口匹配：<br>
+-m  multiport   --sport    源端口列表（1024-2048）                       multi：多种，多数                range：一系列，范围          src：源对象        source：来源         dst：目标<br>
+-m  multiport   --dport   目标端口列表（2000-3000）<br>
+IP范围匹配<br>
+-m  iprange  --src-range  IP范围（192.168.10.10-192.168.10.20）<br>
+-m  iprange  --dst-range  IP范围（例如：192.168.10.100-192.168.10.200）<br>
+MAC范围匹配<br>
+-m mac  --mac-source  MAC地址</p>
+<p>状态匹配<br>
+-m state --state 连接状态<br>
+状态：<br>
+ESTABLISHED：指出该信息包属于已建立的连接，该连接一直用于发送和接收信息包并且完全有效。<br>
+INVALID：指出该信息包与任何已知的流或连接都不相关联，它可能包含错误的数据或头。<br>
+NEW：意味着该信息包已经或将启动新的连接，或者它与尚未用于发送和接收信息包的连接相关联。<br>
+RELATED：表示该信息包正在启动新连接，以及它与已建立的连接相关联。</p>
+<p>字符串匹配<br>
+-m  string --string &quot;关键字&quot; --alog bm<br>
+选项说明：<br>
+-m string               //匹配字符串规则<br>
+--string &quot;&quot;             //引号中添字符串<br>
+--algo   bm           //字符串编码转换算法</p>
+<p><strong>6）[控制类型]：</strong><br>
+-j ACCEPT：允许通过                                                    accept：同意，接受             reject：拒收，拒绝接受                 algo：算法<br>
+-j DROP：直接丢弃，不给出任何回应<br>
+-j REJECT：拒绝通过，必要时会给出提示<br>
+-j LOG：记录日志信息，然后传给下一条规则继续匹配</p>
+<p>iptables  [-t 表名]  参数  [链名]  [条件]  [-j 控制类型]<font color="#dd0000"><br>
+几个注意事项<br>
+不指定表名时，默认指filter表<br>
+不指定链名时，默认指表内的所有链<br>
+除非设置链的默认策略，否则必须指定匹配条件<br>
+参数、链名、控制类型使用大写字母，其余均为小写</font></p>
+<p>iptables   -t  filter   -A  INPUT   -p   icmp  -s   192.168.1.1  -d  192.168.1.20  -j  DROP<br>
+在链尾添加一条规则：对来源于192.168.1.1，目标地址为192.168.1.20的数据包在入站时进行丢弃</p>
+<p><font color="#660000" size=5>【8】基本操作语句【防火墙关闭查看[stop firewalld]，更加明显】</font><br>
+查看当前规则<br>
+iptables -t filter -L<br>
+清除所有规则<br>
+iptables -F<br>
+iptables -L<br>
+修改指定链的默认规则<br>
+iptables -t filter  -P INPUT DROP</p>
+<p><font color="#660000" size=5>【9】案例（防火墙firewalld关闭即可）</font><br>
+<strong>例1：拒绝本地主机和任何其他主机“互ping”</strong><br>
+iptables   -t  filter   -A  INPUT   -p   icmp   -j  DROP                                                      //在filter表INPUT链的末尾添加icmp协议规则，动作为DROP<br>
+<strong>例2：拒绝192.168.1.1  ping本地其他主机</strong><br>
+iptables   -t  filter   -A  INPUT   -p   icmp  -s   192.168.1.1  -j  DROP<br>
+<strong>例3：本地主机能ping其他主机，但其他主机不能ping本地主机</strong><br>
+iptables   -t  filter   -A  INPUT   -p   icmp     --icmp-type   8     -j  DROP<br>
+ping<br>
+请求：request   8<br>
+回应：reply  0（默认链的ICMP类型为0，所有本实验中不用设置OUTPUT输出链）<br>
+不可达:3</p>
+<p><strong>例4：允许本地主机能ping其他主机，除（某一个IP）外，不允许其他主机ping本地主机（基于上述实验基础上）</strong><br>
+分析：希望某一个IP地址可以访问。我们可以允许INPUT链中，来自（某一IP），ICMP协议中类型8的数据包。但是第一条为拒绝了所有，所以我们需要将策略插入到“拒绝的策略”之前<br>
+[root@localhost ~]# iptables -I INPUT 1 -s 192.168.2.11 -p icmp --icmp-type 8 -j ACCEPT<br>
+[root@localhost ~]# iptables -L<br>
+Chain INPUT (policy ACCEPT)                                            chain：锁链，一系链               ACCEPT：同意，许可               anywhere：任何地方           opt：选择，挑选       drop：丢弃<br>
+target     prot opt source               destination<br>
+ACCEPT     icmp --  192.168.2.11         anywhere             icmp echo-request<br>
+DROP       icmp --  anywhere             anywhere             icmp echo-request</p>
+<p>Chain FORWARD (policy ACCEPT)<br>
+target     prot opt source               destination<br>
+Chain OUTPUT (policy ACCEPT)<br>
+target     prot opt source               destination</p>
+<p><strong>例5：拒绝客户的192.168.2.1主机访问本地httpd服务</strong><br>
+分析：客户端发来的数据包为输入，所以在INPUT链中配置。根据封装结构，收到的这个数据包源IP地址是192.168.2.1，目标端口号是80端口。<br>
+[root@localhost ~]# iptables -A INPUT -s 192.168.2.1  -p tcp --dport 80 -j DROP<br>
+[root@localhost ~]# iptables -L<br>
+Chain INPUT (policy ACCEPT)<br>
+target     prot opt source               destination<br>
+DROP       tcp  --  192.168.2.1          anywhere             tcp dpt:http</p>
+<p><strong>例6：我不想开放我的其他端口，但我要在我的电脑上启用http服务，并对外服务</strong><br>
+案例分析:防火墙的规则匹配方式为首行配置制,也就是该当收到数据包后,进行规则表达式匹配。当第一行规则满足条件后,就不再往下进行匹配了，<br>
+所以如果我们把包含范围比较大的规则写在前面,则范围小的规则将不再有机会匹配！！！<br>
+如:我们在第一行写了一个拒绝所有客户端访问本地主机,在第二行以后再添加允许192.168.10.2访问本地主机,则无法匹配了。</p>
+<p>总结：在设置规则时我们应该先制定匹配范围最小的规则再制定匹配范围大的规则<br>
+操作如下：<br>
+[root@localhost ~]# iptables -D INPUT 1                                                          从链中删除了第一行的规则<br>
+[root@localhost ~]# iptables -A INPUT -p tcp --dport 80 -j ACCEPT<br>
+[root@localhost ~]# iptables -A INPUT -p tcp -j DROP<br>
+[root@localhost ~]# iptables -A INPUT -p udp -j DROP<br>
+[root@localhost ~]# iptables -L<br>
+Chain INPUT (policy ACCEPT)<br>
+target     prot opt source               destination<br>
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http<br>
+DROP       tcp  --  anywhere             anywhere<br>
+DROP       udp  --  anywhere             anywhere</p>
+<p><strong>例7：拒绝192.168.1.1访问文件服务</strong><br>
+案例分析:在配置规则时有些服务是多端口的,我们要指定关键端口,或配置相关的所有端口,有些服务是在TCP协议和UDP协议中都有端口的,我们要指定到,才能有效的进行控制<br>
+如以下操作中, samba服务本身有两个端口号,139和445,一个负责传输文件,一个负责连接验证。<br>
+nfs服务在tcp和udp中的端口号都是2049.<br>
+[root@localhost ~]# iptables -t filter -F<br>
+[root@localhost ~]# iptables -t filter -L<br>
+拒绝samba<br>
+[root@localhost ~]# iptables -t filter -A INPUT -p tcp --dport 139 -s 192.168.1.1 -j DROP<br>
+[root@localhost ~]# iptables -t filter -A INPUT -p tcp --dport 445 -s 192.168.1.1 -j DROP<br>
+拒绝nfs<br>
+[root@localhost ~]# iptables -t filter -A INPUT -p tcp --dport 2049 -s 192.168.1.1 -j DROP<br>
+[root@localhost ~]# iptables -t filter -A INPUT -p udp --dport 2049 -s 192.168.1.1 -j DROP<br>
+[root@localhost ~]# iptables -L</p>
+<p><strong>例8：只允许192.168.2.1-192.168.2.10之间的主机访问httpd服务器192.168.2.2（无亲测）</strong><br>
+[root@localhost ~]# iptables -t filter -A INPUT  -m iprange --src-range 192.168.2.1-192.168.2.10  -d 192.168.2.2 -p tcp --dport 80 -j ACCEPT<br>
+[root@localhost ~]# iptables -L<br>
+Chain INPUT (policy ACCEPT)<br>
+target     prot opt source               destination<br>
+ACCEPT     tcp  --  anywhere             www.baidu.com        source IP range 192.168.2.1-192.168.2.10 tcp dpt:http<br>
+————————————————————————<br>
+<font color="#dd0000" size=6>firewalld：动态防火墙</font><br>
+firewalld预定义的网络区域：                                           总结：所有区域的通行规则是：允许任何数据发出，拒绝任何数据传入，除指定类型的数据流量【预定义的服务】。<br>
+<font color="#006600">firewalld默认创建了9个安全区域。        分为两大类，第一类通行区域，默认限定允许通行什么类型的数据。第二类拒绝区域，什么数据都不允许通行的区域。<br>
+Trusted：信任，相信            public：公共的        work：工作         internal：内部的，里面的           external：外部的，外部        dmz：非军事化区       block：阻碍，堵塞    </font><br>
+trusted 信任区域：可接受所有的网络连接</p>
+<p>public 公共区域：除非与传出流量相关或与ssh或dhcpv6-client预定义服务匹配，否则拒绝流量传入<br>
+应用场景：在公共区域内不能相信网络内的其他计算机，不会对计算机造成危害。只能接受经过选择的连接！并且该区域是新添加网络接口的默认区域</p>
+<p>work 工作区域<br>
+除非与传出流量相关或ssh ipp-client dhcp6-client预定义服务匹配否则拒绝流量传入。<br>
+应用场景：用于工作区 相信网络内的其他计算机不会危害计算机 仅接收经过选择的连接</p>
+<p>home 家庭区域<br>
+除非与传出流量相关 或ssh ipp-client mdns samba-clientdhcpv6-client 预定义服务匹配 否则拒绝流量传入 。<br>
+应用场景：用于家庭网络 信任网络内的其他计算机不会危害计算机 仅接收经过选择的连接</p>
+<p>internal 内部区域<br>
+除非与传出流量相关 或ssh ipp-client mdns samba-client dhcpv6-client预定义服务匹配否则拒绝流量传入<br>
+应用场景：用于内部网络 信任网络内的其他计算机不会危害计算机 仅接收经过选择的连接</p>
+<p>external 外部区域<br>
+除非与传出流量相关 或与ssh预定义服务匹配，否则拒绝流量传入。<br>
+应用场景：通过次区域转发的ipv4传出流量将进行地址伪装 可用于为路由器启用了伪装功能的外部网络</p>
+<p>dmz 隔离区域也称为非军事区域<br>
+除非与传出的流量相关 或与ssh预定义服务匹配，否则拒绝流量传入</p>
+<p>block 限制区域<br>
+除非与传出流量相关 ,否则拒绝所有传入流量drop。并且不产生包含ICMP（internet control message protocol 互联网控制报文协议）的错误响应</p>
+<p>drop：丢弃区域，许流量传出，拒绝所有流量传入，并且不产生ICMP错误响应<br>
+不同的区域之间的差异是其“对待数据包”的默认行为不同，firewalld的默认区域为public</p>
+<p><font color="#dd00dd" face="楷体" size=5>firewalld特点：</font><br>
+1.増加了网络区域安全设置,网络区域中可以放入接口,不同的区域设置了不同的安全级别。<br>
+2.支持ipv4和ipv6两种策略表以及以太网桥<br>
+3.支持服务或应用程序直接添加规则接口<br>
+4.支持两种配置模式:运行配置,永久配置</p>
+<p><font color="#660000">firewalld的配置文件以xml格式为主（主配置文件firewalld.conf例外），他们有两个存储位</font><br>
+1、/etc/firewalld/<br>
+2、/usr/lib/firewalld/<br>
+使用时的规则是这样的：当需要一个文件时firewalld会首先到第一个目录中去查找，如果可以找到，那么就直接使用，否则会继续到第二个目录中查找。</p>
+<p>firewalld的这种配置文件结构的主要作用是这样的：在第二个目录中存放的是firewalld给提供的通用配置文件，如果我们想修改配置， 那么可以copy一份到第一个目录中，然后再进行修改。这么做有两个好处：首先我们日后可以非常清晰地看到都有哪些文件是我们自己创建或者修改过的，其 次，如果想恢复firewalld给提供的默认配置，只需要将自己在第一个目录中的配置文件删除即可，非常简单，而不需要像其他很多软件那样在修改之前还 得先备份一下，而且时间长了还有可能忘掉之前备份的是什么版本。（主要是services目录下的区域文件）</p>
+<h1 id="firewalld相关文件1防火墙内置支持的服务路径usrlibfirewalldservices-格式服务名html2默认区域配置文件etcfirewalldzones-默认为public3默认防火墙主配置文件etcfirewalldfirewalldconf4预定义网络区域存储位置usrlibfirewalldzones">firewalld相关文件：<br>
+（1）防火墙内置支持的服务路径:/usr/lib/firewalld/services/          格式：服务名.html<br>
+（2）默认区域配置文件：/etc/firewalld/zones/                                默认为public<br>
+（3）默认防火墙主配置文件：/etc/firewalld/firewalld.conf<br>
+（4）预定义网络区域存储位置：/usr/lib/firewalld/zones/</h1>
+<p>————————————————————————————————————————————————————<br>
+<font color="#dd00dd" face="楷体" size=5>firewalld运行规则：</font><br>
+<strong>1、数据包的处理方式</strong><br>
+iptables防火墙:<font color="#dd0000" face="微软黑体"><br>
+输入数据: PREROUTING---INPUT<br>
+输出数据: OUTPUT--POSTROUTING<br>
+转发数据: PREROUTING-FORWARD-POSTROUTIN</font></p>
+<p>firewalld防火墙:<br>
+firewalld的数据机制为“处理收到的数据包”<font color="#dd0000" face="黑体"><br>
+1.若接口加入到指定的安全区域，数据包中的源地址首先匹配特定区域，如果满足规则,则执行数据包处理动作。<br>
+2.若接口未加入到指定的安全区域。数据包中的源地址则无法匹配指定区域规则，则使用接口的本地区域规则进行数据包处理动作。<br>
+3.数据包的源地址无法匹配接口规则时,则使用默认区域规则处理数据包</font></p>
+<p><strong>2、firewalld规则配置</strong><br>
+firewalld图形化界面：firewall-config<br>
+命令行界面：firewall-cmd 选项 规则语句<br>
+————————————————————————————————————————————————————<br>
+<font color="#dd0000" size=6>firewalld配置命令</font><br>
+<font color="#0000dd" size=4>【选项】</font><br>
+<strong>1-1、查看类选项</strong><br>
+查看所有区域名称<br>
+firewall-cmd  --get-zones<br>
+查看支持的服务<br>
+firewall-cmd --get-services<br>
+查看支持的ICMP协议类型<br>
+firewall-cmd --get-icmptypes<br>
+查看默认区域<br>
+firewall-cmd --get-default-zone<br>
+查看活动区域<br>
+firewall-cmd --get-active-zones<br>
+查看指定区域信息<br>
+firewall-cmd --zone=区域名 --list-all （省去--zone默认区域为public）<br>
+firewall-cmd --zone=home --list-all<br>
+显示的信息说明：<br>
+home (active)			#区域名称及状态(active活动状态)<br>
+target: default		#匹配默认规则<br>
+icmp-block-inversion: no	#未启用ICMP消息过滤<br>
+interfaces: ens33		#当前连接网络接口<br>
+sources: 			#源地址规则<br>
+services: dhcpv6-client mdns samba-client ssh    #允许访问服务<br>
+ports: 			#允许访问的端口<br>
+protocols: 			#允许访问的协议<br>
+masquerade: no		#地址伪装未启用<br>
+forward-ports: 		#端口转换<br>
+sourceports: 			#源端口号<br>
+icmp-blocks: 			#icmp消息过滤类型<br>
+rich rules: 			#富语言<br>
+查看指定端口绑定的区域<br>
+firewall-cmd --get-zone-of-interface=端口名称（例：ens33）<br>
+查看所有区域信息<br>
+firewall-cmd --list-all-zones</p>
+<p><strong>1-2、区域配置类选项</strong><br>
+--zone=区域名                                  指定配置区域<br>
+--add-interface=网络接口名           添加接口<br>
+<font face="楷体" color="#006666">1-2.1）指定默认区域</font><br>
+firewall-cmd --set-default-zone=区域名（例：external）<br>
+<font face="楷体" color="#006666">1-2.2）在指定的区域添加接口</font><br>
+firewall-cmd --zone=区域名 --add-interface=端口名称                  一个网卡接口只能加入一个安全区域，以最后加入的区域为准。而一个安全区域能够添加多个网卡接口。<br>
+例：<br>
+firewall-cmd --zone=internal --add-interface=ens37<br>
+<font face="楷体" color="#006666">1-2.3）从指定区域删除接口（删除的接口会自动添加到默认区域）</font><br>
+firewall-cmd --zone=区域名 --remove-interface=端口名称<br>
+例：<br>
+firewall-cmd --zone=internal --remove-interface=ens37<br>
+<font face="楷体" color="#006666">1-2.4）更改接口的绑定区域</font><br>
+firewall-cmd --zone=区域名 --change-interface=端口名称<br>
+例：<br>
+firewall-cmd --zone=internal --change-interface=ens37</p>
+<p><strong>1-2.5）在区域中添加服务</strong><br>
+firewall-cmd --zone=区域名  --add-service=服务名                   //可以让区域接收服务访问请求。      注意：每条语句只能添加一个服务<br>
+例：<br>
+firewall-cmd --zone=external --add-service=https<br>
+从区域中删除服务<br>
+firewall-cmd --zone=区域名 --remove-service=服务名<br>
+例：<br>
+firewall-cmd --zone=external --remove-service=https<br>
+<strong>1-2.6）在区域中添加端口号</strong><br>
+firewall-cmd --zone=区域名 --add-port=端口号/协议类型       //添加TCP或UDP协议中的端口号！！！为指定区域设置允许访问的某个/某段端口号（包括协议名）<br>
+例：<br>
+firewall-cmd --zone=external --add-port=12345/tcp                                     端口号可以是个范围：--add-port=100-200/tcp<br>
+删除指定区域已设置的允许访问的端口号（包括协议名）：--remove-port<br>
+<strong>1-2.7）添加拒绝的ICMP数据包类型</strong><br>
+echo-request：icmp请求<br>
+echo-reply ：icmp应答<br>
+firewall-cmd --zone=区域名 --add-icmp-block=echo-request<br>
+例：<br>
+firewall-cmd --zone=external --add-icmp-block=echo-request</p>
+<h2 id="移除拒绝的icmp数据包请求删除指定区域已设置的拒绝访问的某项icmp类型省略-zonezone时表示对默认区域操作-zonezone-remove-icmp-blockicmptypeicmptypefirewall-cmd-zonedmz-remove-icmp-blockecho-request">移除拒绝的ICMP数据包请求<br>
+删除指定区域已设置的拒绝访问的某项ICMP类型，省略--zone=<zone>时表示对默认区域操作<br>
+[--zone=<zone>] --remove-icmp-block=&lt;icmptype<icmptype>&gt;<br>
+firewall-cmd --zone=dmz --remove-icmp-block=echo-request</h2>
+<p>1-2.8）查看指定区域内允许访问的服务<br>
+firewall-cmd --zone=区域名 --list-services<br>
+例：<br>
+firewall-cmd --zone=external --list-services<br>
+1-2.9）查看指定区域内允许访问的端口列表<br>
+firewall-cmd --zone=区域名 --list-ports<br>
+例：<br>
+firewall-cmd --zone=external --list-ports</p>
+<h2 id="1-210查看拒绝的icmp数据包类型firewall-cmd-zone区域名-list-icmp-blocks例firewall-cmd-zoneexternal-list-icmp-blocks">1-2.10）查看拒绝的ICMP数据包类型<br>
+firewall-cmd --zone=区域名 --list-icmp-blocks<br>
+例：<br>
+firewall-cmd --zone=external --list-icmp-blocks</h2>
+<p><font color="#dd0000" size=6 face="楷体">重点：配置模式</font><br>
+2-1）重新加载防火墙，激活永久配置（简单理解：只有在添加防火墙规则时，才需要重新加载防火墙）<br>
+firewall-cmd --reload            读取firewalld的配置信息，加载配置规则。相当于重启服务，重新读取配置。<br>
+2-2）永久配置<br>
+--permanent<br>
+2-3）把运行配置保存到永久配置<br>
+--runtime-to-permanent                                 permanent：永久的             runtime：运行时间                     reload：重新加载<br>
+注意：在输入规则时，不写--permanent选项，规则是临时生效的，重新启动服务，重启系统，重新加载配置都会丢失以添加的规则。一般使用临时规则的方式进行测试，功能实现后，再添加--permanent选项设置为永久生效。😎😎😎</p>
+
+            </div>
+            <hr style="width: 80%;">
+            
+            <div class="sharebtnContainer">
+                <button type="button" class="sharebtn">转载分享</button>
+            </div>
+            <div class="shareContainer">
+                <div class="share" style="height:30px;background: white;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/QQ.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/wechat.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/weibo.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/qzone.png" alt=""></i></a>
+                    <a class="douban" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/douban.png" alt=""></i></a>
+                    <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/facebook.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://www.zhz666.cf/media/images/twitter.png" alt=""></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="donateContainer">
+                <img src="https://www.zhz666.cf/media/images/donate.png" alt="" class="donateImg">
+            </div>
+            <div class="donateContainer">
+                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1607185419410&amp;di=c10df73db3e55c120863e87abbf45887&amp;imgtype=0&amp;src=http%3A%2F%2Fpics6.baidu.com%2Ffeed%2Fbd3eb13533fa828ba1b591de4e8afc32960a5a90.jpeg%3Ftoken%3D41076c97b2e9d15cb11320d6a64affd8%26s%3DB5F76137C70A434D4AC534FA0300E032" alt="" class="donate">
+            </div>
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong>劫夜_❤</li>
+            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
+        </div>
+        <div id="otherpost">
+            
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/';return false">
+                    
+                    <img src="https://www.zhz666.cf/post-images/shi-me-shi-repo-wen-jian.jpg" style="width: 100%;" class="opimg">
+                    
+                    <h4 class="optitle">什么是repo文件？ </h4>
+                </div>
+            </div>
+            <div class="next-post">
+                下一篇 <a href="https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/">什么是repo文件？ </a>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
+</script>
+                <div id="comment"  class="comment" style="background: white">
+                    <div class="commentcontainer">
+                        
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '14fe10b1d4b6db21a3dd',
+    clientSecret: 'd1a4725138d4dd6cbb8abfab424fe98292ee8039 ',
+    repo: 'xiaozhezhe.github.io',
+    owner: '145d',
+    admin: ['145d'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                        
+                        
+                        
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-1 col-lg-2"></div>
+                <div id="bg">
+                </div>
+            </div>
+            
+        
+        <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+</head>
+<body>
+    <div class="miniMode">
+        <meting-js id="myaplayer" server="netease" type="playlist" fixed="true" order="default">
+        </meting-js>
+    </div>   
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+    var aplayerid = "3020052469";
+    var aplayerserver = "netease";
+    var aplayerorder = "default";
+    var aplayerautoplay = "false";
+    var aplayer = $("#myaplayer");
+    aplayer.attr("server",aplayerserver);
+    aplayer.attr("id",aplayerid);
+    aplayer.attr("order",aplayerorder);
+    if(aplayerautoplay=="true")
+        aplayer.attr("autoplay","true");
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/Aplayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<script>
+    function aplayerbtnInit(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        player.lrc.hide();
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==false)
+        {
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        }
+        else
+        {
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+
+    function aplayerPlay(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==true)
+        {
+            player.play();
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        }
+        else
+        {
+            player.pause();
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+</script>
+        
+        <div class="toc-container">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%A1%AC%E4%BB%B6%E7%BA%A7%E7%B1%BB%E4%BC%BC%E4%BA%8E%E5%8E%9F%E7%94%9F%E6%9E%B6%E6%9E%84%E7%8B%AC%E7%AB%8B%E7%A1%AC%E4%BB%B6%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-%E8%BF%99%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E9%98%B2%E7%81%AB%E5%A2%99-%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BC%80%E5%90%AF%E9%82%A3%E4%B9%88%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%92%8C%E6%8E%A5%E5%8F%A3-%E5%8F%AA%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%AF%B9%E6%9D%A5%E8%AF%B4%E6%AF%94%E8%BE%83%E7%A8%B3%E5%AE%9A-%E4%B8%8D%E4%BC%9A%E5%A4%AA%E5%8D%A1%E9%87%8D%E5%90%AF%E5%8D%B3%E5%8F%AF-%E4%BC%98%E7%82%B9%E7%A8%B3%E5%AE%9A-%E9%AB%98%E6%95%88-%E6%A0%B9%E6%8D%AE%E6%95%B0%E6%8D%AE%E5%8C%85%E9%87%8C%E7%9A%84%E4%BF%A1%E6%81%AF%E8%BF%87%E6%BB%A4-%E8%A7%A3%E5%86%B3%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98-%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E9%97%AE%E9%A2%98%E8%BE%83%E5%B0%8F-%E6%88%90%E6%9C%AC%E9%99%8D%E4%BD%8E%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7%E7%BE%A4%E4%BD%93%E9%9C%80%E6%B1%82%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD-%E4%BD%9C%E4%B8%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%BE%E5%A4%87-%E7%BC%BA%E7%82%B9%E5%8A%9F%E8%83%BD%E6%B2%A1%E6%9C%89%E8%BD%AF%E4%BB%B6%E7%BA%A7%E9%82%A3%E4%B9%88%E5%BC%BA%E5%A4%A7font-color00dddd%E5%B8%B8%E8%A7%81%E7%9A%84%E7%A1%AC%E4%BB%B6%E9%98%B2%E7%81%AB%E5%A2%99font%E5%8D%8E%E4%B8%BA-%E6%80%9D%E7%A7%91-%E5%A4%A9%E8%9E%8D%E4%BF%A1-%E6%B7%B1%E4%BF%A1%E6%9C%8D-%E9%A3%9E%E5%A1%94-%E6%B5%AA%E6%BD%AE-%E4%B8%AD%E6%96%B0%E9%87%91%E7%9B%BE%E7%BB%BF%E7%9B%9F%E7%A7%91%E6%8A%80-juniper-%E5%90%AF%E6%98%8E%E6%98%9F%E8%BE%B0-%E7%BD%91%E5%BA%B7-netgear">硬件级（类似于原生架构）：独立硬件，嵌入式应用程序。（这个操作系统本身就是防火墙）。不需要开启那么多功能和接口。只开启防火墙相对应的功能和接口，相对来说比较稳定。不会太卡，重启即可。<br>
+优点：<br>
+稳定、高效。根据数据包里的信息过滤。解决兼容性问题。安全漏洞问题较小。成本降低，根据用户群体需求提升性能。作为网络安全防护的主要设备。<br>
+缺点：<br>
+功能没有软件级那么强大<br>
+<font color="#00dddd">常见的硬件防火墙：</font><br>
+华为	         思科	         天融信         	深信服         	飞塔         	浪潮	         中新金盾		<br>
+绿盟科技	                           	Juniper	                           启明星辰	                           网康                           	NETGEAR</a></li>
+<li><a href="#%E6%A0%B9%E6%8D%AE%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E5%9E%8B%E4%B8%BB%E6%9C%BA%E9%98%B2%E7%81%AB%E5%A2%99">根据存放位置：<br>
+网络型<br>
+主机防火墙</a></li>
+<li><a href="#%E8%A7%84%E5%88%99%E9%93%BE%E5%86%85%E7%9A%84%E5%8C%B9%E9%85%8D%E9%A1%BA%E5%BA%8F%E6%8C%89%E9%A1%BA%E5%BA%8F%E4%BE%9D%E6%AC%A1%E6%A3%80%E6%9F%A5%E5%8C%B9%E9%85%8D%E5%8D%B3%E5%81%9C%E6%AD%A2log%E7%AD%96%E7%95%A5%E4%BE%8B%E5%A4%96%E8%8B%A5%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9B%B8%E5%8C%B9%E9%85%8D%E7%9A%84%E8%A7%84%E5%88%99%E5%88%99%E6%8C%89%E8%AF%A5%E9%93%BE%E7%9A%84%E9%BB%98%E8%AE%A4%E7%AD%96%E7%95%A5%E5%A4%84%E7%90%86">规则链内的匹配顺序<br>
+按顺序依次检查，匹配即停止（LOG策略例外）<br>
+若找不到相匹配的规则，则按该链的默认策略处理</a></li>
+</ul>
+</li>
+<li><a href="#firewalld%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B61%E9%98%B2%E7%81%AB%E5%A2%99%E5%86%85%E7%BD%AE%E6%94%AF%E6%8C%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B7%AF%E5%BE%84usrlibfirewalldservices-%E6%A0%BC%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%90%8Dhtml2%E9%BB%98%E8%AE%A4%E5%8C%BA%E5%9F%9F%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6etcfirewalldzones-%E9%BB%98%E8%AE%A4%E4%B8%BApublic3%E9%BB%98%E8%AE%A4%E9%98%B2%E7%81%AB%E5%A2%99%E4%B8%BB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6etcfirewalldfirewalldconf4%E9%A2%84%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%E5%8C%BA%E5%9F%9F%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AEusrlibfirewalldzones">firewalld相关文件：<br>
+（1）防火墙内置支持的服务路径:/usr/lib/firewalld/services/          格式：服务名.html<br>
+（2）默认区域配置文件：/etc/firewalld/zones/                                默认为public<br>
+（3）默认防火墙主配置文件：/etc/firewalld/firewalld.conf<br>
+（4）预定义网络区域存储位置：/usr/lib/firewalld/zones/</a>
+<ul>
+<li><a href="#%E7%A7%BB%E9%99%A4%E6%8B%92%E7%BB%9D%E7%9A%84icmp%E6%95%B0%E6%8D%AE%E5%8C%85%E8%AF%B7%E6%B1%82%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%8C%BA%E5%9F%9F%E5%B7%B2%E8%AE%BE%E7%BD%AE%E7%9A%84%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E7%9A%84%E6%9F%90%E9%A1%B9icmp%E7%B1%BB%E5%9E%8B%E7%9C%81%E7%95%A5-zonezone%E6%97%B6%E8%A1%A8%E7%A4%BA%E5%AF%B9%E9%BB%98%E8%AE%A4%E5%8C%BA%E5%9F%9F%E6%93%8D%E4%BD%9C-zonezone-remove-icmp-blockicmptypeicmptypefirewall-cmd-zonedmz-remove-icmp-blockecho-request">移除拒绝的ICMP数据包请求<br>
+删除指定区域已设置的拒绝访问的某项ICMP类型，省略--zone=<zone>时表示对默认区域操作<br>
+[--zone=<zone>] --remove-icmp-block=&lt;icmptype<icmptype>&gt;<br>
+firewall-cmd --zone=dmz --remove-icmp-block=echo-request</a></li>
+<li><a href="#1-210%E6%9F%A5%E7%9C%8B%E6%8B%92%E7%BB%9D%E7%9A%84icmp%E6%95%B0%E6%8D%AE%E5%8C%85%E7%B1%BB%E5%9E%8Bfirewall-cmd-zone%E5%8C%BA%E5%9F%9F%E5%90%8D-list-icmp-blocks%E4%BE%8Bfirewall-cmd-zoneexternal-list-icmp-blocks">1-2.10）查看拒绝的ICMP数据包类型<br>
+firewall-cmd --zone=区域名 --list-icmp-blocks<br>
+例：<br>
+firewall-cmd --zone=external --list-icmp-blocks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    </div>
+    </div>
+    <div class="tog">
+        <div class="toggleContainer">
+            <div class="toggle">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+        </div>
+    </div>
+    <div id="bgchoice" style="display: none">link</div>
+    
+    <div id="bgurl" style="display:none">http://pic.netbian.com/uploads/allimg/191226/005317-1577292797089c.jpg</div>
+    
+    </div>
+</body>
+<script>
+    var img = $("img");
+    for (var i = 0; i < img.length; i++) {
+        if (img.eq(i).attr("class") == undefined) {
+            img.eq(i).attr("class", "lazyload");
+            var imgsrc = img.eq(i).attr("src");
+            img.eq(i).attr("data-original", imgsrc);
+            img.eq(i).attr("src", "");
+            img.eq(i).hide();
+        }
+    }
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+    //寻找所有code标签，加复制按钮鸭！(行内代码除外)
+    var codes = document.getElementsByTagName('code');
+    if (codes.length) {
+        for (var i = 0; i < codes.length; i++) {
+            //高度/行高=文本行数
+            // var rowNum=Math.round(codes[i].height()/parseFloat(codes[i].css('line-height')));
+            // console.log("当前有"+rowNum+"行");
+            var code_id = "code_id_" + i;
+            codes[i].setAttribute("id", code_id);
+            var ci = "#" + code_id;
+            var codedot = $(ci);
+            var rowNum = Math.round(codedot.height() / parseFloat(codedot.css('line-height')));
+            if (rowNum <= 1) continue;
+            var btn = document.createElement("button");
+            btn.setAttribute("class", "copybt");
+            btn.setAttribute("data-clipboard-target", "#" + code_id);
+            btn.innerHTML = '复制代码';
+            codes[i].parentNode.insertBefore(btn, codes[i]);
+        }
+    };
+    var cop = new ClipboardJS('.copybt');
+    var codeCopyText = $("#codeCopyText").html();
+    cop.on('success', function (e) {
+        alert(codeCopyText);
+        e.clearSelection();
+    });
+    cop.on('error', function (e) {
+        alert("矮油，复制失败了...手动复制吧勇士！");
+        e.clearSelection();
+    });
+</script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
+<script type="text/javascript" src="https://www.zhz666.cf/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://www.zhz666.cf/media/live2d/assets/tororo.model.json");
+</script>
+
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
+
+<script>
+    var bgchoice = $('#bgchoice').html();
+    var bg = $('#bg');
+    var bgurl = document.getElementById("bgurl").innerHTML;
+    if (bgchoice == 'default')
+        for (var i = 0; i < 3; i++)
+            bgurl = bgurl.replace("\\", "/");
+    bg.css("background", "url('" + bgurl + "')");
+</script>
+
+
+<script src="https://www.zhz666.cf/media/js/index.js"></script>
+
+
+
+<!-- 动态更改上(下)一篇博客图片框长宽 -->
+<script>
+    npcontainer = document.querySelector('#npcontainer');
+    npstyle = window.getComputedStyle(npcontainer, null);
+    npwidth = npstyle.width;
+    npheight = 0.6 * Number(npwidth.replace("px", ""));
+    npheight = npheight.toString() + "px";
+    var op = $(".opimg");
+    op.css("height", npheight);
+</script>
+
+<script src="https://www.zhz666.cf/media/share/dist/Share.js"></script>
+
+<script>
+    var avatarSrc = $(".avatar").attr("src");
+    var dp = document.getElementsByClassName("describtion")[0].innerHTML;
+</script>
+
+
+<script>
+    var title = document.getElementById("texttitle").getElementsByTagName("h2");
+    
+    var share = new Share('.share', {
+        title: title[0].innerHTML,
+        initialized: true,
+        //默认获取网站描述
+        description: dp,
+        //网站图片默认获取的是设置的用户头像
+        image: avatarSrc,
+        //激活的分享网站
+        sites: ["weibo", "qq", "wechat", "douban", "qzone", "facebook", "twitter", "google"],
+        //微信分享PC端会生成二维码分享,移动端如果可以唤起微信最好
+        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+        wechatQrcodeHelper: '<p>微信里扫一下二维码</p><p>便可将本文分享至朋友圈。</p>',
+        //关闭的网站分享
+        disabled: ['google', 'linkedin'],
+        wechatQrcodePosition: 'bottom'
+    });
+
+    //点击分享按钮展现出分享icons
+    var sharebtnTag = false;
+    $(".sharebtn").click(function () {
+        if(!sharebtnTag)
+        {
+            $(".share").show();
+            sharebtnTag = true;
+        }
+        else
+        {
+            $(".share").hide();
+            sharebtnTag = false;
+        }
+    })
+
+    var donatebtnTag = false;
+    $(".donateImg").click(function () {
+        if(!donatebtnTag)
+        {
+            $(".donate").show();
+            donatebtnTag = true;
+        }
+        else{
+            $(".donate").hide();
+            donatebtnTag = false;
+        }
+    })
+
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload=function(){
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);
+        document.getElementById("veditor").setAttribute("placeholder", jrsc);
+        aplayerbtnInit();
+    }
+</script>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        function lazyload() {
+            var oLazyload = $("img.lazyload"),
+                fLazyload = function (hLazyload) {
+                    var nLazyload = $(window).height() + $(document).scrollTop();
+                    oLazyload.each(function () {
+                        $(this).offset().top < nLazyload && ($(this).trigger("appear"), oLazyload =
+                            oLazyload.not(this));
+                    }), 0 == oLazyload.length && $(window).unbind("scroll", fLazyload);
+                };
+            oLazyload.each(function () {
+                $(this).one("appear", function () {
+                    $(this).attr("src", $(this).attr("data-original"));
+                    $(this).fadeIn(500);
+                });
+            }), $(window).bind("scroll", fLazyload), fLazyload();
+        }
+        lazyload();
+    });
+</script>
+
+<!-- <script src="https://www.zhz666.cf/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
+
+<script>
+    function getHotnum() {
+        //文章阅读热度（重构，利用leancloud原生api）
+        var pl = $("#pl").html();
+        var rootaddr = $("#rootaddr").html();
+        pl = pl.replace(rootaddr, "");
+
+        var appid = '';
+        var appkey = '';
+        console.log(appid, appkey)
+        if(AV==undefined)
+            AV.init({
+                appId: appid,
+                appKey: appkey
+            });
+        const query = new AV.Query('Counter');
+        query.equalTo('url', pl);
+        var time = 'Loading...';
+        query.find().then(function (results) {
+            console.log(results)
+            if (results.length == 0) {
+                console.log("0")
+                var NewCounter = AV.Object.extend('Counter');
+                var nc = new NewCounter();
+                nc.save({
+                    time: 1,
+                    title: "iptables与fiewalld防火墙",
+                    url: pl,
+                    xid: pl,
+                }).then(function (object) {
+                    $(".hotnum").eq(0).html(1);
+                    $(".hotnum").eq(1).html(1);
+                });
+            } else {
+                id = results[0].id;
+                var todo = AV.Object.createWithoutData('Counter', id);
+                time = results[0].attributes.time + 1;
+                todo.set("time", time);
+                todo.save();
+                console.log(todo);
+                $(".hotnum").eq(0).html(time);
+                $(".hotnum").eq(1).html(time);
+            }
+
+        }, function (error) {
+            console.log(error)
+        });
+    }
+</script>
