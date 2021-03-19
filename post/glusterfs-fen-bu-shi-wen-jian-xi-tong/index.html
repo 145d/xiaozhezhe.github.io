@@ -1,8 +1,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="description" content="repo文件是Fedora中yum源（软件仓库）的配置文件，通常一个repo文件定义了一个或者多个软件仓库的细节内容，例如我们将从哪里下载需要安装或者升级的软件包，repo文件中的设置内容将被yum读取和应用！
-YUM的工作原理并不复杂，每..." />
+    <meta name="description" content="理论：😋
+1、分布式文件系统
+互联网应用技术的高速发展，网络时代由IT时代进入了DT时代。IT信息技术，DT数据技术。进入大数据时代，导致互联网应用后台无法快速有效的记录存储数据。
+分布式：将数据或文件存放在不同的服务器上，访问时，同时对..." />
     <meta name="keywords" content="Linux" />
     <link rel="stylesheet" href="https://www.zhz666.cf/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.zhz666.cf/styles/main.css">
@@ -435,11 +437,11 @@ YUM的工作原理并不复杂，每..." />
         <div class="postshow" style="padding-bottom: 0;">
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;">
-                <img src="https://www.zhz666.cf/post-images/shi-me-shi-repo-wen-jian.jpg" class="postimage" style="cursor:auto">
+                <img src="https://www.zhz666.cf/post-images/glusterfs-fen-bu-shi-wen-jian-xi-tong.jpg" class="postimage" style="cursor:auto">
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-12-13</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-03-19</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 17 min read</div>
                 <div class="posttag">
                     
                     <a href="https://www.zhz666.cf/tag/0mckH4XPX/" class="postlink">
@@ -451,9 +453,9 @@ YUM的工作原理并不复杂，每..." />
             
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>什么是repo文件？ </h2>
+                <h2>GlusterFS分布式文件系统</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/</div>
+                <div id="pl" style="display:none">https://www.zhz666.cf/post/glusterfs-fen-bu-shi-wen-jian-xi-tong/</div>
                 <div id="rootaddr" style="display:none">https://www.zhz666.cf</div>
                 <span id="hotnum">
                     <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
@@ -461,99 +463,270 @@ YUM的工作原理并不复杂，每..." />
                 </span>
             </div>
             <div class="text ">
-                <p>repo文件是Fedora中yum源（软件仓库）的配置文件，通常一个repo文件定义了一个或者多个软件仓库的细节内容，例如我们将从哪里下载需要安装或者升级的软件包，repo文件中的设置内容将被yum读取和应用！<br>
-YUM的工作原理并不复杂，每一个 RPM软件的头（header）里面都会纪录该软件的依赖关系，那么如果可以将该头的内容纪录下来并且进行分析，可以知道每个软件在安装之前需要额外安装 哪些基础软件。也就是说，在服务器上面先以分析工具将所有的RPM档案进行分析，然后将该分析纪录下来，只要在进行安装或升级时先查询该纪录的文件，就可 以知道所有相关联的软件。所以YUM的基本工作流程如下：</p>
-<h2 id="服务器端在服务器上面存放了所有的rpm软件包然后以相关的功能去分析每个rpm文件的依赖性关系将这些数据记录成文件存放在服务器的某特定目录内-客户端如果需要安装某个软件时先下载服务器上面记录的依赖性关系文件可通过www或ftp方式通过对服务器端下载的纪录数据进行分析然后取得所有相关的软件一次全部下载下来进行安装">服务器端：在服务器上面存放了所有的RPM软件包，然后以相关的功能去分析每个RPM文件的依赖性关系，将这些数据记录成文件存放在服务器的某特定目录内。<br>
-客户端：如果需要安装某个软件时，先下载服务器上面记录的依赖性关系文件(可通过WWW或FTP方式)，通过对服务器端下载的纪录数据进行分析，然后取得所有相关的软件，一次全部下载下来进行安装。</h2>
-<p>rpm    --nodeps：安装时忽略依赖关系。<br>
-缺少依赖关系，导致部分软件不能正常使用<br>
-yum：由redhat推出的服务，rpm包管理器，对依赖数据包进行更新安装工具</p>
-<p>yum主配置目录：/etc/yum.repos.d/<br>
-yum主配置文件:  /etc/yum.conf<br>
-YUM主配文件:/etc/yum.conf</p>
-<h2 id="font-colordd0000yum重要的目录和文件fontpackages存储rpm包repodata记录软件依赖关系cd-repodatarepomdxml-xml列表-查找软件依赖关系"><font color="#dd0000">yum重要的目录和文件：</font><br>
-Packages	存储rpm包<br>
-repodata	记录软件依赖关系<br>
-cd repodata→repomd.xml  （xml列表 查找软件依赖关系）</h2>
-<p>[root@localhost ~]# ll /etc/yum.repos.d/<br>
-总用量 28<br>
--rw-r--r--. 1 root root 1664 11月 30 2016 CentOS-Base.repo                                           //联网后基础的源<br>
--rw-r--r--. 1 root root 1309 11月 30 2016 CentOS-CR.repo<br>
--rw-r--r--. 1 root root  649 11月 30 2016 CentOS-Debuginfo.repo                                    //和内核相关的更新和软件安装<br>
--rw-r--r--. 1 root root  314 11月 30 2016 CentOS-fasttrack.repo<br>
--rw-r--r--. 1 root root  630 11月 30 2016 CentOS-Media.repo                                               //使用光盘挂载后调用的文件<br>
--rw-r--r--. 1 root root 1331 11月 30 2016 CentOS-Sources.repo<br>
--rw-r--r--. 1 root root 2893 11月 30 2016 CentOS-Vault.repo                                                   //最近新版本的加入的（老版本的yum源配置）<br>
-工作原理！<br>
-yum通过读取yum源配置文件，确认软件包源文件路径，读取路径中，两个目录中的文件信息。<br>
-1.repodata目录：软件包依赖环境参照表。目录中有*.xml文件，文件中记录了软件的依赖环境。<br>
-2.Packages目录：统计完需要安装的依赖关系后，从此目录中读取相关软件包。<br>
-3.将软件包复制到缓存后，进行解压安装。</p>
-<h1 id="font-color00dddd-size5第一部分font"><font color="#00dddd" size=5>第一部分：</font></h1>
-<p>vim  /etc/yum.conf<br>
-[main]<br>
-cachedir=/var/cache/yum/$ basearch/$ releasever          #cachedir：yum缓存的目录，yum在此存储下载的rpm包和数据库，一般是/var/cache/yum/$ basearch/$ releasever。</p>
-<p><font color="#dd0000">keepcache=1<br>
-#keepcache：是否保留缓存内容，0：表示安装后删除软件包，1表示安装后保留软件包</font></p>
-<p>debuglevel=2<br>
-#debuglevel：除错级别，0──10,默认是2 貌似只记录安装和删除记录<br>
-logfile=/var/log/yum.log<br>
-pkgpolicy=newest<br>
-#pkgpolicy： 包的策略。一共有两个选项，newest和last，这个作用是如果你设置了多个repository，而同一软件在不同的repository中同时存 在，yum应该安装哪一个，如果是newest，则yum会安装最新的那个版本。如果是last，则yum会将服务器id以字母表排序，并选择最后的那个 服务器上的软件安装。一般都是选newest。</p>
-<p>distroverpkg=centos-release<br>
-#指定一个软件包，yum会根据这个包判断你的发行版本，默认是redhat-release，也可以是安装的任何针对自己发行版的rpm包。</p>
-<p>tolerant=1<br>
-#tolerent，也有1和0两个选项，表示yum是否容忍命令行发生与软件包有关的错误，比如你要安装1,2,3三个包，而其中3此前已经安装了，如果你设为1,则yum不会出现错误信息。默认是0。<br>
-exactarch=1<br>
-#exactarch，有两个选项1和0,代表是否只升级和你安装软件包cpu体系一致的包，如果设为1，则如你安装了一个i386的rpm，则yum不会用1686的包来升级。</p>
-<p>retries=20<br>
-#retries，网络连接发生错误后的重试次数，如果设为0，则会无限重试。<br>
-obsoletes=1<br>
-<font color="#dd0000">gpgcheck=1<br>
-#gpgchkeck= 有1和0两个选择，分别代表是否是否进行gpg校验，如果没有这一项，默认是检查的。 </font><br>
-reposdir=/etc/yy.rm #默认是 /etc/yum.repos.d/ 低下的 xx.repo后缀文件<br>
-#默认都会被include 进来 也就是说 /etc/yum.repos.d/xx.repo 无论配置文件有多少个 每个里面有多少个[name] 最后其实都被整合到 一个里面看就是了 重复的[name]后面的覆盖前面的<br>
-exclude=xxx<br>
-#exclude 排除某些软件在升级名单之外，可以用通配符，列表中各个项目要用空格隔开，这个对于安装了诸如美化包，中文补丁的朋友特别有用。<br>
-keepcache=[1 or 0]<br>
-#　　设置 keepcache=1，yum 在成功安装软件包之后保留缓存的头文件 (headers) 和软件包。默认值为 keepcache=0 不保存</p>
-<p>reposdir=[包含 .repo 文件的目录的绝对路径]<br>
-#　　该选项用户指定 .repo 文件的绝对路径。.repo 文件包含软件仓库的信息 (作用与 /etc/yum.conf 文件中的 [repository] 片段相同)。</p>
-<h1 id="font-color00dddd-size5第二部分font"><font color="#00dddd" size=5>第二部分：</font></h1>
-<p>vi /etc/yum.repo.d/xx.repo<br>
-这个字段其实也可以在yum.conf里面直接配置</p>
-<p>[serverid]<br>
-#其中serverid是用于区别各个不同的repository，必须有一个独一无二的名称。 重复了 前面覆盖后面--还是反过来呢？？？用enabled 测试是后面覆盖前面<br>
-name=Some name for this server<br>
-#name，是对repository的描述，支持像$releasever $basearch这样的变量; name=Fedora Core $releasever - $basearch - Released Updates</p>
-<p><font color="#dd0000">baseurl=url://path/to/repository/<br>
-#baseurl是服务器设置中最重要的部分，只有设置正确，才能从上面获取软件。它的格式是： </font><br>
-baseurl=url://server1/path/to/repository/<br>
-url://server2/path/to/repository/<br>
-url://server3/path/to/repository/<br>
-#其中url支持的协议有 http:// ftp:// file://三种。baseurl后可以跟多个url，你可以自己改为速度比较快的镜像站，但baseurl只能有一个，也就是说不能像如下格式：<br>
-<font color="#00dd00">baseurl=url://server1/path/to/repository/<br>
-baseurl=url://server2/path/to/repository/<br>
-baseurl=url://server3/path/to/repository/    </font><br>
-其中url指向的目录必须是这个repository header目录的上一级，它也支持$releasever $basearch这样的变量。</p>
-<p>#mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 11: releasever&amp;̲arch='>releasever&amp;arch=</span>basearch<br>
-#上面的这一行是指定一个镜像服务器的地址列表，通常是开启的，本例中加了注释符号禁用了，我们可以试试，将$ releasever和$ basearch替换成自己对应的版本和架构，例如10和i386，在浏览器中打开，我们就能看到一长串镜可用的镜像服务器地址列表。</p>
-<p><font color="#dd00dd">url之后可以加上多个选项，如gpgcheck、exclude、failovermethod等，比如：</font><br>
-gpgcheck=1<br>
-exclude=gaim<br>
-#其中gpgcheck，exclude的含义和[main]部分相同，但只对此服务器起作用，<br>
-failovermethod=priority<br>
-#failovermethode 有两个选项roundrobin和priority，意思分别是有多个url可供选择时，yum选择的次序，roundrobin是随机选择，如果连接失 败则使用下一个，依次循环，priority则根据url的次序从第一个开始。如果不指明，默认是roundrobin。</p>
-<p>enabled=[1 or 0]<br>
-#当某个软件仓库被配置成 enabled=0 时，yum 在安装或升级软件包时不会将该仓库做为软件包提供源。使用这个选项，可以启用或禁用软件仓库。<br>
-#通过 yum 的 --enablerepo=[repo_name] 和 --disablerepo=[repo_name] 选项，或者通过 PackageKit 的&quot;添加/删除软件&quot;工具，也能够方便地启用和禁用指定的软件仓库</p>
-<p><font face="楷体" size=5><font color="#dd00dd">几个变量 </font></font><br>
-$ releasever，发行版的版本，从[main]部分的distroverpkg获取，如果没有，则根据redhat-release包进行判断。<br>
-$ arch，cpu体系，如i686,athlon等<br>
-$basearch，cpu的基本体系组，如i686和athlon同属i386，alpha和alphaev6同属alpha。<br>
-对yum.conf设定完成，我们就可以好好体验yum带来的方便了。</p>
-<p>还有一件事没有做。那就是导入每个reposity的GPG key，前面说过，yum可以使用gpg对包进行校验，确保下载包的完整性，所以我们先要到各个repository站点找到gpg key，一般都会放在首页的醒目位置，一些名字诸如 RPM-GPG-KEY.txt之类的纯文本文件，把它们下载，然后用rpm --import xxx.txt命令将它们导入，最好把发行版自带GPG-KEY也导入。<br>
-rpm --import /usr/share/doc/redhat-release-*/RPM-GPG-KEY 官方软件升级用的上。</p>
+                <h2 id="理论">理论：😋</h2>
+<p><code>1、分布式文件系统</code><br>
+互联网应用技术的高速发展，网络时代由IT时代进入了DT时代。IT信息技术，DT数据技术。进入大数据时代，导致互联网应用后台无法快速有效的记录存储数据。</p>
+<p>分布式：将数据或文件存放在不同的服务器上，访问时，同时对多台服务器进行数据读取。如DNS服务</p>
+<p><code>2、主流的分布式文件系统</code></p>
+<p>Ceph	发布与开源社区，云计算和存储厂商支持的比较多。<br>
+HDFS	（Hadoop Distributed File System），是Hadoop的一个核心<br>
+Swift	Swift 最初是由Rackspace公司开发的分布式对象存储服务， 2010 年贡献给 OpenStack 开源社区。</p>
+<p>GFS	google的分布式文件存储系统，是专为存储海量搜索数据而设计的。google和baidu是同一时期进入中国的。安卓系统，量子计算机，人工智能。</p>
+<p>Luster	基于linux内核开发的分布式文件系统，开源，注意应用与HPC（手持PC,平板电脑，PAD等设备）</p>
+<p>GlusterFS	开源软件，实现过程与工作结构比较简单，高效的文件系统。发</p>
+<p>MFS	早期的一种分布式文件系统</p>
+<h2 id="分布式文件系统工作原理">分布式文件系统工作原理</h2>
+<p><code>1、MFS工作原理</code><br>
+通过拓扑图，查看基本结构：<br>
+MFS文件系统是一种中心结构型的文件系统，客户端访问数据时，将请求发送给中心节点(调度器)，中心节点进行查询匹配后，进行存储服务器的调度。<br>
+元数据服务器：master，是一个调度器，用于接收客户端访问请求，并进行存储服务器的调度。元数据管理，有点像图书管理员的查询目录。<br>
+元数据日志服务器：metalogger server ,是元数据服务器的备份服务器，以日志文件管理的方式，备份master的动作变化。<br>
+数据存储服务器：chunk server，存储节点服务器，是用来存储实体数据。<br>
+客户端：client，通过挂载使用MFS的主机。</p>
+<p><code>2、MFS的工作原理</code><br>
+1.读取数据</p>
+<p>客户端给元数据服务器发送读取文件请求。<br>
+元数据服务器通过文件列表查询，找到文件存储位置和信息。<br>
+将存储位置和信息发送给客户端。<br>
+客户端收到信息后，通过信息描述的位置访问数据存储服务器。<br>
+数据存储服务器收到请求后，将数据发送给客户端，完成读取任务。</p>
+<p>2.写入数据</p>
+<p>客户端给元数据服务器发送写入文件请求和文件基本信息。<br>
+·元数据服务器收到请求后，给所有的存储服务器发送存储通告。<br>
+存储服务器收到通告后，回应是否有空闲和存储区域信息。<br>
+·元数据服务器收到通告回应后，将存储服务器地址和存储区域信息发送给客户端。↓<br>
+客户端收到存储区域信息后，访问存储服务器，并进行数据保存。<br>
+客户端数据保存完成后，给元数据服务器发送存储完成的响应。↓<br>
+存储服务器存储完成后，也给元数据服务器发送完成响应。<br>
+·元数据服务器收到响应后，完成文件管理列表，并将动作写入日志和日志服务器。↑</p>
+<p><code>3、GlusterFS文件系统工作原理</code><br>
+GlusterFS采用可堆叠的用户空间设计。<br>
+glusterfs是一个无中心结构的开源分布式文件系统，使用存储卷和组合存储卷的方式进行工作，部分功能和协议参照应用了磁盘整列的功能。</p>
+<p><strong>1.GlusterFS的特点：</strong></p>
+<p>扩展性：支持的功能和软件比较多。对linux平台的兼容性高。</p>
+<p>高性能：能够支持高速读写，和高并发访问。</p>
+<p>高可用性：能够支持冗余。</p>
+<p>全局同一命名空间：多台服务器构建存储群集后，使用同一个虚拟服务器名。</p>
+<p>弹性卷管理：支持存储系统的服务器扩展，能够添加服务器。</p>
+<p>标准协议：共享协议使用NFS和SMB，数据传输协议使用CIFS等，连接使用TCP/IP协议。兼容性高。</p>
+<p><strong>2.GlusterFS的专业名词术语：</strong></p>
+<p>brick	：存储块，对数据进行基本存储的物理分区  /dev/sdb1  /dev/sdc1   /data</p>
+<p>volume	：逻辑卷，多个物理存储分区的集合（多个存储块组合成一个整体的逻辑存储设备）</p>
+<p>FUSE	：内核模块，用于创建和管理文件系统。（在服务器之间建立存储关系）</p>
+<p>VFS	：内核模块，内核空间对用户空间提供的一个访问磁盘的接口。</p>
+<p>Glusted	：是一个文件系统管理器，在每个节点服务器上运行，节点服务器通过glusted管理器相互确认身份，交换存储信息。（后台管理进程，处理用户的访问请求，查询存储列表）<br>
+--以上是glusterfs堆载式结果</p>
+<p><strong>3.GlusterFS的工作原理：</strong></p>
+<p>客户端的应用程序通过挂载点发送访问请求。<br>
+客户端的操作系统内核VFS接收并处理请求，将访问发送给FUSE内核进程。<br>
+客户端的FUSE内核进程通过设备将请求发送给GlusterFS客户端进程。<br>
+GlusterFS客户端进程通过配置，对数据进行读或写的处理，将数据发送给GlusterFS服务器。<br>
+GlusterFS服务器收到数据后，通过VFS接口连接文件系统，进行数据的读取或访问，将结果返回客户端。</p>
+<p><strong>4.服务器存储数据的方式：</strong></p>
+<p>将数据分割成块。<br>
+使用hash算法计算哈希值（32位）。<br>
+给每个数据块添加一个值。<br>
+将存储空间分为N个存储区。<br>
+将数据库按规则存储在存储区中。</p>
+<p>哈希值的作用：<br>
+不会产生重复的文件块编号，防止分块存储是出错。<br>
+当有重复的文件时，不会重复存储，产生空间浪费。</p>
+<h2 id="glusterfs部署">GlusterFS部署</h2>
+<p>1、安装配置GlusterFS节点服务器<br>
+四台node节点，1台客户端</p>
+<p>1.配置节点服务器ip地址<br>
+2.修改节点服务器的计算机名<br>
+3.配置hosts文件（4台节点相同）<br>
+[root@localhost ~]# hostname node1<br>
+[root@localhost ~]# bash<br>
+[root@node1 ~]# vim /etc/hosts<br>
+添加：<br>
+192.168.10.1 node1<br>
+192.168.10.2 node2<br>
+192.168.10.3 node3<br>
+192.168.10.4 node4</p>
+<p>4.安装软件（在所有节点上安装）<br>
+复制GlusterFS软件包到/media目录中，再进行安装。如果在使用yum安装时报错，输入清除yum缓存的命令。<br>
+yum  clean all<br>
+配置本地yum源<br>
+[root@node1 ~]# yum -y install glusterfs glusterfs-server glusterfs-fuse glusterfs-rdma</p>
+<p>5.启动glusterd服务<br>
+systemctl  restart glusterd</p>
+<p>6.建立存储群集<br>
+在任意一台节点上建立群集，只需要操作一次。<br>
+[root@node1 ~]# gluster peer probe node1<br>
+[root@node1 ~]# gluster peer probe node2<br>
+[root@node1 ~]# gluster peer probe node3<br>
+[root@node1 ~]# gluster peer probe node4</p>
+<p>7.查看状态<br>
+[root@node1 ~]# gluster peer status</p>
+<p><code>2、创建分布式文件系统</code></p>
+<p>在所有节点服务器上创建分布式文件系统的存储目录</p>
+<p>mkdir /data1 /data2 /data3</p>
+<p>1.分布式卷（Distributed Volume）<br>
+又称哈希卷，类似于RAID0。是GlusterFS中三大基本卷之一，应用率比较高。分布式卷对文件进行处理，没有分块，通过文件扩展属性生成hash值，分散存储在节点上，对存储效率没有提升，但是能够提高并发访问量。</p>
+<p>工作原理：<br>
+客户端给分布式卷发送写入请求：<br>
+分布式卷收到客户端的写入请求后，记录文件的相关信息，生成hash值。<br>
+分布式卷对存储节点服务器发送写入通告。<br>
+分布式卷收到最先响应的节点回应后，将写入请求发送给该节点进行存储。</p>
+<p>客户端给分布式卷发送读取请求：<br>
+分布式卷收到请求后，对文件信息进行对比验证，找到存储节点。<br>
+将读取请求发送给节点服务器，读取文件。</p>
+<p>创建分布式卷（在node1操作）：<br>
+使用node1和node2节点配置分布式卷：<br>
+[root@node1 /]# gluster volume create dis-volume  node1:/data1 node2:/data1 force<br>
+卷 创建  卷名(自定义)  节点计算机名:/目录名</p>
+<p>查看分布式卷信息：<br>
+[root@node1 /]# gluster volume info dis-volume</p>
+<p>启用分布式卷：<br>
+[root@node1 /]# gluster volume start dis-volume</p>
+<p>查看分布式卷状态：<br>
+[root@node1 /]# gluster volume status dis-volume<br>
+优点：容量大；缺点：没冗余</p>
+<p>2.客户端应用：</p>
+<p>安装客户端<br>
+配置客户端IP地址<br>
+配置客户端hosts文件<br>
+vim /etc/hosts<br>
+添加：<br>
+192.168.10.1 node1<br>
+192.168.10.2 node2</p>
+<p>安装GlusterFS客户端</p>
+<p>[root@localhost /]# yum -y install glusterfs glusterfs-fuse</p>
+<p>创建挂载点目录：</p>
+<p>[root@localhost /]# mkdir -p /{dis,stripe,rep,dis-stripe,dis-rep}</p>
+<p>挂载分布式文件系统：</p>
+<p>[root@localhost /]# mount -t glusterfs node1:dis-volume /dis</p>
+<p>3、分布式文件系统的优缺点：<br>
+1.提高了文件系统的并发访问量。<br>
+2.因为是单服务器节点存储数据，所以对数据的存储效率没有提升。<br>
+3.任意节点损坏，分布式系统还能使用，但会丢失部分数据，没有数据冗余性。</p>
+<pre><code>GlusterFS文件系统（2）
+</code></pre>
+<p>--<br>
+【1】条带卷（Striped Volume）<br>
+相当于raid0，文件是分片均匀写在各个节点的硬盘上的。优点是分布式读写,性能整体较好。缺点是没冗余,分片随机读写可能会导致硬盘IOPS饱和。<br>
+写入数据：<br>
+当条带卷接收到客户端的写入请求后，将数据按照节点服务器的数量进行分段，在文件信息中添加分段偏移量信息。将分好段的数据分别保存在每个节点服务器上。</p>
+<p>读取数据：<br>
+当条带卷接收到客户端的读取请求后，根据文件信息中的分段信息，同时从各个节点上读取数据，根据偏移量信息在内存中进行文件的合并。</p>
+<p>特点：条带卷具有高速读写的性能，理论分析中（不考虑其他干扰因素和故障冗余问题），节点的数量越多，读写性能越高,写入速度也就越快。<br>
+缺点：不具备故障冗余功能，任何一台节点服务器断线或出现故障，则整个条带卷就会出现故障。无法提供工作。</p>
+<p>--配置条带卷</p>
+<pre><code>     	卷      创建   卷名(自定义)    卷类型(条带) 数据分段数量   节点链接方式  TCP协议  
+</code></pre>
+<p>gluster volume create stripe-volume   stripe               2               transport   tcp    node1:/data2 node2:/data2 force</p>
+<p>启动条带卷：<br>
+gluster volume start stripe-volume</p>
+<p>查看条带卷信息：<br>
+gluster volume info stripe-volume</p>
+<p>客户端挂载：<br>
+mount -t glusterfs node1:/stripe-volume /stripe</p>
+<p>客户端写入测试：<br>
+cd /stripe<br>
+dd if=/dev/zero of=stripe.iso bs=1M count=100</p>
+<p>【2】复制卷</p>
+<p>功能类似于磁盘整列RAID1，可以由多台节点服务器构建，同一个文件可以保存一份或多份。由一台节点服务器面向客户端响应工作，其他服务器都是镜像服务器。提供文件系统的冗余性，但不是备份。主服务上删除文件时，冗余服务器上也会删除文件。（通常与分布式卷或者条带卷组合使用,解决前两种存储卷的冗余缺陷。缺点是磁盘利用率低。）</p>
+<p>特点：<br>
+提供冗余功能，服务器的存储空间利用率比较低。读写性能相对较弱，因为有数据同步的时间。如果构成复制卷的多个节点存储空间不同的话，按最少的空间为基准。</p>
+<p>--配置复制卷</p>
+<p>创建复制卷：<br>
+gluster volume create rep-volume replica 2 transport tcp node1:/data3 node2:/data3 force</p>
+<p>启动复制卷：<br>
+gluster volume start rep-volume</p>
+<p>查看复制卷信息：<br>
+gluster volume info rep-volume</p>
+<p>客户端挂载：<br>
+mount -t glusterfs node1:/rep-volume /rep</p>
+<h2 id="测试cd-repdd-ifdevzero-ofrepiso-bs1m-count100">测试：<br>
+cd /rep<br>
+dd if=/dev/zero of=rep.iso bs=1M count=100</h2>
+<pre><code>GlusterFS文件系统（3）
+</code></pre>
+<p>【1】分布式条带卷<br>
+分布式条带卷是存储群集中的一种组合应用方式，按照常规的层次结构，分布式卷在群集结构中的最上层，中层有两个条带卷构成，下层分别有多台节点服务器构成两个条带卷。</p>
+<p>当分布式卷收到客户端的访问请求后，根据分布式卷的调度规则，将请求转发给其中一个条带卷，条带卷收到访问请求后，对需要写入的数据进行分段处理，并发送给每个节点服务器。</p>
+<p>--配置分布式条带卷<br>
+创建分布式条带卷：<br>
+gluster volume create dis-stripe stripe 2 node1:/data4 node2:/data4 node3:/data4 node4:/data4 force</p>
+<p>启动分布式条带卷：<br>
+gluster volume start dis-stripe<br>
+查看分布式条带卷信息：<br>
+gluster volume info dis-stripe<br>
+客户端挂载：<br>
+mount -t glusterfs node1:/dis-stripe /dis-stripe</p>
+<p>【2】分布式复制卷<br>
+对客户端发送的写入请求进行分布式调度存储，并对每个节点服务器进行复制卷冗余。在生产环境中应用率不太高。</p>
+<p>--配置分布式复制卷：<br>
+gluster volume create dis-rep replica 2 node1:/data5 node2:/data5 node3:/data5 node4:/data5 force</p>
+<p>启动分布式条带卷：<br>
+gluster volume start dis-rep<br>
+查看分布式条带卷信息：<br>
+gluster volume info dis-rep<br>
+客户端挂载：<br>
+mount -t glusterfs node1:/dis-rep /dis-rep</p>
+<p>【3】条带复制卷<br>
+条带卷收到写入请求后，将数据进行分段，分别发送给两个复制卷，由复制卷写入数据后进行数据同步到冗余设备中。（将两个复制卷合并成一个条带卷,提供读写性能和冗余性）</p>
+<p>--配置条带复制卷：<br>
+gluster volume create stripe-rep stripe 2 replica 2 node1:/data6 node2:/data6 node3:/data6 node4:/data6 force</p>
+<p>启动条带复制卷：<br>
+gluster volume start stripe-rep<br>
+查看条带复制卷信息：<br>
+gluster volume info stripe-rep<br>
+客户端挂载：<br>
+mount -t glusterfs node1:/stripe-rep /stripe-rep</p>
+<p>【4】复制条带卷<br>
+复制卷收到写入请求后，将数据发送给主条带卷，主条带卷将数据进行分段，分别写入节点设备，主条带卷写入完成后，将数据发送给冗余条带卷，冗余条带卷收到数据后进行分段，并写入节点服务器。</p>
+<p>--配置复制条带卷：<br>
+gluster volume create rep-stripe  replica 2 stripe 2 node1:/data7 node2:/data7 node3:/data7 node4:/data7 force</p>
+<p>启动复制条带卷：<br>
+gluster volume start rep-stripe<br>
+查看复制条带卷信息：<br>
+gluster volume info rep-stripe<br>
+客户端挂载：<br>
+mount -t glusterfs node1:/rep-stripe /rep-stripe</p>
+<p>【5】分布式条带复制卷</p>
+<p>最少有8台节点服务器构成，底层由8台节点构建4个复制卷，由4个复制卷构建2个条带卷，最上层有两个条带卷构建一个分布式卷。</p>
+<h2 id="在最上层提高了访问并发量中层提高了读写性能底层提高了冗余性">在最上层提高了访问并发量，中层提高了读写性能，底层提高了冗余性。</h2>
+<pre><code>GlusterFS集群故障测试与修复
+</code></pre>
+<p><code>1、故障冗余测试</code></p>
+<p>断开node2节点服务器的网络，在客户端上查看与使用文件系统，测试不同卷的工作状态：<br>
+结果：<br>
+1.分布式卷：能够继续使用，但丢失了一部分数据。读写功能正常。<br>
+2.条带卷：已挂载的卷能够打开，但是没有任何数据。无法写入数据。<br>
+3.复制卷：能够正常使用卷，没有丢失数据，读写功能正常。<br>
+4.分布式条带卷：能够继续使用，丢失了一部分数据，读取正常，也能够继续写入数据。<br>
+5.分布式复制卷：能够正常使用，没有丢失数据，读写功能正常。<br>
+6.条带复制卷：能够正常使用，没有丢失数据，读写功能正常。<br>
+7.复制条带卷：能够正常使用，没有丢失数据，读写功能正常。</p>
+<p><code>2、配置分布式条带复制卷</code></p>
+<p>gluster volume create dis-stripe-rep stripe 2 replica 2 node1:/data8 node2:/data8 node3:/data8 node4:/data8 node5:/data8 node6:/data8 node7:/data8 node8:/data8 force</p>
+<p>启动分布式条带复制卷<br>
+gluster volume start dis-stripe-rep</p>
+<p>查看分布式条带复制卷信息：<br>
+gluster volume info dis-stripe-rep</p>
+<p><code>3、停止卷</code></p>
+<p>1.客户端卸载需要停止的卷</p>
+<p>2.在构建卷的节点服务器上输入停止卷的命令</p>
+<p>gluster volume stop dis-volume</p>
+<p><code>3.删除指定的卷</code></p>
+<p>gluster volume delete dis-volume</p>
+<p>注意事项：正在被挂载的卷无法停止，没有停止的卷无法删除，删除的卷不可恢复，只能重新创建。源条带卷节点服务器会保留被分段的文件。重新创建条带卷后，文件可以正常使用。</p>
+<p><code>4、GlusterFS其他相关命令</code><br>
+-1.查看glusterfs卷列表（任意节点上）：<br>
+[root@node1 /]# gluster volume list</p>
+<p>-2.查看所有卷信息（任意节点上）：<br>
+[root@node4 /]# gluster volume info</p>
+<p>-3.查看卷状态（任意节点上）：<br>
+[root@node4 /]# gluster volume status</p>
+<p>-4.停止或删除卷<br>
+[root@node4 /]# gluster volume stop dis-volume<br>
+删除卷时，需要先停止卷，再删除。<br>
+[root@node4 /]# gluster volume delete dis-volume</p>
+<p>-5.设置卷访问控制<br>
+gluster volume set 卷名 auth.allow 192.168.10.10,192.168.20.*</p>
 
             </div>
             <hr style="width: 80%;">
@@ -591,36 +764,24 @@ rpm --import /usr/share/doc/redhat-release-*/RPM-GPG-KEY 官方软件升级用�
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>劫夜_❤</li>
-            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/shi-me-shi-repo-wen-jian/</li>
+            <li><strong>原文链接：</strong>https://www.zhz666.cf/post/glusterfs-fen-bu-shi-wen-jian-xi-tong/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/';return false">
                     
                     <img src="https://www.zhz666.cf/post-images/iptables-yu-fiewalld-fang-huo-qiang.png" style="width: 100%;" class="opimg">
                     
                     <h4 class="optitle">iptables与fiewalld防火墙</h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/">iptables与fiewalld防火墙</a>
-            </div>
-            
-            
-            <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://www.zhz666.cf/post/yum-ku-de-da-jian/';return false">
-                    
-                    <img src="https://w.wallhaven.cc/full/m9/wallhaven-m9p2w9.png" style="width: 100%;" class="opimg">
-                    
-                    <h4 class="optitle">Yum库的搭建</h4>
-                </div>
-            </div>
             <div class="next-post">
-                下一篇 <a href="https://www.zhz666.cf/post/yum-ku-de-da-jian/">Yum库的搭建</a>
+                下一篇 <a href="https://www.zhz666.cf/post/iptables-yu-fiewalld-fang-huo-qiang/">iptables与fiewalld防火墙</a>
             </div>
             
         </div>
@@ -741,16 +902,15 @@ rpm --import /usr/share/doc/redhat-release-*/RPM-GPG-KEY 官方软件升级用�
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%9D%A2%E5%AD%98%E6%94%BE%E4%BA%86%E6%89%80%E6%9C%89%E7%9A%84rpm%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%84%B6%E5%90%8E%E4%BB%A5%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8E%BB%E5%88%86%E6%9E%90%E6%AF%8F%E4%B8%AArpm%E6%96%87%E4%BB%B6%E7%9A%84%E4%BE%9D%E8%B5%96%E6%80%A7%E5%85%B3%E7%B3%BB%E5%B0%86%E8%BF%99%E4%BA%9B%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%88%90%E6%96%87%E4%BB%B6%E5%AD%98%E6%94%BE%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%9F%90%E7%89%B9%E5%AE%9A%E7%9B%AE%E5%BD%95%E5%86%85-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85%E6%9F%90%E4%B8%AA%E8%BD%AF%E4%BB%B6%E6%97%B6%E5%85%88%E4%B8%8B%E8%BD%BD%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%9D%A2%E8%AE%B0%E5%BD%95%E7%9A%84%E4%BE%9D%E8%B5%96%E6%80%A7%E5%85%B3%E7%B3%BB%E6%96%87%E4%BB%B6%E5%8F%AF%E9%80%9A%E8%BF%87www%E6%88%96ftp%E6%96%B9%E5%BC%8F%E9%80%9A%E8%BF%87%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E7%BA%AA%E5%BD%95%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90%E7%84%B6%E5%90%8E%E5%8F%96%E5%BE%97%E6%89%80%E6%9C%89%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BD%AF%E4%BB%B6%E4%B8%80%E6%AC%A1%E5%85%A8%E9%83%A8%E4%B8%8B%E8%BD%BD%E4%B8%8B%E6%9D%A5%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">服务器端：在服务器上面存放了所有的RPM软件包，然后以相关的功能去分析每个RPM文件的依赖性关系，将这些数据记录成文件存放在服务器的某特定目录内。<br>
-客户端：如果需要安装某个软件时，先下载服务器上面记录的依赖性关系文件(可通过WWW或FTP方式)，通过对服务器端下载的纪录数据进行分析，然后取得所有相关的软件，一次全部下载下来进行安装。</a></li>
-<li><a href="#font-colordd0000yum%E9%87%8D%E8%A6%81%E7%9A%84%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6fontpackages%E5%AD%98%E5%82%A8rpm%E5%8C%85repodata%E8%AE%B0%E5%BD%95%E8%BD%AF%E4%BB%B6%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BBcd-repodatarepomdxml-xml%E5%88%97%E8%A1%A8-%E6%9F%A5%E6%89%BE%E8%BD%AF%E4%BB%B6%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><font color="#dd0000">yum重要的目录和文件：</font><br>
-Packages	存储rpm包<br>
-repodata	记录软件依赖关系<br>
-cd repodata→repomd.xml  （xml列表 查找软件依赖关系）</a></li>
+<li><a href="#%E7%90%86%E8%AE%BA">理论：😋</a></li>
+<li><a href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">分布式文件系统工作原理</a></li>
+<li><a href="#glusterfs%E9%83%A8%E7%BD%B2">GlusterFS部署</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95cd-repdd-ifdevzero-ofrepiso-bs1m-count100">测试：<br>
+cd /rep<br>
+dd if=/dev/zero of=rep.iso bs=1M count=100</a></li>
+<li><a href="#%E5%9C%A8%E6%9C%80%E4%B8%8A%E5%B1%82%E6%8F%90%E9%AB%98%E4%BA%86%E8%AE%BF%E9%97%AE%E5%B9%B6%E5%8F%91%E9%87%8F%E4%B8%AD%E5%B1%82%E6%8F%90%E9%AB%98%E4%BA%86%E8%AF%BB%E5%86%99%E6%80%A7%E8%83%BD%E5%BA%95%E5%B1%82%E6%8F%90%E9%AB%98%E4%BA%86%E5%86%97%E4%BD%99%E6%80%A7">在最上层提高了访问并发量，中层提高了读写性能，底层提高了冗余性。</a></li>
 </ul>
 </li>
-<li><a href="#font-color00dddd-size5%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86font"><font color="#00dddd" size=5>第一部分：</font></a></li>
-<li><a href="#font-color00dddd-size5%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86font"><font color="#00dddd" size=5>第二部分：</font></a></li>
 </ul>
 
     </div>
@@ -990,7 +1150,7 @@ cd repodata→repomd.xml  （xml列表 查找软件依赖关系）</a></li>
                 var nc = new NewCounter();
                 nc.save({
                     time: 1,
-                    title: "什么是repo文件？ ",
+                    title: "GlusterFS分布式文件系统",
                     url: pl,
                     xid: pl,
                 }).then(function (object) {
